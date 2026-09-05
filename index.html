@@ -48,7 +48,7 @@
       </div>
       <div class="feature-grid">
         <a class="feature-card available" href="#kalkulator"><span class="feature-icon">▱</span><span><strong>Volume Kolam</strong><small>Hitung liter dan kebutuhan pompa</small></span><span class="arrow">→</span></a>
-        <article class="feature-card"><span class="feature-icon">◌</span><span><strong>Kalkulator Pakan</strong><small>Segera hadir</small></span></article>
+        <a class="feature-card available" href="#kalkulator-pakan"><span class="feature-icon">◌</span><span><strong>Kalkulator Pakan</strong><small>Hitung kebutuhan harian dan per sesi</small></span><span class="arrow">→</span></a>
         <article class="feature-card"><span class="feature-icon">+</span><span><strong>Dosis Treatment</strong><small>Segera hadir</small></span></article>
         <article class="feature-card"><span class="feature-icon">◇</span><span><strong>Varietas Koi</strong><small>Segera hadir</small></span></article>
       </div>
@@ -90,6 +90,46 @@
           <small class="disclaimer">*Acuan sirkulasi 1× volume kolam per jam. Sesuaikan dengan head loss dan sistem filter.</small>
         </div>
       </div>
+    </section>
+
+    <section class="calculator-section feed-section" id="kalkulator-pakan" aria-labelledby="feed-title">
+      <div class="calculator-intro">
+        <p class="eyebrow">KALKULATOR PAKAN</p>
+        <h2 id="feed-title">Atur pakan berdasarkan biomassa</h2>
+        <p>Gunakan total perkiraan berat seluruh koi, kemudian tentukan persentase pakan dan jumlah pemberian per hari.</p>
+        <div class="formula-note"><strong>Catatan penting</strong><span>Hasil adalah titik awal. Sesuaikan dengan suhu, kualitas air, aktivitas koi, jenis pakan, dan kemampuan biofilter.</span></div>
+      </div>
+
+      <div class="calculator-card">
+        <form id="feed-form">
+          <label>Total berat seluruh koi <span class="input-wrap"><input id="biomass" type="number" min="0.1" step="any" inputmode="decimal" placeholder="10" required><span>kg</span></span></label>
+          <label>Persentase pakan per hari <span class="input-wrap"><input id="feed-rate" type="number" min="0.1" max="5" step="0.1" inputmode="decimal" value="1.5" required><span>%</span></span></label>
+          <label>Frekuensi pemberian <span class="input-wrap"><input id="feed-frequency" type="number" min="1" max="12" step="1" inputmode="numeric" value="4" required><span>kali</span></span></label>
+          <button class="calculate-button" type="submit">Hitung kebutuhan pakan</button>
+        </form>
+
+        <div class="result-panel feed-result" id="feed-result" aria-live="polite">
+          <p>REKOMENDASI HITUNGAN</p>
+          <strong id="feed-daily">0 gram/hari</strong>
+          <div class="result-details">
+            <span><small>Setiap pemberian</small><b id="feed-serving">0 gram</b></span>
+            <span><small>Perkiraan 30 hari</small><b id="feed-monthly">0 kg</b></span>
+          </div>
+          <small class="disclaimer">Kurangi atau hentikan pakan saat ikan tidak aktif, kualitas air bermasalah, atau selama treatment yang mensyaratkannya.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="water-guide" aria-labelledby="water-guide-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">PANDUAN CEPAT</p><h2 id="water-guide-title">Tiga parameter limbah nitrogen</h2></div>
+      </div>
+      <div class="water-grid">
+        <article><span class="number">01</span><h3>Amonia</h3><strong>Target: tidak terdeteksi</strong><p>Limbah awal dari metabolisme dan sisa organik. Amonia bebas (NH₃) sangat toksik; risikonya meningkat saat pH dan suhu naik.</p><small>Jika terdeteksi: hentikan pakan sementara, tambah aerasi, cek sumber limbah dan biofilter.</small></article>
+        <article><span class="number">02</span><h3>Nitrit</h3><strong>Target: tidak terdeteksi</strong><p>Produk antara dari proses nitrifikasi. Nitrit mengganggu kemampuan darah membawa oksigen.</p><small>Jika terdeteksi: kurangi beban pakan, tambah aerasi, evaluasi kematangan dan aliran biofilter.</small></article>
+        <article><span class="number">03</span><h3>Nitrat</h3><strong>Jaga tetap rendah dan stabil</strong><p>Produk akhir nitrifikasi yang relatif kurang toksik, tetapi penumpukan menunjukkan perlunya pengelolaan air.</p><small>Jika meningkat: lakukan penggantian air bertahap dan kurangi akumulasi kotoran.</small></article>
+      </div>
+      <p class="guide-disclaimer">Interpretasikan hasil bersama pH, suhu, KH, oksigen terlarut, kondisi ikan, dan petunjuk alat tes yang digunakan.</p>
     </section>
   </main>
 
