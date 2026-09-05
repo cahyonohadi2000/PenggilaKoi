@@ -58,7 +58,17 @@ const koiVarieties = [
     confused: 'Sanke umumnya tidak memiliki sumi di kepala dan pola hitamnya terasa sebagai aksen di atas dasar putih.'
   },
   {
+    name: 'Ki Utsuri', japanese: '黄写り', category: 'utsurimono', group: 'Utsurimono', colors: 'Sumi • Ki',
+    image: 'assets/varieties/ki-utsuri.webp',
+    pattern: 'linear-gradient(125deg, #101820 0 28%, #e5ab27 29% 48%, #111a21 49% 66%, #e5ab27 67% 82%, #101820 83%)',
+    summary: 'Koi dasar hitam dengan pola kuning yang saling membungkus tubuh.',
+    identify: 'Tidak memiliki shiroji atau hi; pola sumi dan ki hadir di kepala serta dapat melewati garis lateral.',
+    quality: 'Sumi pekat, ki bersih dan merata, batas warna tegas, pola kepala kuat, serta keseimbangan pola tubuh.',
+    confused: 'Ki Bekko berdasar kuning dengan bercak hitam di atas tubuh, bukan pola hitam yang membungkus seperti Utsuri.'
+  },
+  {
     name: 'Shiro Utsuri', japanese: '白写り', category: 'utsurimono', group: 'Utsurimono', colors: 'Sumi • Shiroji',
+    image: 'assets/varieties/shiro-utsuri.webp',
     pattern: 'linear-gradient(125deg, #101820 0 28%, #f5f7f6 29% 48%, #111a21 49% 66%, #f5f7f6 67% 82%, #101820 83%)',
     summary: 'Koi dasar hitam dengan pola putih yang saling membungkus tubuh.',
     identify: 'Sumi hadir di kepala dan dapat memanjang di bawah garis lateral; pangkal sirip sering memiliki motoguro.',
@@ -67,6 +77,7 @@ const koiVarieties = [
   },
   {
     name: 'Hi Utsuri', japanese: '緋写り', category: 'utsurimono', group: 'Utsurimono', colors: 'Sumi • Hi',
+    image: 'assets/varieties/hi-utsuri.webp',
     pattern: 'linear-gradient(125deg, #111a20 0 27%, #d33a32 28% 47%, #111a20 48% 66%, #d33a32 67% 82%, #111a20 83%)',
     summary: 'Koi hitam dengan pola hi merah atau jingga yang membungkus tubuh.',
     identify: 'Tidak memiliki shiroji; pola sumi dan hi dapat hadir di kepala serta melewati garis lateral.',
