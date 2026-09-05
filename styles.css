@@ -102,6 +102,22 @@ form > label, .field-grid label { display: block; margin-bottom: 17px; color: va
 .remove-group:hover { color: #b44343; background: #f8e9e9; }
 .add-group { width: 100%; margin: 1px 0 19px; padding: 10px; border: 1px dashed #92b5c0; border-radius: 10px; color: var(--blue); background: white; font-size: 13px; font-weight: 700; cursor: pointer; }
 .add-group:hover { background: var(--ice); }
+.treatment-section { border-top: 1px solid var(--line); }
+.treatment-card { position: relative; }
+.form-step { display: flex; align-items: center; gap: 9px; margin: 0 0 15px; font-family: Manrope; font-size: 16px; }
+.form-step span { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--blue); font-size: 12px; }
+.treatment-step { margin-top: 28px; }
+.quarantine-shape-tab, .treatment-tab { padding: 11px; border: 0; border-radius: 8px; color: var(--muted); background: transparent; font-weight: 700; cursor: pointer; }
+.quarantine-shape-tab.active, .treatment-tab.active { color: var(--navy); background: white; box-shadow: 0 3px 12px rgba(8,34,59,.08); }
+.treatment-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; padding: 5px; margin-bottom: 18px; border-radius: 12px; background: #edf3f5; }
+.treatment-fields { margin-bottom: 18px; padding: 16px; border: 1px solid var(--line); border-radius: 13px; background: #f8fbfc; }
+.treatment-fields.hidden { display: none; }
+.treatment-fields > label, .treatment-fields .field-grid label { margin-bottom: 0; }
+.treatment-fields .field-help { margin-top: 3px; }
+.treatment-result { background: linear-gradient(135deg, #3d3457, #087ea4); }
+.safety-note { margin-top: 14px; padding: 17px 19px; border: 1px solid #f1d4a6; border-radius: 10px; color: #694c1c; background: #fff8e9; }
+.safety-note strong, .safety-note span { display: block; }
+.safety-note span { margin-top: 5px; font-size: 12px; line-height: 1.5; }
 
 .water-guide { padding: 95px max(5vw, 24px) 100px; color: white; background: var(--navy); }
 .water-guide > * { max-width: 1116px; margin-left: auto; margin-right: auto; }
@@ -147,5 +163,6 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .koi-group .input-wrap input { padding: 11px 8px; }
   .koi-group .input-wrap span { padding-right: 8px; }
   .feed-result .result-details { grid-template-columns: 1fr; }
+  .treatment-tabs { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 7px; }
 }
