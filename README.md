@@ -11,6 +11,10 @@ Web aplikasi sederhana untuk membantu koi keeper melakukan perhitungan teknis de
 - Kalkulator pakan yang mengestimasi biomassa dari panjang dan jumlah koi
 - Kurva panjang-bobot 10–70 cm dengan interpolasi antartitik
 - Panduan cepat amonia, nitrit, dan nitrat
+- Kalkulator volume bak karantina persegi dan bulat
+- Kalkulator garam berdasarkan selisih kadar awal dan target
+- Kalkulator obat bubuk berdasarkan mg/L
+- Kalkulator obat cair berdasarkan aturan mL per volume air
 - Tidak memerlukan login dan tidak mengirim data pengguna ke server
 
 ## Menjalankan secara lokal
