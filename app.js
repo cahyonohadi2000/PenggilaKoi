@@ -104,7 +104,7 @@ const koiVarieties = [
     confused: 'Asagi memiliki sisik penuh dengan pola jaring pada punggung.'
   },
   {
-    name: 'Goshiki', japanese: '五色', category: 'lainnya', group: 'Koromo–Goshiki', colors: 'Lima warna',
+    name: 'Goshiki', japanese: '五色', category: 'koromo', group: 'Koromo–Goshiki', colors: 'Lima warna',
     image: 'assets/varieties/goshiki.webp',
     pattern: 'radial-gradient(circle at 35% 50%, #c93238 0 20%, transparent 21%), radial-gradient(circle at 75% 40%, #d33a3f 0 18%, transparent 19%), repeating-linear-gradient(45deg, rgba(21,42,55,.55) 0 3px, transparent 3px 12px), #9fb4bd',
     summary: 'Koi nonmetallic dengan campuran putih, merah, hitam, biru muda, dan biru gelap.',
@@ -148,7 +148,7 @@ const koiVarieties = [
     confused: 'Yamabuki Ogon memiliki kilau metallic yang jelas; Karashigoi bersifat nonmetallic.'
   },
   {
-    name: 'Yamabuki Ogon', japanese: '山吹黄金', category: 'lainnya', group: 'Hikarimuji', colors: 'Kuning metallic',
+    name: 'Yamabuki Ogon', japanese: '山吹黄金', category: 'hikari', group: 'Hikarimuji', colors: 'Kuning metallic',
     image: 'assets/varieties/yamabuki-ogon.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(255,255,255,.28) 0 2px, transparent 2px 13px), linear-gradient(135deg, #d99c0b, #ffe279 48%, #c98a00)',
     summary: 'Koi satu warna kuning keemasan dengan kilau metallic di seluruh tubuh dan sirip.',
@@ -157,13 +157,117 @@ const koiVarieties = [
     confused: 'Karashigoi berwarna mustard tetapi tidak memiliki kilau metallic.'
   },
   {
-    name: 'Platinum Ogon', japanese: 'プラチナ黄金', category: 'lainnya', group: 'Hikarimuji', colors: 'Putih metallic',
+    name: 'Platinum Ogon', japanese: 'プラチナ黄金', category: 'hikari', group: 'Hikarimuji', colors: 'Putih metallic',
     image: 'assets/varieties/platinum-ogon.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(90,122,137,.14) 0 2px, transparent 2px 13px), linear-gradient(135deg, #c7d4d9, #ffffff 48%, #aebfc6)',
     summary: 'Koi satu warna putih-perak metallic tanpa pola warna lain.',
     identify: 'Kilau platinum menutupi tubuh, kepala, dan sirip secara merata.',
     quality: 'Hikari cerah tanpa kusam, kepala bersih, warna seragam, susunan sisik rapi, dan body.',
     confused: 'Shiromuji berwarna putih tetapi nonmetallic.'
+  },
+  {
+    name: 'Shiro Bekko', japanese: '白べっ甲', category: 'bekko', group: 'Bekko', colors: 'Shiroji • Sumi',
+    pattern: 'radial-gradient(circle at 35% 45%, #16212a 0 10%, transparent 11%), radial-gradient(circle at 68% 58%, #111b22 0 13%, transparent 14%), #f7faf9',
+    summary: 'Koi dasar putih dengan bercak sumi yang berada terutama di bagian punggung.',
+    identify: 'Kepala umumnya bersih tanpa sumi; bercak hitam tidak membungkus tubuh dan tidak turun dominan ke perut.',
+    quality: 'Shiroji bersih, kepala mulus, sumi pekat dan seimbang, pola bahu kuat, serta sirip yang rapi.',
+    confused: 'Shiro Utsuri memiliki karakter dasar hitam, sumi di kepala, pola membungkus tubuh, dan sering memiliki motoguro.'
+  },
+  {
+    name: 'Ai Goromo', japanese: '藍衣', category: 'koromo', group: 'Koromo', colors: 'Shiroji • Hi • Biru indigo',
+    pattern: 'radial-gradient(circle at 32% 50%, #c83a3a 0 19%, transparent 20%), radial-gradient(circle at 70% 42%, #bd3439 0 20%, transparent 21%), repeating-linear-gradient(45deg, rgba(28,65,95,.28) 0 2px, transparent 2px 11px), #f6faf9',
+    summary: 'Koi bergaya Kohaku dengan sisik berbingkai biru indigo di dalam pola hi.',
+    identify: 'Warna biru muncul seperti jaring pada sisik di area merah, sementara shiroji tetap tampak bersih.',
+    quality: 'Pola dasar Kohaku yang seimbang, shiroji cerah, hi kuat, dan retikulasi biru yang rapi serta tidak berlebihan.',
+    confused: 'Goshiki biasanya memperlihatkan retikulasi lebih luas pada dasar tubuh, bukan hanya pada bagian hi.'
+  },
+  {
+    name: 'Aka Matsuba', japanese: '赤松葉', category: 'kawarimono', group: 'Kawarimono', colors: 'Merah • Retikulasi gelap',
+    pattern: 'repeating-linear-gradient(45deg, rgba(48,38,35,.32) 0 2px, transparent 2px 12px), repeating-linear-gradient(-45deg, rgba(48,38,35,.2) 0 2px, transparent 2px 12px), #c95743',
+    summary: 'Koi merah nonmetallic dengan bagian tengah sisik lebih gelap menyerupai susunan buah pinus.',
+    identify: 'Kepala dan sirip relatif polos, sedangkan punggung menampilkan pola matsuba yang teratur.',
+    quality: 'Warna merah merata, kepala bersih, retikulasi konsisten, sisik tersusun rapi, dan body proporsional.',
+    confused: 'Kin Matsuba memiliki kilau metallic keemasan, sedangkan Aka Matsuba bersifat nonmetallic.'
+  },
+  {
+    name: 'Gin Matsuba', japanese: '銀松葉', category: 'hikari', group: 'Hikarimuji', colors: 'Platinum • Retikulasi gelap',
+    pattern: 'repeating-linear-gradient(45deg, rgba(41,61,73,.3) 0 2px, transparent 2px 12px), repeating-linear-gradient(-45deg, rgba(41,61,73,.18) 0 2px, transparent 2px 12px), linear-gradient(135deg, #b8c8cf, #f9ffff 48%, #9fb1b9)',
+    summary: 'Koi platinum metallic dengan pusat sisik gelap yang membentuk pola matsuba.',
+    identify: 'Kilau putih-perak menutupi tubuh dan sirip, dipadukan dengan retikulasi gelap yang seragam di punggung.',
+    quality: 'Lustre kuat, kepala bersih, pola sisik teratur, retikulasi seragam, dan tidak ada noda warna lain.',
+    confused: 'Platinum Ogon sama-sama metallic putih tetapi tidak memiliki pola gelap di tengah sisik.'
+  },
+  {
+    name: 'Kujaku', japanese: '孔雀', category: 'hikari', group: 'Hikarimoyo', colors: 'Platinum • Hi • Matsuba',
+    pattern: 'radial-gradient(circle at 30% 50%, #d14a37 0 19%, transparent 20%), radial-gradient(circle at 70% 44%, #ce4735 0 20%, transparent 21%), repeating-linear-gradient(45deg, rgba(37,57,68,.28) 0 2px, transparent 2px 12px), linear-gradient(135deg, #dae5e7, #ffffff)',
+    summary: 'Koi metallic berpola merah dengan retikulasi matsuba di atas dasar platinum.',
+    identify: 'Memadukan pola menyerupai Kohaku, kilau hikari, dan pusat sisik gelap yang tampak seperti jaring.',
+    quality: 'Lustre merata, pola hi seimbang, retikulasi rapi, kepala bersih, dan sisik tidak berantakan.',
+    confused: 'Goshiki bersifat nonmetallic; Hariwake metallic tetapi tidak memiliki retikulasi matsuba.'
+  },
+  {
+    name: 'Hariwake', japanese: 'ハリワケ', category: 'hikari', group: 'Hikarimoyo', colors: 'Platinum • Kuning atau jingga',
+    pattern: 'radial-gradient(ellipse at 30% 48%, #e0a51c 0 20%, transparent 21%), radial-gradient(ellipse at 72% 44%, #e8b528 0 23%, transparent 24%), linear-gradient(135deg, #dce7e9, #ffffff 48%, #bac9ce)',
+    summary: 'Koi metallic dua warna dengan dasar platinum dan pola kuning atau jingga.',
+    identify: 'Kilau metallic hadir di seluruh tubuh; pola berwarna terang berdiri di atas dasar putih-perak.',
+    quality: 'Hikari cerah, kepala bersih, tepi pola rapi, warna merata, komposisi seimbang, dan body kuat.',
+    confused: 'Yamabuki Ogon hanya memiliki satu warna kuning metallic tanpa pola platinum.'
+  },
+  {
+    name: 'Kikusui', japanese: '菊水', category: 'hikari', group: 'Hikarimoyo', colors: 'Platinum • Hi • Doitsu',
+    pattern: 'radial-gradient(ellipse at 28% 48%, #d44235 0 18%, transparent 19%), radial-gradient(ellipse at 68% 45%, #d94b39 0 21%, transparent 22%), linear-gradient(135deg, #d7e4e7, #ffffff 48%, #b5c7cd)',
+    summary: 'Koi Doitsu metallic dengan dasar platinum dan pola merah atau jingga.',
+    identify: 'Permukaan tubuh minim sisik, memiliki kilau hikari dan pola menyerupai Kohaku.',
+    quality: 'Kulit bersih, kilau merata, pola hi kuat dan seimbang, garis dorsal rapi, serta bebas sisik liar.',
+    confused: 'Doitsu Hariwake biasanya berpola kuning; Kikusui menampilkan pola merah atau jingga yang lebih dekat ke Kohaku.'
+  },
+  {
+    name: 'Kumonryu', japanese: '九紋竜', category: 'kawarimono', group: 'Kawarimono', colors: 'Putih • Sumi • Doitsu',
+    pattern: 'linear-gradient(125deg, #eef5f4 0 20%, #172129 21% 39%, #f5f9f8 40% 58%, #111b22 59% 76%, #f5f9f8 77%)',
+    summary: 'Koi Doitsu hitam-putih dengan pola sumi yang dapat berubah mengikuti kondisi dan pertumbuhan.',
+    identify: 'Tubuh minim sisik dengan pola hitam-putih bergaya awan; sumi dapat muncul atau menghilang seiring waktu.',
+    quality: 'Kontras warna, kulit bersih, pola kepala menarik, keseimbangan sumi, body, dan susunan sisik dorsal yang rapi.',
+    confused: 'Shiro Utsuri umumnya bersisik penuh dan dinilai sebagai kelompok Utsurimono.'
+  },
+  {
+    name: 'Benigoi', japanese: '紅鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Merah atau jingga',
+    pattern: 'repeating-linear-gradient(45deg, rgba(106,34,25,.11) 0 2px, transparent 2px 13px), linear-gradient(135deg, #c84031, #ed7251)',
+    summary: 'Koi nonmetallic satu warna merah atau jingga tanpa pola warna lain.',
+    identify: 'Warna tubuh seragam dari kepala sampai ekor dan tidak memiliki dasar putih seperti Kohaku.',
+    quality: 'Body bervolume, warna merata, kulit bersih, kepala proporsional, serta sisik dan sirip yang rapi.',
+    confused: 'Aka Matsuba memiliki pusat sisik gelap; Kohaku mempunyai pola hi di atas dasar putih.'
+  },
+  {
+    name: 'Kigoi', japanese: '黄鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Kuning nonmetallic',
+    pattern: 'repeating-linear-gradient(45deg, rgba(93,74,22,.1) 0 2px, transparent 2px 13px), linear-gradient(135deg, #e4c23e, #f4dd75)',
+    summary: 'Koi satu warna kuning cerah tanpa kilau metallic.',
+    identify: 'Warna kuning relatif seragam; sebagian Kigoi memiliki mata merah sebagai karakter albino.',
+    quality: 'Kuning bersih dan merata, body kuat, kepala mulus, sisik teratur, serta bebas bercak warna lain.',
+    confused: 'Yamabuki Ogon memiliki kilau metallic; Karashigoi cenderung berwarna kuning mustard.'
+  },
+  {
+    name: 'Karasugoi', japanese: '烏鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Hitam',
+    pattern: 'repeating-linear-gradient(45deg, rgba(120,148,158,.09) 0 2px, transparent 2px 13px), linear-gradient(135deg, #10181d, #33424a)',
+    summary: 'Koi berwarna hitam pekat yang menjadi induk kelompok beberapa varietas hitam Kawarimono.',
+    identify: 'Tubuh didominasi warna hitam tanpa pola putih luas seperti Kumonryu atau Hageshiro.',
+    quality: 'Body besar, warna hitam merata dan dalam, kulit sehat, sisik rapi, serta kepala dan sirip bersih.',
+    confused: 'Kumonryu menampilkan pola putih yang jelas; Magoi umumnya dipandang sebagai ikan leluhur, bukan varietas hias yang sama.'
+  },
+  {
+    name: 'Yamato Nishiki', japanese: '大和錦', category: 'hikari', group: 'Hikarimoyo', colors: 'Platinum • Hi • Sumi',
+    pattern: 'radial-gradient(circle at 28% 50%, #d13e34 0 18%, transparent 19%), radial-gradient(circle at 68% 44%, #ce3b32 0 20%, transparent 21%), radial-gradient(circle at 78% 33%, #182129 0 8%, transparent 9%), linear-gradient(135deg, #d9e5e7, #ffffff)',
+    summary: 'Versi metallic bergaya Taisho Sanke dengan dasar putih-perak, hi, dan sumi.',
+    identify: 'Pola tiga warna menyerupai Sanke tetapi seluruh kulit dan sirip memperlihatkan kilau hikari.',
+    quality: 'Lustre merata, shiroji metallic bersih, hi kuat, sumi pekat, dan keseimbangan pola tiga warna.',
+    confused: 'Taisho Sanke memiliki komposisi serupa tetapi bersifat nonmetallic.'
+  },
+  {
+    name: 'Kin Showa', japanese: '金昭和', category: 'hikari', group: 'Hikari Utsurimono', colors: 'Metallic • Hi • Sumi • Shiroji',
+    pattern: 'linear-gradient(120deg, #172129 0 22%, transparent 23% 40%, #d24a32 41% 62%, transparent 63%), radial-gradient(circle at 75% 32%, #121b22 0 16%, transparent 17%), linear-gradient(135deg, #d5c391, #fff5ce)',
+    summary: 'Showa Sanshoku berkilau metallic dengan pola hitam, merah, dan putih.',
+    identify: 'Memiliki karakter pola Showa—termasuk sumi di kepala dan motoguro—dengan kilau hikari di tubuh serta sirip.',
+    quality: 'Lustre kuat, sumi pekat, warna hi bersih, keseimbangan tiga warna, pola kepala, motoguro, dan body.',
+    confused: 'Showa Sanshoku bersifat nonmetallic; Yamato Nishiki memiliki karakter pola seperti Sanke.'
   },
   {
     name: 'Tancho', japanese: '丹頂', category: 'lainnya', group: 'Pola khusus', colors: 'Tanda hi di kepala',
@@ -310,17 +414,6 @@ tabs.forEach((tab) => {
   });
 });
 
-const getBottomDrainRecommendation = (liters) => {
-  if (liters <= 5000) return '1 × 3 inci';
-  const drainCount = Math.ceil(liters / 15000);
-  return `${drainCount} × 4 inci`;
-};
-
-const getAeratorRecommendation = (liters) => ({
-  minimum: (liters / 1000) * 7,
-  ideal: (liters / 1000) * 10
-});
-
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const depth = Number(document.querySelector('#depth').value);
@@ -338,15 +431,9 @@ form.addEventListener('submit', (event) => {
 
   if (!Number.isFinite(liters) || liters <= 0) return;
 
-  const chamberLiters = liters * 0.3;
-  const aerator = getAeratorRecommendation(liters);
-
   document.querySelector('#result-liters').textContent = `${formatter.format(liters)} liter`;
   document.querySelector('#result-cubic').textContent = `${formatter.format(liters / 1000)} m³`;
   document.querySelector('#result-pump').textContent = `${formatter.format(liters)} L/jam`;
-  document.querySelector('#result-bottom-drain').textContent = getBottomDrainRecommendation(liters);
-  document.querySelector('#result-chamber').textContent = `${formatter.format(chamberLiters)} liter`;
-  document.querySelector('#result-aerator').textContent = `${formatter.format(aerator.minimum)}–${formatter.format(aerator.ideal)} LPM`;
   document.querySelector('#result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 });
 
