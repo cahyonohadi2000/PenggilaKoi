@@ -8,6 +8,8 @@ Web aplikasi sederhana untuk membantu koi keeper melakukan perhitungan teknis de
 - Kalkulator volume kolam persegi
 - Kalkulator volume kolam bulat
 - Estimasi kapasitas minimum pompa berdasarkan sirkulasi 1x per jam
+- Kalkulator pakan berdasarkan biomassa, feeding rate, dan frekuensi
+- Panduan cepat amonia, nitrit, dan nitrat
 - Tidak memerlukan login dan tidak mengirim data pengguna ke server
 
 ## Menjalankan secara lokal
