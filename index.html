@@ -96,13 +96,21 @@
       <div class="calculator-intro">
         <p class="eyebrow">KALKULATOR PAKAN</p>
         <h2 id="feed-title">Atur pakan berdasarkan biomassa</h2>
-        <p>Gunakan total perkiraan berat seluruh koi, kemudian tentukan persentase pakan dan jumlah pemberian per hari.</p>
-        <div class="formula-note"><strong>Catatan penting</strong><span>Hasil adalah titik awal. Sesuaikan dengan suhu, kualitas air, aktivitas koi, jenis pakan, dan kemampuan biofilter.</span></div>
+        <p>Masukkan panjang badan dan jumlah koi pada setiap kelompok ukuran. Sistem mengubah panjang menjadi estimasi berat sesuai kurva referensi, kemudian menjumlahkannya sebagai biomassa.</p>
+        <div class="formula-note"><strong>Cara mengukur</strong><span>Ukur panjang badan dari ujung mulut sampai pangkal ekor—sirip ekor tidak ikut dihitung. Kurva digunakan untuk panjang 10–70 cm.</span></div>
       </div>
 
       <div class="calculator-card">
         <form id="feed-form">
-          <label>Total berat seluruh koi <span class="input-wrap"><input id="biomass" type="number" min="0.1" step="any" inputmode="decimal" placeholder="10" required><span>kg</span></span></label>
+          <div class="koi-groups-heading"><strong>Kelompok ukuran koi</strong><small>Panjang badan × jumlah ikan</small></div>
+          <div id="koi-groups">
+            <div class="koi-group">
+              <label>Panjang badan <span class="input-wrap"><input class="koi-length" type="number" min="10" max="70" step="1" inputmode="decimal" value="35" required><span>cm</span></span></label>
+              <label>Jumlah <span class="input-wrap"><input class="koi-count" type="number" min="1" max="999" step="1" inputmode="numeric" value="1" required><span>ekor</span></span></label>
+              <button class="remove-group" type="button" aria-label="Hapus kelompok" title="Hapus kelompok">×</button>
+            </div>
+          </div>
+          <button class="add-group" id="add-koi-group" type="button">+ Tambah kelompok ukuran</button>
           <label>Persentase pakan per hari <span class="input-wrap"><input id="feed-rate" type="number" min="0.1" max="5" step="0.1" inputmode="decimal" value="1.5" required><span>%</span></span></label>
           <label>Frekuensi pemberian <span class="input-wrap"><input id="feed-frequency" type="number" min="1" max="12" step="1" inputmode="numeric" value="4" required><span>kali</span></span></label>
           <button class="calculate-button" type="submit">Hitung kebutuhan pakan</button>
@@ -112,10 +120,11 @@
           <p>REKOMENDASI HITUNGAN</p>
           <strong id="feed-daily">0 gram/hari</strong>
           <div class="result-details">
+            <span><small>Estimasi biomassa</small><b id="feed-biomass">0 kg</b></span>
             <span><small>Setiap pemberian</small><b id="feed-serving">0 gram</b></span>
             <span><small>Perkiraan 30 hari</small><b id="feed-monthly">0 kg</b></span>
           </div>
-          <small class="disclaimer">Kurangi atau hentikan pakan saat ikan tidak aktif, kualitas air bermasalah, atau selama treatment yang mensyaratkannya.</small>
+          <small class="disclaimer">Berat merupakan estimasi dari kurva dan dapat berbeda karena bentuk tubuh, jenis kelamin, serta kondisi ikan. Kurangi atau hentikan pakan saat ikan tidak aktif atau kualitas air bermasalah.</small>
         </div>
       </div>
     </section>
