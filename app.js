@@ -414,26 +414,49 @@ tabs.forEach((tab) => {
   });
 });
 
+const getBottomDrainRecommendation = (liters) => {
+  if (liters <= 5000) return '1 × 3 inci';
+  const drainCount = Math.ceil(liters / 15000);
+  return `${drainCount} × 4 inci`;
+};
+
+const getAeratorRecommendation = (liters) => ({
+  minimum: (liters / 1000) * 7,
+  ideal: (liters / 1000) * 10
+});
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const depth = Number(document.querySelector('#depth').value);
+  const averageKoiLength = Number(document.querySelector('#average-koi-length').value);
   let liters = 0;
+  let baseArea = 0;
 
   if (activeShape === 'rectangle') {
     const length = Number(document.querySelector('#length').value);
     const width = Number(document.querySelector('#width').value);
+    baseArea = length * width;
     liters = (length * width * depth) / 1000;
   } else {
     const diameter = Number(document.querySelector('#diameter').value);
     const radius = diameter / 2;
+    baseArea = Math.PI * radius * radius;
     liters = (Math.PI * radius * radius * depth) / 1000;
   }
 
-  if (!Number.isFinite(liters) || liters <= 0) return;
+  if (![liters, baseArea, averageKoiLength].every(Number.isFinite) || liters <= 0 || baseArea <= 0 || averageKoiLength <= 0) return;
+
+  const chamberLiters = liters * 0.3;
+  const aerator = getAeratorRecommendation(liters);
+  const idealKoiCount = Math.floor(baseArea / 150 / averageKoiLength);
 
   document.querySelector('#result-liters').textContent = `${formatter.format(liters)} liter`;
   document.querySelector('#result-cubic').textContent = `${formatter.format(liters / 1000)} m³`;
   document.querySelector('#result-pump').textContent = `${formatter.format(liters)} L/jam`;
+  document.querySelector('#result-bottom-drain').textContent = getBottomDrainRecommendation(liters);
+  document.querySelector('#result-chamber').textContent = `${formatter.format(chamberLiters)} liter`;
+  document.querySelector('#result-aerator').textContent = `${formatter.format(aerator.minimum)}–${formatter.format(aerator.ideal)} LPM`;
+  document.querySelector('#result-ideal-koi').textContent = `${formatter.format(idealKoiCount)} ekor`;
   document.querySelector('#result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 });
 
