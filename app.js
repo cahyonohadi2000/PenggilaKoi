@@ -310,6 +310,17 @@ tabs.forEach((tab) => {
   });
 });
 
+const getBottomDrainRecommendation = (liters) => {
+  if (liters <= 5000) return '1 × 3 inci';
+  const drainCount = Math.ceil(liters / 15000);
+  return `${drainCount} × 4 inci`;
+};
+
+const getAeratorRecommendation = (liters) => {
+  const calculatedLpm = (liters / 1000) * 2;
+  return Math.max(10, Math.ceil(calculatedLpm / 10) * 10);
+};
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const depth = Number(document.querySelector('#depth').value);
@@ -327,9 +338,15 @@ form.addEventListener('submit', (event) => {
 
   if (!Number.isFinite(liters) || liters <= 0) return;
 
+  const chamberLiters = liters * 0.1;
+  const aeratorLpm = getAeratorRecommendation(liters);
+
   document.querySelector('#result-liters').textContent = `${formatter.format(liters)} liter`;
   document.querySelector('#result-cubic').textContent = `${formatter.format(liters / 1000)} m³`;
   document.querySelector('#result-pump').textContent = `${formatter.format(liters)} L/jam`;
+  document.querySelector('#result-bottom-drain').textContent = getBottomDrainRecommendation(liters);
+  document.querySelector('#result-chamber').textContent = `${formatter.format(chamberLiters)} liter`;
+  document.querySelector('#result-aerator').textContent = `${formatter.format(aeratorLpm)} LPM`;
   document.querySelector('#result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 });
 
