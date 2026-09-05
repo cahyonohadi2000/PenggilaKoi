@@ -114,6 +114,7 @@ const koiVarieties = [
   },
   {
     name: 'Chagoi', japanese: '茶鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Cokelat • Teh',
+    image: 'assets/varieties/chagoi.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(77,51,31,.16) 0 2px, transparent 2px 12px), linear-gradient(135deg, #9a6b42, #c69868)',
     summary: 'Koi satu warna cokelat atau warna teh yang dikenal mudah jinak dan berpotensi tumbuh besar.',
     identify: 'Warna tubuh relatif seragam dengan pola sisik teratur; tidak memiliki pola warna kontras.',
@@ -167,6 +168,7 @@ const koiVarieties = [
   },
   {
     name: 'Shiro Bekko', japanese: '白べっ甲', category: 'bekko', group: 'Bekko', colors: 'Shiroji • Sumi',
+    image: 'assets/varieties/shiro-bekko.webp',
     pattern: 'radial-gradient(circle at 35% 45%, #16212a 0 10%, transparent 11%), radial-gradient(circle at 68% 58%, #111b22 0 13%, transparent 14%), #f7faf9',
     summary: 'Koi dasar putih dengan bercak sumi yang berada terutama di bagian punggung.',
     identify: 'Kepala umumnya bersih tanpa sumi; bercak hitam tidak membungkus tubuh dan tidak turun dominan ke perut.',
@@ -175,6 +177,7 @@ const koiVarieties = [
   },
   {
     name: 'Ai Goromo', japanese: '藍衣', category: 'koromo', group: 'Koromo', colors: 'Shiroji • Hi • Biru indigo',
+    image: 'assets/varieties/ai-goromo.webp',
     pattern: 'radial-gradient(circle at 32% 50%, #c83a3a 0 19%, transparent 20%), radial-gradient(circle at 70% 42%, #bd3439 0 20%, transparent 21%), repeating-linear-gradient(45deg, rgba(28,65,95,.28) 0 2px, transparent 2px 11px), #f6faf9',
     summary: 'Koi bergaya Kohaku dengan sisik berbingkai biru indigo di dalam pola hi.',
     identify: 'Warna biru muncul seperti jaring pada sisik di area merah, sementara shiroji tetap tampak bersih.',
@@ -183,6 +186,7 @@ const koiVarieties = [
   },
   {
     name: 'Aka Matsuba', japanese: '赤松葉', category: 'kawarimono', group: 'Kawarimono', colors: 'Merah • Retikulasi gelap',
+    image: 'assets/varieties/aka-matsuba.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(48,38,35,.32) 0 2px, transparent 2px 12px), repeating-linear-gradient(-45deg, rgba(48,38,35,.2) 0 2px, transparent 2px 12px), #c95743',
     summary: 'Koi merah nonmetallic dengan bagian tengah sisik lebih gelap menyerupai susunan buah pinus.',
     identify: 'Kepala dan sirip relatif polos, sedangkan punggung menampilkan pola matsuba yang teratur.',
@@ -191,6 +195,7 @@ const koiVarieties = [
   },
   {
     name: 'Gin Matsuba', japanese: '銀松葉', category: 'hikari', group: 'Hikarimuji', colors: 'Platinum • Retikulasi gelap',
+    image: 'assets/varieties/gin-matsuba.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(41,61,73,.3) 0 2px, transparent 2px 12px), repeating-linear-gradient(-45deg, rgba(41,61,73,.18) 0 2px, transparent 2px 12px), linear-gradient(135deg, #b8c8cf, #f9ffff 48%, #9fb1b9)',
     summary: 'Koi platinum metallic dengan pusat sisik gelap yang membentuk pola matsuba.',
     identify: 'Kilau putih-perak menutupi tubuh dan sirip, dipadukan dengan retikulasi gelap yang seragam di punggung.',
@@ -199,6 +204,7 @@ const koiVarieties = [
   },
   {
     name: 'Kujaku', japanese: '孔雀', category: 'hikari', group: 'Hikarimoyo', colors: 'Platinum • Hi • Matsuba',
+    image: 'assets/varieties/kujaku.webp',
     pattern: 'radial-gradient(circle at 30% 50%, #d14a37 0 19%, transparent 20%), radial-gradient(circle at 70% 44%, #ce4735 0 20%, transparent 21%), repeating-linear-gradient(45deg, rgba(37,57,68,.28) 0 2px, transparent 2px 12px), linear-gradient(135deg, #dae5e7, #ffffff)',
     summary: 'Koi metallic berpola merah dengan retikulasi matsuba di atas dasar platinum.',
     identify: 'Memadukan pola menyerupai Kohaku, kilau hikari, dan pusat sisik gelap yang tampak seperti jaring.',
@@ -207,6 +213,7 @@ const koiVarieties = [
   },
   {
     name: 'Hariwake', japanese: 'ハリワケ', category: 'hikari', group: 'Hikarimoyo', colors: 'Platinum • Kuning atau jingga',
+    image: 'assets/varieties/hariwake.webp',
     pattern: 'radial-gradient(ellipse at 30% 48%, #e0a51c 0 20%, transparent 21%), radial-gradient(ellipse at 72% 44%, #e8b528 0 23%, transparent 24%), linear-gradient(135deg, #dce7e9, #ffffff 48%, #bac9ce)',
     summary: 'Koi metallic dua warna dengan dasar platinum dan pola kuning atau jingga.',
     identify: 'Kilau metallic hadir di seluruh tubuh; pola berwarna terang berdiri di atas dasar putih-perak.',
@@ -215,6 +222,7 @@ const koiVarieties = [
   },
   {
     name: 'Kikusui', japanese: '菊水', category: 'hikari', group: 'Hikarimoyo', colors: 'Platinum • Hi • Doitsu',
+    image: 'assets/varieties/kikusui.webp',
     pattern: 'radial-gradient(ellipse at 28% 48%, #d44235 0 18%, transparent 19%), radial-gradient(ellipse at 68% 45%, #d94b39 0 21%, transparent 22%), linear-gradient(135deg, #d7e4e7, #ffffff 48%, #b5c7cd)',
     summary: 'Koi Doitsu metallic dengan dasar platinum dan pola merah atau jingga.',
     identify: 'Permukaan tubuh minim sisik, memiliki kilau hikari dan pola menyerupai Kohaku.',
@@ -223,6 +231,7 @@ const koiVarieties = [
   },
   {
     name: 'Kumonryu', japanese: '九紋竜', category: 'kawarimono', group: 'Kawarimono', colors: 'Putih • Sumi • Doitsu',
+    image: 'assets/varieties/kumonryu.webp',
     pattern: 'linear-gradient(125deg, #eef5f4 0 20%, #172129 21% 39%, #f5f9f8 40% 58%, #111b22 59% 76%, #f5f9f8 77%)',
     summary: 'Koi Doitsu hitam-putih dengan pola sumi yang dapat berubah mengikuti kondisi dan pertumbuhan.',
     identify: 'Tubuh minim sisik dengan pola hitam-putih bergaya awan; sumi dapat muncul atau menghilang seiring waktu.',
@@ -231,6 +240,7 @@ const koiVarieties = [
   },
   {
     name: 'Benigoi', japanese: '紅鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Merah atau jingga',
+    image: 'assets/varieties/benigoi.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(106,34,25,.11) 0 2px, transparent 2px 13px), linear-gradient(135deg, #c84031, #ed7251)',
     summary: 'Koi nonmetallic satu warna merah atau jingga tanpa pola warna lain.',
     identify: 'Warna tubuh seragam dari kepala sampai ekor dan tidak memiliki dasar putih seperti Kohaku.',
@@ -239,6 +249,7 @@ const koiVarieties = [
   },
   {
     name: 'Kigoi', japanese: '黄鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Kuning nonmetallic',
+    image: 'assets/varieties/kigoi.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(93,74,22,.1) 0 2px, transparent 2px 13px), linear-gradient(135deg, #e4c23e, #f4dd75)',
     summary: 'Koi satu warna kuning cerah tanpa kilau metallic.',
     identify: 'Warna kuning relatif seragam; sebagian Kigoi memiliki mata merah sebagai karakter albino.',
@@ -247,6 +258,7 @@ const koiVarieties = [
   },
   {
     name: 'Karasugoi', japanese: '烏鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Hitam',
+    image: 'assets/varieties/karasugoi.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(120,148,158,.09) 0 2px, transparent 2px 13px), linear-gradient(135deg, #10181d, #33424a)',
     summary: 'Koi berwarna hitam pekat yang menjadi induk kelompok beberapa varietas hitam Kawarimono.',
     identify: 'Tubuh didominasi warna hitam tanpa pola putih luas seperti Kumonryu atau Hageshiro.',
@@ -255,6 +267,7 @@ const koiVarieties = [
   },
   {
     name: 'Yamato Nishiki', japanese: '大和錦', category: 'hikari', group: 'Hikarimoyo', colors: 'Platinum • Hi • Sumi',
+    image: 'assets/varieties/yamato-nishiki.webp',
     pattern: 'radial-gradient(circle at 28% 50%, #d13e34 0 18%, transparent 19%), radial-gradient(circle at 68% 44%, #ce3b32 0 20%, transparent 21%), radial-gradient(circle at 78% 33%, #182129 0 8%, transparent 9%), linear-gradient(135deg, #d9e5e7, #ffffff)',
     summary: 'Versi metallic bergaya Taisho Sanke dengan dasar putih-perak, hi, dan sumi.',
     identify: 'Pola tiga warna menyerupai Sanke tetapi seluruh kulit dan sirip memperlihatkan kilau hikari.',
@@ -263,6 +276,7 @@ const koiVarieties = [
   },
   {
     name: 'Kin Showa', japanese: '金昭和', category: 'hikari', group: 'Hikari Utsurimono', colors: 'Metallic • Hi • Sumi • Shiroji',
+    image: 'assets/varieties/kin-showa.webp',
     pattern: 'linear-gradient(120deg, #172129 0 22%, transparent 23% 40%, #d24a32 41% 62%, transparent 63%), radial-gradient(circle at 75% 32%, #121b22 0 16%, transparent 17%), linear-gradient(135deg, #d5c391, #fff5ce)',
     summary: 'Showa Sanshoku berkilau metallic dengan pola hitam, merah, dan putih.',
     identify: 'Memiliki karakter pola Showa—termasuk sumi di kepala dan motoguro—dengan kilau hikari di tubuh serta sirip.',
