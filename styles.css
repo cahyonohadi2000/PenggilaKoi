@@ -61,6 +61,9 @@ h2 { font-size: clamp(30px, 4vw, 44px); }
 .arrow { align-self: end; font-size: 24px; }
 
 .calculator-section { max-width: 1116px; margin: auto; padding: 100px 24px 110px; display: grid; grid-template-columns: .82fr 1.18fr; gap: 86px; align-items: start; }
+.feed-section { max-width: none; padding-left: max(calc((100vw - 1116px) / 2 + 24px), 24px); padding-right: max(calc((100vw - 1116px) / 2 + 24px), 24px); background: var(--ice); }
+.feed-section .calculator-intro { order: 2; }
+.feed-section .calculator-card { order: 1; }
 .calculator-intro > p:not(.eyebrow) { color: var(--muted); line-height: 1.7; }
 .formula-note { margin-top: 30px; padding: 19px; border-left: 4px solid var(--cyan); border-radius: 0 10px 10px 0; background: var(--ice); }
 .formula-note strong, .formula-note span { display: block; }
@@ -86,6 +89,19 @@ form > label, .field-grid label { display: block; margin-bottom: 17px; color: va
 .result-details small { opacity: .65; }
 .result-details b { margin-top: 4px; }
 .disclaimer { display: block; opacity: .57; line-height: 1.4; }
+.feed-result { background: linear-gradient(135deg, #084c56, #087ea4); }
+
+.water-guide { padding: 95px max(5vw, 24px) 100px; color: white; background: var(--navy); }
+.water-guide > * { max-width: 1116px; margin-left: auto; margin-right: auto; }
+.water-guide .eyebrow { color: var(--cyan); }
+.water-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.water-grid article { padding: 27px; border: 1px solid rgba(255,255,255,.13); border-radius: 19px; background: rgba(255,255,255,.055); }
+.water-grid .number { color: var(--cyan); font-family: Manrope; font-size: 12px; }
+.water-grid h3 { margin: 18px 0 10px; font-family: Manrope; font-size: 25px; }
+.water-grid strong { display: block; color: var(--cyan); font-size: 13px; }
+.water-grid p { min-height: 96px; color: #c2d2db; font-size: 14px; line-height: 1.55; }
+.water-grid small { display: block; padding-top: 15px; border-top: 1px solid rgba(255,255,255,.12); color: #91aab7; line-height: 1.5; }
+.guide-disclaimer { margin-top: 21px; color: #8198a5; font-size: 12px; line-height: 1.55; }
 
 footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 24px); color: var(--muted); border-top: 1px solid var(--line); font-size: 12px; }
 
@@ -99,6 +115,10 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .water-card { height: 310px; }
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .calculator-section { padding-top: 75px; grid-template-columns: 1fr; gap: 35px; }
+  .feed-section .calculator-intro { order: 1; }
+  .feed-section .calculator-card { order: 2; }
+  .water-grid { grid-template-columns: 1fr; }
+  .water-grid p { min-height: auto; }
 }
 
 @media (max-width: 480px) {
