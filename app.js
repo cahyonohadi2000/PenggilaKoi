@@ -7,9 +7,15 @@ const navigation = document.querySelector('.main-nav');
 const feedForm = document.querySelector('#feed-form');
 const koiGroups = document.querySelector('#koi-groups');
 const addKoiGroupButton = document.querySelector('#add-koi-group');
+const treatmentForm = document.querySelector('#treatment-form');
+const quarantineShapeTabs = document.querySelectorAll('.quarantine-shape-tab');
+const treatmentTabs = document.querySelectorAll('.treatment-tab');
 let activeShape = 'rectangle';
+let quarantineShape = 'rectangle';
+let treatmentType = 'salt';
 
 const formatter = new Intl.NumberFormat('id-ID', { maximumFractionDigits: 1 });
+const doseFormatter = new Intl.NumberFormat('id-ID', { maximumFractionDigits: 3 });
 
 // Sampel kurva panjang-bobot pada referensi pengguna (panjang badan tanpa ekor).
 // Bobot di antara titik dihitung dengan interpolasi linear. Catatan 2% pada
@@ -56,6 +62,40 @@ addKoiGroupButton.addEventListener('click', () => {
 });
 
 wireRemoveButtons();
+
+quarantineShapeTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    quarantineShape = tab.dataset.qShape;
+    quarantineShapeTabs.forEach((item) => {
+      const selected = item === tab;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-selected', String(selected));
+    });
+    const isRectangle = quarantineShape === 'rectangle';
+    document.querySelector('#q-rectangle-fields').classList.toggle('hidden', !isRectangle);
+    document.querySelector('#q-circle-fields').classList.toggle('hidden', isRectangle);
+    document.querySelector('#q-length').required = isRectangle;
+    document.querySelector('#q-width').required = isRectangle;
+    document.querySelector('#q-diameter').required = !isRectangle;
+  });
+});
+
+treatmentTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    treatmentType = tab.dataset.treatment;
+    treatmentTabs.forEach((item) => {
+      const selected = item === tab;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-selected', String(selected));
+    });
+
+    ['salt', 'powder', 'liquid'].forEach((type) => {
+      const active = type === treatmentType;
+      document.querySelector(`#${type}-fields`).classList.toggle('hidden', !active);
+      document.querySelectorAll(`#${type}-fields input`).forEach((input) => { input.required = active; });
+    });
+  });
+});
 
 tabs.forEach((tab) => {
   tab.addEventListener('click', () => {
@@ -121,6 +161,58 @@ feedForm.addEventListener('submit', (event) => {
   document.querySelector('#feed-serving').textContent = `${formatter.format(dailyGrams / frequency)} gram`;
   document.querySelector('#feed-monthly').textContent = `${formatter.format((dailyGrams * 30) / 1000)} kg`;
   document.querySelector('#feed-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+});
+
+treatmentForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const depth = Number(document.querySelector('#q-depth').value);
+  let volume = 0;
+
+  if (quarantineShape === 'rectangle') {
+    const length = Number(document.querySelector('#q-length').value);
+    const width = Number(document.querySelector('#q-width').value);
+    volume = (length * width * depth) / 1000;
+  } else {
+    const diameter = Number(document.querySelector('#q-diameter').value);
+    volume = (Math.PI * Math.pow(diameter / 2, 2) * depth) / 1000;
+  }
+
+  if (!Number.isFinite(volume) || volume <= 0) return;
+
+  let doseText = '';
+  let kindText = '';
+  let noteText = '';
+
+  if (treatmentType === 'salt') {
+    const current = Number(document.querySelector('#salt-current').value);
+    const target = Number(document.querySelector('#salt-target').value);
+    if (target <= current) {
+      document.querySelector('#salt-target').setCustomValidity('Kadar target harus lebih tinggi daripada kadar saat ini.');
+      document.querySelector('#salt-target').reportValidity();
+      return;
+    }
+    document.querySelector('#salt-target').setCustomValidity('');
+    doseText = `${doseFormatter.format(volume * (target - current) / 1000)} kg garam`;
+    kindText = 'Garam';
+    noteText = 'Larutkan garam terlebih dahulu dan masukkan secara bertahap. Ukur kembali salinitas air.';
+  } else if (treatmentType === 'powder') {
+    const mgPerLiter = Number(document.querySelector('#powder-dose').value);
+    doseText = `${doseFormatter.format(volume * mgPerLiter / 1000)} gram`;
+    kindText = 'Obat bubuk';
+    noteText = 'Pastikan angka mg/L berasal dari label produk atau referensi yang sesuai untuk bahan tersebut.';
+  } else {
+    const productDose = Number(document.querySelector('#liquid-dose').value);
+    const referenceVolume = Number(document.querySelector('#liquid-reference-volume').value);
+    doseText = `${doseFormatter.format(volume * productDose / referenceVolume)} mL`;
+    kindText = 'Obat cair';
+    noteText = 'Cocokkan kembali konsentrasi produk dan aturan mL per liter pada label sebelum digunakan.';
+  }
+
+  document.querySelector('#treatment-dose').textContent = doseText;
+  document.querySelector('#treatment-volume').textContent = `${formatter.format(volume)} liter`;
+  document.querySelector('#treatment-kind').textContent = kindText;
+  document.querySelector('#treatment-note').textContent = noteText;
+  document.querySelector('#treatment-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 });
 
 menuButton.addEventListener('click', () => {
