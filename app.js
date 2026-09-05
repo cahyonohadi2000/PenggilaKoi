@@ -122,6 +122,7 @@ const koiVarieties = [
   },
   {
     name: 'Soragoi', japanese: '空鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Abu-abu',
+    image: 'assets/varieties/soragoi.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(27,48,60,.22) 0 2px, transparent 2px 12px), linear-gradient(135deg, #778d97, #b6c4c9)',
     summary: 'Koi satu warna abu-abu dengan pola sisik yang menjadi daya tarik utama.',
     identify: 'Warna abu-abu merata dari kepala ke ekor, tanpa pola warna lain yang dominan.',
@@ -139,6 +140,7 @@ const koiVarieties = [
   },
   {
     name: 'Karashigoi', japanese: '芥子鯉', category: 'kawarimono', group: 'Kawarimono', colors: 'Kuning mustard',
+    image: 'assets/varieties/karashigoi.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(91,69,22,.13) 0 2px, transparent 2px 13px), linear-gradient(135deg, #d0a936, #ead578)',
     summary: 'Koi satu warna kuning mustard yang terkenal dengan pertumbuhan dan karakter ramah.',
     identify: 'Warna kuning lembut sampai mustard yang merata, dapat hadir dalam tipe sisik berbeda.',
@@ -147,6 +149,7 @@ const koiVarieties = [
   },
   {
     name: 'Yamabuki Ogon', japanese: '山吹黄金', category: 'lainnya', group: 'Hikarimuji', colors: 'Kuning metallic',
+    image: 'assets/varieties/yamabuki-ogon.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(255,255,255,.28) 0 2px, transparent 2px 13px), linear-gradient(135deg, #d99c0b, #ffe279 48%, #c98a00)',
     summary: 'Koi satu warna kuning keemasan dengan kilau metallic di seluruh tubuh dan sirip.',
     identify: 'Tidak memiliki pola warna lain; kilau hikari harus tampak konsisten termasuk pada kepala dan sirip.',
@@ -155,6 +158,7 @@ const koiVarieties = [
   },
   {
     name: 'Platinum Ogon', japanese: 'プラチナ黄金', category: 'lainnya', group: 'Hikarimuji', colors: 'Putih metallic',
+    image: 'assets/varieties/platinum-ogon.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(90,122,137,.14) 0 2px, transparent 2px 13px), linear-gradient(135deg, #c7d4d9, #ffffff 48%, #aebfc6)',
     summary: 'Koi satu warna putih-perak metallic tanpa pola warna lain.',
     identify: 'Kilau platinum menutupi tubuh, kepala, dan sirip secara merata.',
@@ -163,6 +167,7 @@ const koiVarieties = [
   },
   {
     name: 'Tancho', japanese: '丹頂', category: 'lainnya', group: 'Pola khusus', colors: 'Tanda hi di kepala',
+    image: 'assets/varieties/tancho.webp',
     pattern: 'radial-gradient(circle at 50% 46%, #d43035 0 22%, transparent 23%), #f7faf9',
     summary: 'Sebutan untuk koi dengan satu tanda hi di kepala dan tanpa hi lain pada tubuh.',
     identify: 'Tanda kepala idealnya berdiri sendiri dan tidak menyentuh mata, hidung, bahu, atau sirip.',
