@@ -138,8 +138,11 @@ form > label, .field-grid label { display: block; margin-bottom: 17px; color: va
 .variety-filter:hover, .variety-filter.active { color: white; border-color: var(--blue); background: var(--blue); }
 .variety-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; margin-top: 32px; }
 .variety-card { overflow: hidden; border: 1px solid var(--line); border-radius: 19px; background: white; box-shadow: 0 8px 24px rgba(8,34,59,.055); }
-.variety-visual { height: 112px; position: relative; overflow: hidden; background: var(--pattern); }
+.variety-visual { height: 210px; position: relative; overflow: hidden; background: var(--pattern); }
 .variety-visual::after { content: ""; position: absolute; width: 130px; height: 58px; top: 27px; right: -17px; border-radius: 60% 38% 55% 45%; border: 2px solid rgba(255,255,255,.55); background: rgba(255,255,255,.14); transform: rotate(-5deg); }
+.variety-visual.has-photo { background: #118bc4; }
+.variety-visual.has-photo::after { display: none; }
+.variety-photo { width: 100%; height: 100%; display: block; object-fit: contain; object-position: center; }
 .variety-group { position: absolute; z-index: 1; left: 15px; top: 14px; padding: 5px 9px; border-radius: 99px; color: white; background: rgba(8,34,59,.72); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .variety-body { padding: 21px; }
 .variety-body h3 { margin: 0; font-family: Manrope; font-size: 21px; }
