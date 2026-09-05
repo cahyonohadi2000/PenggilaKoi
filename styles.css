@@ -90,6 +90,17 @@ form > label, .field-grid label { display: block; margin-bottom: 17px; color: va
 .result-details b { margin-top: 4px; }
 .disclaimer { display: block; opacity: .57; line-height: 1.4; }
 .feed-result { background: linear-gradient(135deg, #084c56, #087ea4); }
+.feed-result .result-details { grid-template-columns: repeat(3, 1fr); }
+.koi-groups-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 10px; }
+.koi-groups-heading strong { font-size: 14px; }
+.koi-groups-heading small { color: var(--muted); font-size: 11px; }
+.koi-group { display: grid; grid-template-columns: 1.2fr .9fr 34px; gap: 10px; align-items: end; margin-bottom: 10px; padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: #f8fbfc; }
+.koi-group label { margin: 0; color: var(--muted); font-size: 12px; font-weight: 600; }
+.koi-group .input-wrap { background: white; }
+.remove-group { width: 34px; height: 43px; border: 0; border-radius: 9px; color: #8a98a3; background: #e8f0f2; font-size: 21px; cursor: pointer; }
+.remove-group:hover { color: #b44343; background: #f8e9e9; }
+.add-group { width: 100%; margin: 1px 0 19px; padding: 10px; border: 1px dashed #92b5c0; border-radius: 10px; color: var(--blue); background: white; font-size: 13px; font-weight: 700; cursor: pointer; }
+.add-group:hover { background: var(--ice); }
 
 .water-guide { padding: 95px max(5vw, 24px) 100px; color: white; background: var(--navy); }
 .water-guide > * { max-width: 1116px; margin-left: auto; margin-right: auto; }
@@ -119,6 +130,7 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .feed-section .calculator-card { order: 2; }
   .water-grid { grid-template-columns: 1fr; }
   .water-grid p { min-height: auto; }
+  .feed-result .result-details { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 480px) {
@@ -130,5 +142,9 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .feature-card { min-height: 135px; }
   .calculator-card { padding: 20px; }
   .field-grid { grid-template-columns: 1fr; gap: 0; }
+  .koi-group { grid-template-columns: 1fr 1fr 32px; padding: 10px; }
+  .koi-group .input-wrap input { padding: 11px 8px; }
+  .koi-group .input-wrap span { padding-right: 8px; }
+  .feed-result .result-details { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 7px; }
 }
