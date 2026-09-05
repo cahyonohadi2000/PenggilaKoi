@@ -33,6 +33,7 @@ const koiWeightCurve = [
 const koiVarieties = [
   {
     name: 'Kohaku', japanese: '紅白', category: 'gosanke', group: 'Gosanke', colors: 'Shiroji • Hi',
+    image: 'assets/varieties/kohaku.webp',
     pattern: 'radial-gradient(circle at 30% 55%, #c9282d 0 19%, transparent 20%), radial-gradient(circle at 72% 42%, #d43838 0 23%, transparent 24%), #f8fbfa',
     summary: 'Koi nonmetallic dengan dasar putih dan pola merah, tanpa sumi.',
     identify: 'Shiroji putih dengan hi merah yang tersusun seimbang dari kepala hingga mendekati ekor.',
@@ -41,6 +42,7 @@ const koiVarieties = [
   },
   {
     name: 'Taisho Sanke', japanese: '大正三色', category: 'gosanke', group: 'Gosanke', colors: 'Shiroji • Hi • Sumi',
+    image: 'assets/varieties/taisho-sanke.webp',
     pattern: 'radial-gradient(circle at 25% 52%, #d22f35 0 18%, transparent 19%), radial-gradient(circle at 65% 45%, #cf3035 0 22%, transparent 23%), radial-gradient(circle at 80% 35%, #101a22 0 8%, transparent 9%), #f8fbfa',
     summary: 'Koi dasar putih dengan pola merah dan bercak sumi sebagai aksen.',
     identify: 'Sumi umumnya berupa pulau kecil di tubuh dan tidak hadir di kepala; sirip dapat memiliki tejima.',
@@ -163,7 +165,10 @@ function renderVarieties() {
 
   varietyGrid.innerHTML = filtered.map((item) => `
     <article class="variety-card">
-      <div class="variety-visual" style="--pattern:${item.pattern}"><span class="variety-group">${item.group}</span></div>
+      <div class="variety-visual${item.image ? ' has-photo' : ''}" style="--pattern:${item.pattern}">
+        ${item.image ? `<img class="variety-photo" src="${item.image}" alt="Koi ${item.name} tampak atas" loading="lazy">` : ''}
+        <span class="variety-group">${item.group}</span>
+      </div>
       <div class="variety-body">
         <h3>${item.name}</h3><span class="variety-japanese">${item.japanese}</span>
         <span class="variety-colors">${item.colors}</span>
