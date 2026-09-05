@@ -12,8 +12,8 @@ let activeShape = 'rectangle';
 const formatter = new Intl.NumberFormat('id-ID', { maximumFractionDigits: 1 });
 
 // Sampel kurva panjang-bobot pada referensi pengguna (panjang badan tanpa ekor).
-// Bobot di antara titik dihitung dengan interpolasi linear. Area hingga 0,4 kg
-// mendapatkan koreksi +2% sesuai catatan pada grafik sumber.
+// Bobot di antara titik dihitung dengan interpolasi linear. Catatan 2% pada
+// area hijau diperlakukan sebagai panduan feeding rate, bukan penambah bobot.
 const koiWeightCurve = [
   [10, 0.01], [15, 0.03], [20, 0.07], [25, 0.15], [30, 0.35],
   [35, 0.80], [40, 1.50], [45, 1.98], [50, 2.28], [55, 2.48],
@@ -34,7 +34,7 @@ function estimateKoiWeight(length) {
     }
   }
 
-  return baseWeight <= 0.4 ? baseWeight * 1.02 : baseWeight;
+  return baseWeight;
 }
 
 function wireRemoveButtons() {
