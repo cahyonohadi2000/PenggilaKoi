@@ -90,6 +90,9 @@ form > label, .field-grid label { display: block; margin-bottom: 17px; color: va
 .result-details small, .result-details b { display: block; }
 .result-details small { opacity: .65; }
 .result-details b { margin-top: 4px; }
+.pond-system-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pond-system-grid span:last-child { grid-column: 1 / -1; }
+.pond-system-grid b { overflow-wrap: anywhere; font-size: 14px; line-height: 1.35; }
 .disclaimer { display: block; opacity: .57; line-height: 1.4; }
 .feed-result { background: linear-gradient(135deg, #084c56, #087ea4); }
 .feed-result .result-details { grid-template-columns: repeat(3, 1fr); }
@@ -254,6 +257,8 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .koi-group .input-wrap input { padding: 11px 8px; }
   .koi-group .input-wrap span { padding-right: 8px; }
   .feed-result .result-details { grid-template-columns: 1fr; }
+  .pond-system-grid { grid-template-columns: 1fr; }
+  .pond-system-grid span:last-child { grid-column: auto; }
   .treatment-tabs { grid-template-columns: 1fr; }
   .variety-heading { align-items: start; }
   .variety-stat { display: none; }
