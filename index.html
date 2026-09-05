@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260905-6">
+  <link rel="stylesheet" href="styles.css?v=20260905-7">
 </head>
 <body>
   <header class="topbar">
@@ -61,8 +61,8 @@
       <div class="calculator-intro">
         <p class="eyebrow">KALKULATOR PERTAMA</p>
         <h2 id="calculator-title">Volume kolam</h2>
-        <p>Masukkan ukuran bagian dalam kolam. Gunakan kedalaman air aktual, bukan tinggi dinding kolam.</p>
-        <div class="formula-note"><strong>Kenapa ini penting?</strong><span>Dosis obat dan garam harus dihitung dari volume air yang akurat.</span></div>
+        <p>Masukkan ukuran bagian dalam kolam. Selain volume air, Paman akan memperoleh acuan awal untuk pompa, bottom drain, chamber filter, dan aerator.</p>
+        <div class="formula-note"><strong>Dari ukuran menuju rancangan</strong><span>Gunakan kedalaman air aktual, bukan tinggi dinding. Hasil membantu menyusun kebutuhan dasar sistem sirkulasi sebelum berkonsultasi dengan pembuat kolam.</span></div>
       </div>
 
       <div class="calculator-card">
@@ -86,11 +86,14 @@
         <div class="result-panel" id="result" aria-live="polite">
           <p>HASIL PERKIRAAN</p>
           <strong id="result-liters">0 liter</strong>
-          <div class="result-details">
+          <div class="result-details pond-system-grid">
             <span><small>Volume</small><b id="result-cubic">0 m³</b></span>
-            <span><small>Pompa minimum*</small><b id="result-pump">0 L/jam</b></span>
+            <span><small>Pompa minimum</small><b id="result-pump">0 L/jam</b></span>
+            <span><small>Bottom drain minimum</small><b id="result-bottom-drain">-</b></span>
+            <span><small>Chamber konvensional</small><b id="result-chamber">0 liter</b></span>
+            <span><small>Aerator ideal</small><b id="result-aerator">0 LPM</b></span>
           </div>
-          <small class="disclaimer">*Acuan sirkulasi 1× volume kolam per jam. Sesuaikan dengan head loss dan sistem filter.</small>
+          <small class="disclaimer">Acuan awal: sirkulasi 1× volume/jam, chamber filter konvensional minimum 10%, dan aerator sekitar 2 LPM per 1.000 liter. Pilih pompa dengan mempertimbangkan penurunan debit akibat ketinggian, pipa, belokan, UV, dan media filter. Ukuran serta jumlah bottom drain tetap perlu diperiksa berdasarkan luas dasar dan bentuk kolam.</small>
         </div>
       </div>
     </section>
@@ -266,6 +269,6 @@
   </main>
 
   <footer><span>© 2026 Penggila Koi</span><span>Dibuat untuk koi keeper Indonesia</span></footer>
-  <script src="app.js?v=20260905-9"></script>
+  <script src="app.js?v=20260905-10"></script>
 </body>
 </html>
