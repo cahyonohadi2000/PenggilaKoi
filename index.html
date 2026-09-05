@@ -80,7 +80,8 @@
             <label>Diameter <span class="input-wrap"><input id="diameter" type="number" min="1" step="any" inputmode="decimal" placeholder="400"><span>cm</span></span></label>
           </div>
           <label>Kedalaman air <span class="input-wrap"><input id="depth" type="number" min="1" step="any" inputmode="decimal" placeholder="120" required><span>cm</span></span></label>
-          <button class="calculate-button" type="submit">Hitung volume</button>
+          <label>Rata-rata panjang koi <span class="input-wrap"><input id="average-koi-length" type="number" min="1" step="any" inputmode="decimal" placeholder="50" value="50" required><span>cm</span></span><small class="field-help">Gunakan rata-rata panjang koi yang akan dipelihara.</small></label>
+          <button class="calculate-button" type="submit">Hitung volume & rekomendasi</button>
         </form>
 
         <div class="result-panel" id="result" aria-live="polite">
@@ -89,8 +90,12 @@
           <div class="result-details">
             <span><small>Volume</small><b id="result-cubic">0 m³</b></span>
             <span><small>Pompa minimum*</small><b id="result-pump">0 L/jam</b></span>
+            <span><small>Bottom drain minimum*</small><b id="result-bottom-drain">–</b></span>
+            <span><small>Chamber konvensional*</small><b id="result-chamber">0 liter</b></span>
+            <span><small>Aerator ideal*</small><b id="result-aerator">0 LPM</b></span>
+            <span><small>Jumlah koi ideal*</small><b id="result-ideal-koi">0 ekor</b></span>
           </div>
-          <small class="disclaimer">*Acuan sirkulasi 1× volume kolam per jam. Sesuaikan dengan head loss dan sistem filter.</small>
+          <small class="disclaimer">*Acuan awal: sirkulasi 1× volume per jam, chamber konvensional 30% volume kolam, dan aerator 7–10 LPM per 1.000 liter. Jumlah koi dihitung dari luas dasar ÷ 150 ÷ rata-rata panjang koi. Sesuaikan kembali dengan pertumbuhan ikan, beban pakan, head loss, dan kemampuan filter.</small>
         </div>
       </div>
     </section>
@@ -266,6 +271,6 @@
   </main>
 
   <footer><span>© 2026 Penggila Koi</span><span>Dibuat untuk koi keeper Indonesia</span></footer>
-  <script src="app.js?v=20260905-10"></script>
+  <script src="app.js?v=20260905-11"></script>
 </body>
 </html>
