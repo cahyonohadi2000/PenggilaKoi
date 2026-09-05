@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260905-1">
+  <link rel="stylesheet" href="styles.css?v=20260905-2">
 </head>
 <body>
   <header class="topbar">
@@ -49,7 +49,7 @@
       <div class="feature-grid">
         <a class="feature-card available" href="#kalkulator"><span class="feature-icon">▱</span><span><strong>Volume Kolam</strong><small>Hitung liter dan kebutuhan pompa</small></span><span class="arrow">→</span></a>
         <a class="feature-card available" href="#kalkulator-pakan"><span class="feature-icon">◌</span><span><strong>Kalkulator Pakan</strong><small>Hitung kebutuhan harian dan per sesi</small></span><span class="arrow">→</span></a>
-        <article class="feature-card"><span class="feature-icon">+</span><span><strong>Dosis Treatment</strong><small>Segera hadir</small></span></article>
+        <a class="feature-card available" href="#dosis-treatment"><span class="feature-icon">+</span><span><strong>Dosis Treatment</strong><small>Garam, obat bubuk, dan obat cair</small></span><span class="arrow">→</span></a>
         <article class="feature-card"><span class="feature-icon">◇</span><span><strong>Varietas Koi</strong><small>Segera hadir</small></span></article>
       </div>
     </section>
@@ -129,6 +129,74 @@
       </div>
     </section>
 
+    <section class="calculator-section treatment-section" id="dosis-treatment" aria-labelledby="treatment-title">
+      <div class="calculator-intro">
+        <p class="eyebrow">KALKULATOR TREATMENT</p>
+        <h2 id="treatment-title">Dosis untuk bak karantina</h2>
+        <p>Hitung volume air di bak karantina secara terpisah, kemudian tentukan jumlah bahan berdasarkan konsentrasi atau petunjuk produk.</p>
+        <div class="formula-note"><strong>Gunakan tinggi air aktual</strong><span>Masukkan ukuran bagian dalam bak. Jangan memakai tinggi dinding jika air tidak diisi penuh.</span></div>
+        <div class="safety-note"><strong>Perhatian</strong><span>Kalkulator hanya menghitung jumlah bahan. Pemilihan obat, konsentrasi, durasi, dan pengulangan harus mengikuti label produk atau arahan tenaga berpengalaman.</span></div>
+      </div>
+
+      <div class="calculator-card treatment-card">
+        <form id="treatment-form">
+          <h3 class="form-step"><span>1</span> Hitung volume bak</h3>
+          <div class="shape-tabs" role="tablist" aria-label="Bentuk bak karantina">
+            <button class="quarantine-shape-tab active" type="button" data-q-shape="rectangle" role="tab" aria-selected="true">Persegi</button>
+            <button class="quarantine-shape-tab" type="button" data-q-shape="circle" role="tab" aria-selected="false">Bulat</button>
+          </div>
+
+          <div id="q-rectangle-fields" class="field-grid">
+            <label>Panjang <span class="input-wrap"><input id="q-length" type="number" min="1" step="any" inputmode="decimal" placeholder="120" required><span>cm</span></span></label>
+            <label>Lebar <span class="input-wrap"><input id="q-width" type="number" min="1" step="any" inputmode="decimal" placeholder="80" required><span>cm</span></span></label>
+          </div>
+          <div id="q-circle-fields" class="field-grid hidden">
+            <label>Diameter <span class="input-wrap"><input id="q-diameter" type="number" min="1" step="any" inputmode="decimal" placeholder="100"><span>cm</span></span></label>
+          </div>
+          <label>Tinggi air <span class="input-wrap"><input id="q-depth" type="number" min="1" step="any" inputmode="decimal" placeholder="60" required><span>cm</span></span></label>
+
+          <h3 class="form-step treatment-step"><span>2</span> Pilih perhitungan dosis</h3>
+          <div class="treatment-tabs" role="tablist" aria-label="Jenis kalkulator treatment">
+            <button class="treatment-tab active" type="button" data-treatment="salt" role="tab" aria-selected="true">Garam</button>
+            <button class="treatment-tab" type="button" data-treatment="powder" role="tab" aria-selected="false">Obat bubuk</button>
+            <button class="treatment-tab" type="button" data-treatment="liquid" role="tab" aria-selected="false">Obat cair</button>
+          </div>
+
+          <div class="treatment-fields" id="salt-fields">
+            <div class="field-grid">
+              <label>Kadar saat ini <span class="input-wrap"><input id="salt-current" type="number" min="0" step="0.1" inputmode="decimal" value="0" required><span>ppt</span></span></label>
+              <label>Kadar target <span class="input-wrap"><input id="salt-target" type="number" min="0.1" max="10" step="0.1" inputmode="decimal" value="1" required><span>ppt</span></span></label>
+            </div>
+            <small class="field-help">Konversi: 1 ppt = 0,1% = 1 gram garam per liter air.</small>
+          </div>
+
+          <div class="treatment-fields hidden" id="powder-fields">
+            <label>Dosis sesuai label/referensi <span class="input-wrap"><input id="powder-dose" type="number" min="0.01" step="any" inputmode="decimal" placeholder="2"><span>mg/L</span></span></label>
+          </div>
+
+          <div class="treatment-fields hidden" id="liquid-fields">
+            <div class="field-grid">
+              <label>Dosis produk <span class="input-wrap"><input id="liquid-dose" type="number" min="0.01" step="any" inputmode="decimal" placeholder="10"><span>mL</span></span></label>
+              <label>Untuk volume <span class="input-wrap"><input id="liquid-reference-volume" type="number" min="1" step="any" inputmode="decimal" value="1000"><span>liter</span></span></label>
+            </div>
+            <small class="field-help">Contoh label: 10 mL untuk 1.000 liter.</small>
+          </div>
+
+          <button class="calculate-button" type="submit">Hitung dosis treatment</button>
+        </form>
+
+        <div class="result-panel treatment-result" id="treatment-result" aria-live="polite">
+          <p>HASIL PERHITUNGAN</p>
+          <strong id="treatment-dose">0 kg</strong>
+          <div class="result-details">
+            <span><small>Volume bak</small><b id="treatment-volume">0 liter</b></span>
+            <span><small>Jenis perhitungan</small><b id="treatment-kind">Garam</b></span>
+          </div>
+          <small class="disclaimer" id="treatment-note">Larutkan garam terlebih dahulu dan masukkan secara bertahap. Ukur kembali salinitas air.</small>
+        </div>
+      </div>
+    </section>
+
     <section class="water-guide" aria-labelledby="water-guide-title">
       <div class="section-heading">
         <div><p class="eyebrow">PANDUAN CEPAT</p><h2 id="water-guide-title">Tiga parameter limbah nitrogen</h2></div>
@@ -143,6 +211,6 @@
   </main>
 
   <footer><span>© 2026 Penggila Koi</span><span>Dibuat untuk koi keeper Indonesia</span></footer>
-  <script src="app.js?v=20260905-1"></script>
+  <script src="app.js?v=20260905-2"></script>
 </body>
 </html>
