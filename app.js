@@ -51,6 +51,7 @@ const koiVarieties = [
   },
   {
     name: 'Showa Sanshoku', japanese: '昭和三色', category: 'gosanke', group: 'Gosanke', colors: 'Sumi • Hi • Shiroji',
+    image: 'assets/varieties/showa-sanshoku.webp',
     pattern: 'linear-gradient(120deg, #101820 0 22%, transparent 23% 40%, #c72f35 41% 63%, transparent 64%), radial-gradient(circle at 75% 30%, #111b24 0 18%, transparent 19%), #f4f7f7',
     summary: 'Koi tiga warna berkarakter dasar hitam dengan hi dan shiroji yang membungkus tubuh.',
     identify: 'Sumi dapat muncul di kepala dan turun melewati garis lateral; motoguro lazim terlihat pada pangkal sirip dada.',
@@ -86,6 +87,7 @@ const koiVarieties = [
   },
   {
     name: 'Asagi', japanese: '浅黄', category: 'asagi-shusui', group: 'Asagi–Shusui', colors: 'Biru • Shiroji • Hi',
+    image: 'assets/varieties/asagi.webp',
     pattern: 'repeating-linear-gradient(45deg, rgba(25,69,92,.72) 0 3px, transparent 3px 13px), repeating-linear-gradient(-45deg, rgba(25,69,92,.45) 0 3px, transparent 3px 13px), linear-gradient(#9ec4d1 0 65%, #d54a42 66%)',
     summary: 'Koi bersisik biru keabu-abuan dengan pola jaring dan hi pada sisi bawah tubuh.',
     identify: 'Retikulasi teratur di punggung; hi berkembang pada pipi, sisi badan, perut, dan sirip.',
@@ -94,6 +96,7 @@ const koiVarieties = [
   },
   {
     name: 'Shusui', japanese: '秋翠', category: 'asagi-shusui', group: 'Asagi–Shusui', colors: 'Biru • Shiroji • Hi',
+    image: 'assets/varieties/shusui.webp',
     pattern: 'linear-gradient(90deg, transparent 0 43%, #274b63 44% 48%, #a9d1db 49% 51%, #274b63 52% 56%, transparent 57%), linear-gradient(#d8edf0 0 66%, #d84a41 67%)',
     summary: 'Asagi Doitsu dengan kulit terang dan baris sisik gelap di sepanjang dorsal.',
     identify: 'Tidak memiliki retikulasi penuh; sisik dorsal besar tersusun rapi dari bahu menuju ekor.',
@@ -102,6 +105,7 @@ const koiVarieties = [
   },
   {
     name: 'Goshiki', japanese: '五色', category: 'lainnya', group: 'Koromo–Goshiki', colors: 'Lima warna',
+    image: 'assets/varieties/goshiki.webp',
     pattern: 'radial-gradient(circle at 35% 50%, #c93238 0 20%, transparent 21%), radial-gradient(circle at 75% 40%, #d33a3f 0 18%, transparent 19%), repeating-linear-gradient(45deg, rgba(21,42,55,.55) 0 3px, transparent 3px 12px), #9fb4bd',
     summary: 'Koi nonmetallic dengan campuran putih, merah, hitam, biru muda, dan biru gelap.',
     identify: 'Hi menyerupai pola Kohaku di atas dasar atau retikulasi gelap yang memberi kesan lima warna.',
@@ -126,6 +130,7 @@ const koiVarieties = [
   },
   {
     name: 'Ochiba Shigure', japanese: '落葉しぐれ', category: 'kawarimono', group: 'Kawarimono', colors: 'Abu-abu • Cokelat',
+    image: 'assets/varieties/ochiba-shigure.webp',
     pattern: 'radial-gradient(ellipse at 28% 52%, #a16c40 0 20%, transparent 21%), radial-gradient(ellipse at 70% 42%, #9b6339 0 24%, transparent 25%), repeating-linear-gradient(45deg, rgba(30,51,61,.14) 0 2px, transparent 2px 13px), #98aeb6',
     summary: 'Koi abu-abu dengan pola cokelat yang menyerupai daun gugur di permukaan air.',
     identify: 'Dasar seperti Soragoi dipadukan dengan pola cokelat bergaya Kohaku.',
