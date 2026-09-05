@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260905-7">
+  <link rel="stylesheet" href="styles.css?v=20260905-6">
 </head>
 <body>
   <header class="topbar">
@@ -61,8 +61,8 @@
       <div class="calculator-intro">
         <p class="eyebrow">KALKULATOR PERTAMA</p>
         <h2 id="calculator-title">Volume kolam</h2>
-        <p>Masukkan ukuran bagian dalam kolam. Selain volume air, Paman akan memperoleh acuan awal untuk pompa, bottom drain, chamber filter, dan aerator.</p>
-        <div class="formula-note"><strong>Dari ukuran menuju rancangan</strong><span>Gunakan kedalaman air aktual, bukan tinggi dinding. Hasil membantu menyusun kebutuhan dasar sistem sirkulasi sebelum berkonsultasi dengan pembuat kolam.</span></div>
+        <p>Masukkan ukuran bagian dalam kolam. Gunakan kedalaman air aktual, bukan tinggi dinding kolam.</p>
+        <div class="formula-note"><strong>Kenapa ini penting?</strong><span>Dosis obat dan garam harus dihitung dari volume air yang akurat.</span></div>
       </div>
 
       <div class="calculator-card">
@@ -86,14 +86,11 @@
         <div class="result-panel" id="result" aria-live="polite">
           <p>HASIL PERKIRAAN</p>
           <strong id="result-liters">0 liter</strong>
-          <div class="result-details pond-system-grid">
+          <div class="result-details">
             <span><small>Volume</small><b id="result-cubic">0 m³</b></span>
-            <span><small>Pompa minimum</small><b id="result-pump">0 L/jam</b></span>
-            <span><small>Bottom drain minimum</small><b id="result-bottom-drain">-</b></span>
-            <span><small>Chamber minimum (30%)</small><b id="result-chamber">0 liter</b></span>
-            <span><small>Aerator ideal (7–10 LPM/ton)</small><b id="result-aerator">0 LPM</b></span>
+            <span><small>Pompa minimum*</small><b id="result-pump">0 L/jam</b></span>
           </div>
-          <small class="disclaimer"><strong>Acuan hitungan:</strong> sirkulasi 1× volume kolam per jam; chamber filter konvensional minimal 30% dari volume kolam; aerator 7–10 LPM untuk setiap 1.000 liter (1 ton) air. Sesuaikan ukuran dan jumlah bottom drain dengan luas dasar, bentuk kolam, panjang pipa, belokan, serta debit aktual.</small>
+          <small class="disclaimer">*Acuan sirkulasi 1× volume kolam per jam. Sesuaikan dengan head loss dan sistem filter.</small>
         </div>
       </div>
     </section>
@@ -219,7 +216,10 @@
           <button class="variety-filter active" type="button" data-category="all">Semua</button>
           <button class="variety-filter" type="button" data-category="gosanke">Gosanke</button>
           <button class="variety-filter" type="button" data-category="utsurimono">Utsurimono</button>
+          <button class="variety-filter" type="button" data-category="bekko">Bekko</button>
           <button class="variety-filter" type="button" data-category="asagi-shusui">Asagi–Shusui</button>
+          <button class="variety-filter" type="button" data-category="koromo">Koromo–Goshiki</button>
+          <button class="variety-filter" type="button" data-category="hikari">Hikari</button>
           <button class="variety-filter" type="button" data-category="kawarimono">Kawarimono</button>
           <button class="variety-filter" type="button" data-category="lainnya">Lainnya</button>
         </div>
@@ -240,17 +240,14 @@
         <a class="text-link" href="artikel/">Lihat semua artikel →</a>
       </div>
       <div class="article-card-grid">
-        <a class="article-card featured" href="artikel/berapa-lama-koi-perlu-dikarantina.html">
-          <span class="article-category">KESEHATAN · SERI KARANTINA</span><h3>Berapa Lama Koi Perlu Dikarantina?</h3><p>Patokan minimum 14 hari, tanda kesiapan, dan kondisi yang mengharuskan karantina diperpanjang.</p><span class="read-more">Baca artikel →</span>
+        <a class="article-card featured" href="artikel/amonia-nitrit-nitrat.html">
+          <span class="article-category">KUALITAS AIR</span><h3>Amonia, Nitrit, dan Nitrat: Membaca Siklus Limbah Kolam</h3><p>Pahami perjalanan limbah nitrogen dan apa artinya ketika salah satu parameter meningkat.</p><span class="read-more">Baca artikel →</span>
         </a>
-        <a class="article-card" href="artikel/cara-memasukkan-koi-ke-bak-karantina.html">
-          <span class="article-category">KESEHATAN · SERI KARANTINA</span><h3>Cara Memasukkan Koi Baru ke Bak Karantina</h3><p>Langkah aman memindahkan koi tanpa menuangkan air pengiriman ke bak karantina.</p><span class="read-more">Baca artikel →</span>
+        <a class="article-card" href="artikel/pakan-biomassa-koi.html">
+          <span class="article-category">PAKAN</span><h3>Menghitung Pakan Berdasarkan Biomassa Koi</h3><p>Kenapa jumlah pakan sebaiknya tidak hanya berdasarkan perkiraan atau nafsu makan.</p><span class="read-more">Baca artikel →</span>
         </a>
-        <a class="article-card" href="artikel/menyiapkan-bak-karantina-koi.html">
-          <span class="article-category">KESEHATAN · SERI KARANTINA</span><h3>Menyiapkan Bak Karantina Koi yang Aman dan Praktis</h3><p>Lima kebutuhan utama agar bak karantina aman, stabil, dan mudah dipantau.</p><span class="read-more">Baca artikel →</span>
-        </a>
-        <a class="article-card" href="artikel/mengapa-koi-baru-perlu-karantina.html">
-          <span class="article-category">KESEHATAN · SERI KARANTINA</span><h3>Mengapa Koi Baru Jangan Langsung Masuk Kolam?</h3><p>Pahami risiko koi baru dan alasan karantina menjadi perlindungan pertama untuk seluruh kolam.</p><span class="read-more">Baca artikel →</span>
+        <a class="article-card" href="artikel/bak-karantina-koi.html">
+          <span class="article-category">KESEHATAN</span><h3>Menghitung Volume dan Dosis di Bak Karantina</h3><p>Langkah dasar menghindari kesalahan dosis akibat volume air yang tidak akurat.</p><span class="read-more">Baca artikel →</span>
         </a>
       </div>
     </section>
@@ -269,6 +266,6 @@
   </main>
 
   <footer><span>© 2026 Penggila Koi</span><span>Dibuat untuk koi keeper Indonesia</span></footer>
-  <script src="app.js?v=20260905-11"></script>
+  <script src="app.js?v=20260905-9"></script>
 </body>
 </html>
