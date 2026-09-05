@@ -17,6 +17,8 @@ Web aplikasi sederhana untuk membantu koi keeper melakukan perhitungan teknis de
 - Kalkulator obat cair berdasarkan aturan mL per volume air
 - Katalog 15 varietas/pola koi dengan pencarian dan filter kelompok
 - Ciri pembeda, fokus memilih kualitas, dan varietas yang sering tertukar
+- Halaman indeks artikel dengan tautan yang dapat dibagikan
+- Tiga artikel awal tentang kualitas air, pakan, dan karantina
 - Tidak memerlukan login dan tidak mengirim data pengguna ke server
 
 ## Menjalankan secara lokal
