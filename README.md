@@ -15,6 +15,8 @@ Web aplikasi sederhana untuk membantu koi keeper melakukan perhitungan teknis de
 - Kalkulator garam berdasarkan selisih kadar awal dan target
 - Kalkulator obat bubuk berdasarkan mg/L
 - Kalkulator obat cair berdasarkan aturan mL per volume air
+- Katalog 15 varietas/pola koi dengan pencarian dan filter kelompok
+- Ciri pembeda, fokus memilih kualitas, dan varietas yang sering tertukar
 - Tidak memerlukan login dan tidak mengirim data pengguna ke server
 
 ## Menjalankan secara lokal
