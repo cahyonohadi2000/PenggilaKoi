@@ -223,6 +223,30 @@ form > label, .field-grid label { display: block; margin-bottom: 17px; color: va
 .affiliate-disclosure strong { font-family: Manrope; }
 .affiliate-disclosure p { margin: 7px 0 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 
+.farm-hero h1 { max-width: 790px; }
+.farm-directory { max-width: 1116px; margin: auto; padding: 72px 24px 100px; }
+.farm-directory-heading { display: flex; align-items: end; justify-content: space-between; gap: 35px; margin-bottom: 32px; }
+.farm-directory-heading > div > p:last-child { max-width: 680px; margin: 16px 0 0; color: var(--muted); line-height: 1.65; }
+.farm-area-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.farm-area-card { border: 1px solid var(--line); border-radius: 17px; background: white; box-shadow: 0 8px 24px rgba(8,34,59,.05); }
+.farm-area-card summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 24px; list-style: none; cursor: pointer; }
+.farm-area-card summary::-webkit-details-marker { display: none; }
+.farm-area-card summary span, .farm-area-card summary small, .farm-area-card summary strong { display: block; }
+.farm-area-card summary small { margin-bottom: 5px; color: var(--blue); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+.farm-area-card summary strong { font-family: Manrope; font-size: 19px; }
+.farm-area-card summary b { color: var(--blue); font-size: 22px; transition: transform .2s; }
+.farm-area-card[open] summary b { transform: rotate(45deg); }
+.farm-area-card p { margin: 0; padding: 0 24px 22px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.farm-profile-preview { margin-top: 32px; padding: 31px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 45px; align-items: center; border-radius: 20px; color: white; background: linear-gradient(140deg, var(--navy), #075f7d); }
+.farm-profile-preview h2 { font-size: 31px; }
+.farm-profile-preview > div:first-child > p:last-child { color: #bdd4de; font-size: 14px; line-height: 1.65; }
+.farm-profile-preview .eyebrow { color: var(--cyan); }
+.farm-labels { display: grid; gap: 9px; }
+.farm-labels span { padding: 14px 16px; border: 1px solid rgba(255,255,255,.13); border-radius: 12px; background: rgba(255,255,255,.07); }
+.farm-labels b, .farm-labels small { display: block; }
+.farm-labels b { color: var(--cyan); font-size: 13px; }
+.farm-labels small { margin-top: 3px; color: #bed3dc; line-height: 1.45; }
+
 .water-guide { padding: 95px max(5vw, 24px) 100px; color: white; background: var(--navy); }
 .water-guide > * { max-width: 1116px; margin-left: auto; margin-right: auto; }
 .water-guide .eyebrow { color: var(--cyan); }
@@ -257,6 +281,7 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .article-card-grid { grid-template-columns: 1fr; }
   .article-card { min-height: 230px; }
   .product-category-grid { grid-template-columns: 1fr 1fr; }
+  .farm-profile-preview { grid-template-columns: 1fr; gap: 22px; }
 }
 
 @media (max-width: 480px) {
@@ -281,5 +306,8 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .category-count { display: none; }
   .product-category-grid { grid-template-columns: 1fr; }
   .product-category-card { min-height: auto; }
+  .farm-directory-heading { align-items: start; }
+  .farm-area-grid { grid-template-columns: 1fr; }
+  .farm-profile-preview { padding: 24px; }
   footer { flex-direction: column; gap: 7px; }
 }
