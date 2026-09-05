@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087ea4">
+  <meta name="description" content="Kalkulator dan panduan praktis untuk penghobi koi.">
+  <title>Penggila Koi Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#beranda" aria-label="Penggila Koi Tools">
+      <span class="brand-mark">PK</span>
+      <span><strong>PENGGILA KOI</strong><small>TOOLS</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <a class="active" href="#beranda">Beranda</a>
+      <a href="#kalkulator">Kalkulator</a>
+      <a href="#fitur">Fitur</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="hero-copy">
+        <p class="eyebrow">TOOLS PRAKTIS UNTUK KOI KEEPER</p>
+        <h1>Rawat kolam dengan hitungan yang lebih tepat.</h1>
+        <p>Mulai dari volume air. Hasil pengukuran yang benar membantu menentukan kapasitas pompa, jumlah pakan, dan dosis treatment.</p>
+        <a class="primary-button" href="#kalkulator">Hitung volume kolam</a>
+      </div>
+      <div class="water-card" aria-hidden="true">
+        <span class="bubble bubble-one"></span>
+        <span class="bubble bubble-two"></span>
+        <div class="koi-symbol">鯉</div>
+        <div class="water-stat"><strong>Air yang sehat</strong><span>dimulai dari data yang tepat</span></div>
+      </div>
+    </section>
+
+    <section class="features" id="fitur" aria-labelledby="feature-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">DASHBOARD</p><h2 id="feature-title">Pilih kebutuhan Paman</h2></div>
+        <span class="status-pill">MVP 1.0</span>
+      </div>
+      <div class="feature-grid">
+        <a class="feature-card available" href="#kalkulator"><span class="feature-icon">▱</span><span><strong>Volume Kolam</strong><small>Hitung liter dan kebutuhan pompa</small></span><span class="arrow">→</span></a>
+        <article class="feature-card"><span class="feature-icon">◌</span><span><strong>Kalkulator Pakan</strong><small>Segera hadir</small></span></article>
+        <article class="feature-card"><span class="feature-icon">+</span><span><strong>Dosis Treatment</strong><small>Segera hadir</small></span></article>
+        <article class="feature-card"><span class="feature-icon">◇</span><span><strong>Varietas Koi</strong><small>Segera hadir</small></span></article>
+      </div>
+    </section>
+
+    <section class="calculator-section" id="kalkulator" aria-labelledby="calculator-title">
+      <div class="calculator-intro">
+        <p class="eyebrow">KALKULATOR PERTAMA</p>
+        <h2 id="calculator-title">Volume kolam</h2>
+        <p>Masukkan ukuran bagian dalam kolam. Gunakan kedalaman air aktual, bukan tinggi dinding kolam.</p>
+        <div class="formula-note"><strong>Kenapa ini penting?</strong><span>Dosis obat dan garam harus dihitung dari volume air yang akurat.</span></div>
+      </div>
+
+      <div class="calculator-card">
+        <div class="shape-tabs" role="tablist" aria-label="Bentuk kolam">
+          <button class="shape-tab active" type="button" data-shape="rectangle" role="tab" aria-selected="true">Persegi</button>
+          <button class="shape-tab" type="button" data-shape="circle" role="tab" aria-selected="false">Bulat</button>
+        </div>
+
+        <form id="volume-form">
+          <div id="rectangle-fields" class="field-grid">
+            <label>Panjang <span class="input-wrap"><input id="length" type="number" min="1" step="any" inputmode="decimal" placeholder="500" required><span>cm</span></span></label>
+            <label>Lebar <span class="input-wrap"><input id="width" type="number" min="1" step="any" inputmode="decimal" placeholder="300" required><span>cm</span></span></label>
+          </div>
+          <div id="circle-fields" class="field-grid hidden">
+            <label>Diameter <span class="input-wrap"><input id="diameter" type="number" min="1" step="any" inputmode="decimal" placeholder="400"><span>cm</span></span></label>
+          </div>
+          <label>Kedalaman air <span class="input-wrap"><input id="depth" type="number" min="1" step="any" inputmode="decimal" placeholder="120" required><span>cm</span></span></label>
+          <button class="calculate-button" type="submit">Hitung volume</button>
+        </form>
+
+        <div class="result-panel" id="result" aria-live="polite">
+          <p>HASIL PERKIRAAN</p>
+          <strong id="result-liters">0 liter</strong>
+          <div class="result-details">
+            <span><small>Volume</small><b id="result-cubic">0 m³</b></span>
+            <span><small>Pompa minimum*</small><b id="result-pump">0 L/jam</b></span>
+          </div>
+          <small class="disclaimer">*Acuan sirkulasi 1× volume kolam per jam. Sesuaikan dengan head loss dan sistem filter.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Penggila Koi</span><span>Dibuat untuk koi keeper Indonesia</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
