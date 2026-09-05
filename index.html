@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260905-2">
+  <link rel="stylesheet" href="styles.css?v=20260905-3">
 </head>
 <body>
   <header class="topbar">
@@ -21,6 +21,7 @@
     <nav class="main-nav" aria-label="Navigasi utama">
       <a class="active" href="#beranda">Beranda</a>
       <a href="#kalkulator">Kalkulator</a>
+      <a href="#varietas">Varietas</a>
       <a href="#fitur">Fitur</a>
     </nav>
   </header>
@@ -50,7 +51,7 @@
         <a class="feature-card available" href="#kalkulator"><span class="feature-icon">▱</span><span><strong>Volume Kolam</strong><small>Hitung liter dan kebutuhan pompa</small></span><span class="arrow">→</span></a>
         <a class="feature-card available" href="#kalkulator-pakan"><span class="feature-icon">◌</span><span><strong>Kalkulator Pakan</strong><small>Hitung kebutuhan harian dan per sesi</small></span><span class="arrow">→</span></a>
         <a class="feature-card available" href="#dosis-treatment"><span class="feature-icon">+</span><span><strong>Dosis Treatment</strong><small>Garam, obat bubuk, dan obat cair</small></span><span class="arrow">→</span></a>
-        <article class="feature-card"><span class="feature-icon">◇</span><span><strong>Varietas Koi</strong><small>Segera hadir</small></span></article>
+        <a class="feature-card available" href="#varietas"><span class="feature-icon">◇</span><span><strong>Varietas Koi</strong><small>Kenali ciri dan fokus kualitas</small></span><span class="arrow">→</span></a>
       </div>
     </section>
 
@@ -197,6 +198,37 @@
       </div>
     </section>
 
+    <section class="variety-section" id="varietas" aria-labelledby="variety-title">
+      <div class="variety-heading">
+        <div>
+          <p class="eyebrow">ENSIKLOPEDIA RINGKAS</p>
+          <h2 id="variety-title">Kenali varietas koi</h2>
+          <p>Pelajari warna dasar, pola pembeda, fokus kualitas, dan varietas yang sering tertukar.</p>
+        </div>
+        <div class="variety-stat"><strong id="variety-count">15</strong><span>entri awal</span></div>
+      </div>
+
+      <div class="variety-tools">
+        <label class="search-box" aria-label="Cari varietas koi"><span>⌕</span><input id="variety-search" type="search" placeholder="Cari Kohaku, sumi, retikulasi..."></label>
+        <div class="variety-filters" aria-label="Filter kelompok varietas">
+          <button class="variety-filter active" type="button" data-category="all">Semua</button>
+          <button class="variety-filter" type="button" data-category="gosanke">Gosanke</button>
+          <button class="variety-filter" type="button" data-category="utsurimono">Utsurimono</button>
+          <button class="variety-filter" type="button" data-category="asagi-shusui">Asagi–Shusui</button>
+          <button class="variety-filter" type="button" data-category="kawarimono">Kawarimono</button>
+          <button class="variety-filter" type="button" data-category="lainnya">Lainnya</button>
+        </div>
+      </div>
+
+      <div class="variety-grid" id="variety-grid"></div>
+      <p class="empty-varieties hidden" id="empty-varieties">Varietas belum ditemukan. Coba kata kunci atau kelompok lain.</p>
+
+      <div class="classification-note">
+        <strong>Varietas, pola, dan tipe sisik tidak selalu sama.</strong>
+        <p><b>Tancho</b> adalah pola berupa satu tanda hi di kepala tanpa hi lain pada tubuh. <b>Doitsu</b> menunjukkan tipe sisik—tanpa sisik penuh atau hanya memiliki baris sisik tertentu—dan dapat muncul pada banyak varietas. <b>Gin Rin</b> menunjukkan sisik yang berkilau reflektif.</p>
+      </div>
+    </section>
+
     <section class="water-guide" aria-labelledby="water-guide-title">
       <div class="section-heading">
         <div><p class="eyebrow">PANDUAN CEPAT</p><h2 id="water-guide-title">Tiga parameter limbah nitrogen</h2></div>
@@ -211,6 +243,6 @@
   </main>
 
   <footer><span>© 2026 Penggila Koi</span><span>Dibuat untuk koi keeper Indonesia</span></footer>
-  <script src="app.js?v=20260905-2"></script>
+  <script src="app.js?v=20260905-3"></script>
 </body>
 </html>
