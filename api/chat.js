@@ -1,3 +1,4 @@
+// Vercel deployment trigger: consultation API
 const ALLOWED_ORIGINS = new Set([
   'https://cahyonohadi2000.github.io',
   'https://penggilakoi-api.vercel.app'
