@@ -1,4 +1,4 @@
-const API_ENDPOINT = '';
+const API_ENDPOINT = 'https://penggilakoi-api.vercel.app/api/chat';
 const tabs = document.querySelectorAll('.mode-tab');
 const forms = document.querySelectorAll('.consultation-form');
 const resultEmpty = document.querySelector('#result-empty');
@@ -46,28 +46,86 @@ document.querySelectorAll('.photo-input').forEach((input) => {
 forms.forEach((form) => form.addEventListener('submit', async (event) => {
   event.preventDefault();
   if (!form.reportValidity()) return;
+
+  const submitButton = form.querySelector('.submit-consultation');
+  const originalButtonHtml = submitButton.innerHTML;
+  submitButton.disabled = true;
+  submitButton.innerHTML = 'Menganalisis...';
+
   const data = new FormData(form);
   const mode = form.dataset.form === 'health' ? 'Kesehatan Koi' : 'Varietas & Kualitas';
   const question = String(data.get('question') || '').trim();
   const photo = data.get('photo');
-  preparedSummary.innerHTML = `<strong>${mode}</strong><br>${escapeHtml(question)}${photo && photo.size ? '<br>Foto: siap dianalisis' : '<br>Foto: tidak disertakan'}`;
 
-  if (!API_ENDPOINT) {
-    resultEmpty.classList.add('hidden');
-    resultPending.classList.remove('hidden');
-    document.querySelector('#consultation-result').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    return;
-  }
+  preparedSummary.innerHTML = `<strong>${mode}</strong><br>${escapeHtml(question)}${photo && photo.size ? '<br>Foto: sedang dianalisis' : '<br>Foto: tidak disertakan'}`;
+  resultEmpty.classList.add('hidden');
+  resultPending.classList.remove('hidden');
+  resultPending.innerHTML = `
+    <span class="status-dot"></span>
+    <p class="consultation-eyebrow">ANALISIS SEDANG BERJALAN</p>
+    <h2>Sedang membaca data konsultasi.</h2>
+    <p>AI sedang memeriksa informasi yang Paman kirimkan.</p>
+    <div class="prepared-summary" id="prepared-summary">${preparedSummary.innerHTML}</div>
+  `;
+  document.querySelector('#consultation-result').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   try {
-    const response = await fetch(API_ENDPOINT, { method: 'POST', body: data });
-    if (!response.ok) throw new Error('Permintaan gagal');
+    const payloadData = {};
+    data.forEach((value, key) => {
+      if (value instanceof File) return;
+      payloadData[key] = value;
+    });
+
+    let imageDataUrl = '';
+    if (photo && photo.size) {
+      imageDataUrl = await fileToDataUrl(photo);
+    }
+
+    const response = await fetch(API_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mode, data: payloadData, imageDataUrl })
+    });
+
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || 'Permintaan gagal');
+
+    resultPending.innerHTML = `
+      <p class="consultation-eyebrow">HASIL KONSULTASI</p>
+      <h2>Analisis AI</h2>
+      <div class="ai-answer">${formatAnswer(result.answer)}</div>
+      <p class="pending-note">Jawaban ini masih menggunakan model AI umum. Basis pengetahuan khusus Penggila Koi akan dihubungkan pada tahap berikutnya.</p>
+    `;
   } catch (error) {
-    resultEmpty.classList.add('hidden');
-    resultPending.classList.remove('hidden');
+    resultPending.innerHTML = `
+      <p class="consultation-eyebrow">KONEKSI BERMASALAH</p>
+      <h2>Analisis belum berhasil.</h2>
+      <p>${escapeHtml(error.message || 'Terjadi kesalahan saat menghubungi AI.')}</p>
+      <p class="pending-note">Coba ulang beberapa saat lagi. Jika tetap gagal, periksa deployment Vercel dan konfigurasi API.</p>
+    `;
+  } finally {
+    submitButton.disabled = false;
+    submitButton.innerHTML = originalButtonHtml;
   }
 }));
 
+function fileToDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+function formatAnswer(value) {
+  return escapeHtml(String(value || ''))
+    .replace(/\n{2,}/g, '</p><p>')
+    .replace(/\n/g, '<br>')
+    .replace(/^/, '<p>')
+    .replace(/$/, '</p>');
+}
+
 function escapeHtml(value) {
-  return value.replace(/[&<>'"]/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[character]));
+  return value.replace(/[&<>'\"]/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '\"':'&quot;' }[character]));
 }
