@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08223b">
+  <meta name="description" content="Konsultasi AI Penggila Koi untuk membantu membaca masalah kesehatan serta varietas dan kualitas koi.">
+  <title>Konsultasi AI | Penggila Koi</title>
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20260907-6">
+  <link rel="stylesheet" href="consultation.css?v=20260908-1">
+</head>
+<body class="consultation-page">
+  <header class="topbar">
+    <a class="brand" href="../" aria-label="Penggila Koi Tools"><img class="brand-logo" src="../assets/logo-penggila-koi.webp" alt="Logo Penggila Koi" width="48" height="48"><span><strong>PENGGILA KOI</strong><small>TOOLS</small></span></a>
+    <button class="menu-button" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Navigasi utama"><a href="../">Beranda</a><a href="../#kalkulator">Kalkulator</a><a href="../#varietas">Varietas</a><a href="../artikel/">Artikel</a><a href="../rekomendasi/">Rekomendasi</a><a href="../koi-farm/">Koi Farm</a><a href="../ebook-kohaku/">Ebook</a><a class="active" href="./">Konsultasi AI</a></nav>
+  </header>
+
+  <main>
+    <section class="consultation-header">
+      <div class="consultation-shell header-layout">
+        <div>
+          <div class="beta-label"><span></span> BETA</div>
+          <p class="consultation-eyebrow">ASISTEN PENGGILA KOI</p>
+          <h1>Konsultasikan koi Paman dengan data yang lebih lengkap.</h1>
+          <p>Pilih topik, lengkapi kondisi yang diketahui, lalu sistem akan menyiapkan pertanyaan untuk dianalisis berdasarkan pustaka Penggila Koi.</p>
+        </div>
+        <div class="reference-card">
+          <small>BASIS PENGETAHUAN</small>
+          <strong>5 pustaka koi</strong>
+          <p>Kesehatan, karantina, keeping, varietas, dan kualitas koi.</p>
+          <span>Koneksi AI sedang disiapkan</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="consultation-workspace">
+      <div class="consultation-shell workspace-layout">
+        <div class="consultation-panel">
+          <div class="mode-heading">
+            <p class="consultation-eyebrow">PILIH KONSULTASI</p>
+            <h2>Apa yang ingin Paman pelajari?</h2>
+          </div>
+          <div class="mode-tabs" role="tablist" aria-label="Jenis konsultasi">
+            <button class="mode-tab active" type="button" role="tab" aria-selected="true" aria-controls="health-form" data-mode="health"><span class="mode-icon">+</span><span><strong>Kesehatan Koi</strong><small>Gejala, kualitas air, dan tindakan awal</small></span></button>
+            <button class="mode-tab" type="button" role="tab" aria-selected="false" aria-controls="variety-form" data-mode="variety"><span class="mode-icon diamond">◇</span><span><strong>Varietas &amp; Kualitas</strong><small>Identifikasi, body, warna, dan pola</small></span></button>
+          </div>
+
+          <form class="consultation-form" id="health-form" data-form="health">
+            <div class="form-intro"><span>01</span><div><strong>Ceritakan gejala utamanya</strong><p>Jelaskan apa yang Paman lihat, bukan hanya nama penyakit yang dicurigai.</p></div></div>
+            <label class="full-field">Gejala dan pertanyaan Paman<textarea name="question" rows="5" placeholder="Contoh: Sejak kemarin koi diam di dasar, sirip menguncup, dan tidak mau makan. Apa yang perlu saya periksa terlebih dahulu?" required></textarea></label>
+            <div class="form-grid three">
+              <label>Sudah berlangsung<input name="duration" type="text" placeholder="Contoh: 2 hari"></label>
+              <label>Jumlah koi<input name="fishCount" type="number" min="1" inputmode="numeric" placeholder="10"></label>
+              <label>Ukuran rata-rata<input name="fishSize" type="number" min="1" inputmode="decimal" placeholder="35"><span class="unit">cm</span></label>
+            </div>
+            <div class="form-intro second"><span>02</span><div><strong>Data kolam</strong><p>Isi yang sudah diketahui. Data yang kosong akan ditanyakan kembali oleh sistem.</p></div></div>
+            <div class="form-grid four">
+              <label>Volume<input name="volume" type="number" min="1" inputmode="decimal" placeholder="12000"><span class="unit">liter</span></label>
+              <label>Suhu<input name="temperature" type="number" step="0.1" inputmode="decimal" placeholder="27"><span class="unit">°C</span></label>
+              <label>pH<input name="ph" type="number" min="0" max="14" step="0.1" inputmode="decimal" placeholder="7.5"></label>
+              <label>Amonia<input name="ammonia" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span class="unit">mg/L</span></label>
+              <label>Nitrit<input name="nitrite" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0"><span class="unit">mg/L</span></label>
+              <label>Garam<input name="salt" type="number" min="0" step="0.1" inputmode="decimal" placeholder="0"><span class="unit">ppt</span></label>
+              <label class="wide">Perubahan terakhir<input name="recentChange" type="text" placeholder="Koi baru, hujan, pakan, filter, atau treatment"></label>
+            </div>
+            <label class="upload-field"><input class="photo-input" name="photo" type="file" accept="image/jpeg,image/png,image/webp"><span class="upload-icon">＋</span><span><strong>Tambahkan foto koi</strong><small>JPG, PNG, atau WEBP. Maksimal 8 MB.</small></span><img class="photo-preview" alt="Pratinjau foto koi"></label>
+            <label class="agreement"><input type="checkbox" required><span>Saya memahami bahwa hasil AI merupakan panduan awal dan bukan pengganti pemeriksaan langsung.</span></label>
+            <button class="submit-consultation" type="submit">Analisis dengan AI <span>→</span></button>
+          </form>
+
+          <form class="consultation-form hidden" id="variety-form" data-form="variety">
+            <div class="form-intro"><span>01</span><div><strong>Unggah foto dari atas</strong><p>Gunakan foto yang terang, tidak miring, dan memperlihatkan seluruh tubuh koi.</p></div></div>
+            <label class="upload-field featured-upload"><input class="photo-input" name="photo" type="file" accept="image/jpeg,image/png,image/webp" required><span class="upload-icon">＋</span><span><strong>Pilih foto koi</strong><small>JPG, PNG, atau WEBP. Maksimal 8 MB.</small></span><img class="photo-preview" alt="Pratinjau foto koi"></label>
+            <div class="form-intro second"><span>02</span><div><strong>Lengkapi informasi koi</strong><p>Data tambahan membantu AI membedakan fakta, pengamatan, dan perkiraan.</p></div></div>
+            <div class="form-grid three">
+              <label>Perkiraan varietas<input name="suspectedVariety" type="text" placeholder="Contoh: Showa"></label>
+              <label>Ukuran koi<input name="fishSize" type="number" min="1" inputmode="decimal" placeholder="45"><span class="unit">cm</span></label>
+              <label>Umur<input name="age" type="text" placeholder="Contoh: Nisai"></label>
+              <label>Breeder<input name="breeder" type="text" placeholder="Jika diketahui"></label>
+              <label>Jenis kelamin<select name="sex"><option value="">Belum diketahui</option><option>Betina</option><option>Jantan</option></select></label>
+              <label>Fokus penilaian<select name="focus"><option>Identifikasi varietas</option><option>Body</option><option>Kualitas warna dan kulit</option><option>Pola dan keseimbangan</option><option>Potensi perkembangan</option><option>Penilaian menyeluruh</option></select></label>
+            </div>
+            <label class="full-field">Pertanyaan Paman<textarea name="question" rows="4" placeholder="Contoh: Apakah ini termasuk Kindai Showa? Bagaimana keseimbangan pola dan kualitas suminya?" required></textarea></label>
+            <label class="agreement"><input type="checkbox" required><span>Saya memahami bahwa identifikasi dan penilaian dilakukan dari foto sehingga memiliki keterbatasan.</span></label>
+            <button class="submit-consultation" type="submit">Analisis dengan AI <span>→</span></button>
+          </form>
+        </div>
+
+        <aside class="consultation-result" id="consultation-result" aria-live="polite">
+          <div class="result-empty" id="result-empty">
+            <div class="ai-orbit"><span>AI</span></div>
+            <p class="consultation-eyebrow">HASIL KONSULTASI</p>
+            <h2>Jawaban akan tampil di sini.</h2>
+            <p>Lengkapi data di sebelah kiri agar analisis tidak hanya bergantung pada satu gejala atau satu bagian foto.</p>
+            <ul><li>Informasi yang diamati</li><li>Dasar analisis</li><li>Langkah yang disarankan</li><li>Batasan dan data yang masih diperlukan</li></ul>
+          </div>
+          <div class="result-pending hidden" id="result-pending">
+            <span class="status-dot"></span>
+            <p class="consultation-eyebrow">DATA BERHASIL DISIAPKAN</p>
+            <h2>Koneksi AI belum diaktifkan.</h2>
+            <p>Form dan validasi sudah berfungsi. Tahap berikutnya adalah menghubungkan server aman, OpenAI API, serta basis pengetahuan dari buku Penggila Koi.</p>
+            <div class="prepared-summary" id="prepared-summary"></div>
+            <strong class="pending-note">Tidak ada jawaban otomatis yang dibuat sebelum basis pengetahuan dan pengamanannya aktif.</strong>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="consultation-safety">
+      <div class="consultation-shell safety-grid">
+        <div><p class="consultation-eyebrow">CARA KERJA</p><h2>AI mencari rujukan sebelum menjawab.</h2></div>
+        <div class="safety-steps"><article><span>1</span><p>Data konsultasi diperiksa kelengkapannya.</p></article><article><span>2</span><p>Sistem mencari materi relevan dari pustaka Penggila Koi.</p></article><article><span>3</span><p>Jawaban membedakan fakta, kemungkinan, dan informasi yang belum cukup.</p></article></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 Penggila Koi</span><span>Konsultasi berbasis pustaka Penggila Koi</span></footer>
+  <script src="consultation.js?v=20260908-1"></script>
+</body>
+</html>
