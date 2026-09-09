@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="auction.css?v=20260909-1">
+  <link rel="stylesheet" href="auction.css?v=20260909-2">
 </head>
 <body>
   <header class="topbar">
@@ -30,18 +30,18 @@
   <main>
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">PENGGILA KOI AUCTION · MVP</p>
+        <p class="eyebrow">PENGGILA KOI AUCTION · REALTIME MVP</p>
         <h1>Temukan koi pilihan. Bid dengan transparan.</h1>
-        <p>Lelang koi online dengan informasi ikan, waktu penutupan, minimum kenaikan bid, dan histori penawaran yang mudah dipahami.</p>
+        <p>Lelang koi online dengan informasi ikan, waktu penutupan, minimum kenaikan bid, dan histori penawaran yang tersimpan di database.</p>
         <div class="hero-actions">
           <a class="primary-button" href="#live">Lihat Live Auction</a>
-          <button class="secondary-button" id="openProfile" type="button">Profil Bidder</button>
+          <button class="secondary-button" id="openProfile" type="button">Login / Profil Bidder</button>
         </div>
       </div>
       <aside class="hero-card">
         <span class="live-dot">● LIVE</span>
-        <strong id="liveCount">3 koi sedang dilelang</strong>
-        <p>Jika ada bid pada 2 menit terakhir, waktu lelang otomatis bertambah 2 menit.</p>
+        <strong id="liveCount">Memuat auction...</strong>
+        <p>Bid tersinkron real-time. Jika ada bid pada 2 menit terakhir, waktu lelang otomatis bertambah 2 menit.</p>
       </aside>
     </section>
 
@@ -51,59 +51,33 @@
           <p class="eyebrow">LIVE AUCTION</p>
           <h2>Sedang berlangsung</h2>
         </div>
-        <div class="status-chip">Bid demo tersimpan di browser ini</div>
+        <div class="status-chip" id="connectionStatus">Menghubungkan Supabase...</div>
       </div>
       <div class="auction-grid" id="liveGrid"></div>
     </section>
 
     <section class="section muted-section" id="upcoming">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">UPCOMING</p>
-          <h2>Lelang berikutnya</h2>
-        </div>
-      </div>
-      <div class="upcoming-card">
-        <div>
-          <span class="badge">COMING SOON</span>
-          <h3>Penggila Koi Special Auction #02</h3>
-          <p>Contoh event untuk seller/farm. Pada tahap berikutnya event dapat dibuat dari dashboard admin.</p>
-        </div>
-        <div class="upcoming-meta">
-          <span>Mulai</span>
-          <strong>12 September 2026 · 19:00 WIB</strong>
-        </div>
-      </div>
+      <div class="section-heading"><div><p class="eyebrow">UPCOMING</p><h2>Lelang berikutnya</h2></div></div>
+      <div class="upcoming-card"><div><span class="badge">COMING SOON</span><h3>Penggila Koi Special Auction</h3><p>Event yang berstatus upcoming akan muncul otomatis dari database.</p></div><div class="upcoming-meta"><span>Status</span><strong id="upcomingCount">Menunggu data</strong></div></div>
     </section>
 
     <section class="section" id="selesai">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">HASIL LELANG</p>
-          <h2>Selesai</h2>
-        </div>
-      </div>
-      <div class="empty-state" id="finishedState">Belum ada lelang demo yang selesai.</div>
+      <div class="section-heading"><div><p class="eyebrow">HASIL LELANG</p><h2>Selesai</h2></div></div>
+      <div class="empty-state" id="finishedState">Memuat hasil...</div>
     </section>
 
     <section class="section guide-section" id="cara">
-      <div>
-        <p class="eyebrow">CARA BID</p>
-        <h2>Empat langkah sederhana</h2>
-      </div>
+      <div><p class="eyebrow">CARA BID</p><h2>Empat langkah sederhana</h2></div>
       <div class="guide-grid">
-        <article><span>1</span><h3>Isi profil bidder</h3><p>Masukkan nama dan nomor WhatsApp agar identitas bid jelas.</p></article>
+        <article><span>1</span><h3>Daftar / login</h3><p>Gunakan email, lalu lengkapi nama dan WhatsApp.</p></article>
         <article><span>2</span><h3>Pilih koi</h3><p>Periksa varietas, breeder, size, gender, OB dan KB.</p></article>
-        <article><span>3</span><h3>Masukkan bid</h3><p>Bid berikutnya minimal current bid + KB.</p></article>
-        <article><span>4</span><h3>Tunggu penutupan</h3><p>Bid tertinggi saat waktu habis menjadi pemenang.</p></article>
+        <article><span>3</span><h3>Masukkan bid</h3><p>Server memvalidasi minimum bid dan status lelang.</p></article>
+        <article><span>4</span><h3>Tunggu penutupan</h3><p>Bid tertinggi pada penutupan menjadi kandidat pemenang.</p></article>
       </div>
     </section>
   </main>
 
-  <footer>
-    <strong>Penggila Koi Auction</strong>
-    <p>MVP demonstrasi. Belum menggunakan database real-time atau pembayaran online.</p>
-  </footer>
+  <footer><strong>Penggila Koi Auction</strong><p>MVP realtime menggunakan Supabase. Pembayaran online belum diaktifkan.</p></footer>
 
   <div class="modal" id="auctionModal" aria-hidden="true">
     <div class="modal-backdrop" data-close="auctionModal"></div>
@@ -117,18 +91,37 @@
     <div class="modal-backdrop" data-close="profileModal"></div>
     <div class="modal-panel profile-panel" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
       <button class="close-button" type="button" data-close="profileModal" aria-label="Tutup">×</button>
-      <p class="eyebrow">PROFIL BIDDER</p>
-      <h2 id="profileTitle">Identitas untuk melakukan bid</h2>
-      <form id="profileForm" class="profile-form">
-        <label>Nama / nama panggilan<input id="bidderName" name="name" required maxlength="40" placeholder="Contoh: Paman Cahyono"></label>
-        <label>Nomor WhatsApp<input id="bidderPhone" name="phone" required maxlength="20" inputmode="tel" placeholder="08xxxxxxxxxx"></label>
-        <button class="primary-button" type="submit">Simpan Profil</button>
-      </form>
-      <p class="privacy-note">Pada MVP ini data hanya disimpan di browser Anda.</p>
+      <p class="eyebrow">AKUN BIDDER</p>
+      <h2 id="profileTitle">Login untuk mengikuti lelang</h2>
+
+      <div id="loggedOutPanel">
+        <form id="authForm" class="profile-form">
+          <label>Email<input id="authEmail" type="email" required autocomplete="email" placeholder="nama@email.com"></label>
+          <label>Password<input id="authPassword" type="password" required minlength="6" autocomplete="current-password" placeholder="Minimal 6 karakter"></label>
+          <label>Nama / nama panggilan<input id="signupName" type="text" maxlength="40" placeholder="Dipakai saat daftar baru"></label>
+          <div class="hero-actions">
+            <button class="primary-button" type="submit">Login</button>
+            <button class="secondary-button" id="signupButton" type="button">Daftar Akun</button>
+          </div>
+        </form>
+        <p class="privacy-note">Untuk akun baru, Supabase dapat meminta verifikasi email sesuai pengaturan Authentication project.</p>
+      </div>
+
+      <div id="loggedInPanel" hidden>
+        <p class="privacy-note">Login sebagai <strong id="currentEmail"></strong></p>
+        <form id="profileForm" class="profile-form">
+          <label>Nama / nama panggilan<input id="bidderName" name="name" required maxlength="40" placeholder="Contoh: Paman Cahyono"></label>
+          <label>Nomor WhatsApp<input id="bidderPhone" name="phone" required maxlength="20" inputmode="tel" placeholder="08xxxxxxxxxx"></label>
+          <label>Kota<input id="bidderCity" name="city" maxlength="60" placeholder="Contoh: Yogyakarta"></label>
+          <button class="primary-button" type="submit">Simpan Profil</button>
+          <button class="secondary-button" id="logoutButton" type="button">Logout</button>
+        </form>
+      </div>
     </div>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="auction.js?v=20260909-1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="auction.js?v=20260909-2"></script>
 </body>
 </html>
