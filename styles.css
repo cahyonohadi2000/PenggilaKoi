@@ -61,6 +61,7 @@ h2 { font-size: clamp(30px, 4vw, 44px); }
 .feature-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; color: var(--cyan); background: rgba(91,214,231,.12); font-size: 22px; }
 .feature-card strong, .feature-card small { display: block; }
 .feature-card strong { font-size: 17px; }
+.feature-card small.construction-label { width: max-content; margin: 0 0 9px; padding: 4px 7px; border: 1px solid rgba(255,210,122,.55); border-radius: 999px; color: #ffd27a; background: rgba(255,193,72,.1); font-size: 10px; font-weight: 800; letter-spacing: .08em; line-height: 1; opacity: 1; }
 .feature-card small { margin-top: 7px; line-height: 1.4; opacity: .62; }
 .arrow { align-self: end; font-size: 24px; }
 
