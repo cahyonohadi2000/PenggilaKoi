@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="auction.css?v=20260909-2">
+  <link rel="stylesheet" href="auction.css?v=20260909-3">
 </head>
 <body>
   <header class="topbar">
@@ -23,6 +23,7 @@
       <a href="#upcoming">Upcoming</a>
       <a href="#selesai">Selesai</a>
       <a href="#cara">Cara Bid</a>
+      <button class="nav-login-button" id="navLoginButton" type="button">Daftar / Login</button>
       <a class="home-link" href="../">Website Utama</a>
     </nav>
   </header>
@@ -35,7 +36,7 @@
         <p>Lelang koi online dengan informasi ikan, waktu penutupan, minimum kenaikan bid, dan histori penawaran yang tersimpan di database.</p>
         <div class="hero-actions">
           <a class="primary-button" href="#live">Lihat Live Auction</a>
-          <button class="secondary-button" id="openProfile" type="button">Login / Profil Bidder</button>
+          <button class="secondary-button" id="openProfile" type="button" onclick="document.getElementById('profileModal').classList.add('open');document.getElementById('profileModal').setAttribute('aria-hidden','false')">Daftar / Login Bidder</button>
         </div>
       </div>
       <aside class="hero-card">
@@ -47,10 +48,7 @@
 
     <section class="section" id="live">
       <div class="section-heading">
-        <div>
-          <p class="eyebrow">LIVE AUCTION</p>
-          <h2>Sedang berlangsung</h2>
-        </div>
+        <div><p class="eyebrow">LIVE AUCTION</p><h2>Sedang berlangsung</h2></div>
         <div class="status-chip" id="connectionStatus">Menghubungkan Supabase...</div>
       </div>
       <div class="auction-grid" id="liveGrid"></div>
@@ -69,7 +67,7 @@
     <section class="section guide-section" id="cara">
       <div><p class="eyebrow">CARA BID</p><h2>Empat langkah sederhana</h2></div>
       <div class="guide-grid">
-        <article><span>1</span><h3>Daftar / login</h3><p>Gunakan email, lalu lengkapi nama dan WhatsApp.</p></article>
+        <article class="guide-action-card"><span>1</span><h3>Daftar / login</h3><p>Gunakan email, lalu lengkapi nama dan WhatsApp.</p><button class="primary-button guide-login-button" id="guideLoginButton" type="button" onclick="document.getElementById('profileModal').classList.add('open');document.getElementById('profileModal').setAttribute('aria-hidden','false')">Daftar / Login</button></article>
         <article><span>2</span><h3>Pilih koi</h3><p>Periksa varietas, breeder, size, gender, OB dan KB.</p></article>
         <article><span>3</span><h3>Masukkan bid</h3><p>Server memvalidasi minimum bid dan status lelang.</p></article>
         <article><span>4</span><h3>Tunggu penutupan</h3><p>Bid tertinggi pada penutupan menjadi kandidat pemenang.</p></article>
@@ -93,7 +91,6 @@
       <button class="close-button" type="button" data-close="profileModal" aria-label="Tutup">×</button>
       <p class="eyebrow">AKUN BIDDER</p>
       <h2 id="profileTitle">Login untuk mengikuti lelang</h2>
-
       <div id="loggedOutPanel">
         <form id="authForm" class="profile-form">
           <label>Email<input id="authEmail" type="email" required autocomplete="email" placeholder="nama@email.com"></label>
@@ -106,7 +103,6 @@
         </form>
         <p class="privacy-note">Untuk akun baru, Supabase dapat meminta verifikasi email sesuai pengaturan Authentication project.</p>
       </div>
-
       <div id="loggedInPanel" hidden>
         <p class="privacy-note">Login sebagai <strong id="currentEmail"></strong></p>
         <form id="profileForm" class="profile-form">
@@ -122,6 +118,16 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="auction.js?v=20260909-2"></script>
+  <script src="auction.js?v=20260909-3"></script>
+  <script>
+    const fallbackOpenProfile = () => {
+      const modal = document.getElementById('profileModal');
+      if (!modal) return;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    };
+    document.getElementById('navLoginButton')?.addEventListener('click', fallbackOpenProfile);
+    document.getElementById('guideLoginButton')?.addEventListener('click', fallbackOpenProfile);
+  </script>
 </body>
 </html>
