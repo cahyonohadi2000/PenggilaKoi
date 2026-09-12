@@ -1,92 +1,50 @@
+---
+title: Direktori Koi Farm
+---
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Temukan profil koi farm berdasarkan wilayah dan jalur kontak resminya.">
-  <title>Koi Farm Berdasarkan Area | Penggila Koi Tools</title>
-  <link rel="icon" href="../assets/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087ea4"><meta name="description" content="Direktori koi farm berdasarkan wilayah untuk membantu penghobi menemukan farm terdekat.">
+  <title>Koi Farm | Penggila Koi Tools</title>
+  <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20260907-3">
+  <link rel="stylesheet" href="{{ '/styles.css?v=20260912-1' | relative_url }}">
 </head>
-<body class="article-site">
+<body class="farm-site">
   <header class="topbar">
-    <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/logo-penggila-koi.webp" alt="Logo Penggila Koi" width="48" height="48"><span><strong>PENGGILA KOI</strong><small>TOOLS</small></span></a>
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Penggila Koi Tools"><img class="brand-logo" src="{{ '/assets/logo-penggila-koi.webp' | relative_url }}" alt="Logo Penggila Koi" width="48" height="48"><span><strong>PENGGILA KOI</strong><small>TOOLS</small></span></a>
     <button class="menu-button" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
-    <nav class="main-nav" aria-label="Navigasi utama"><a href="../index.html">Beranda</a><a href="../index.html#varietas">Varietas</a><a href="../artikel/">Artikel</a><a href="../rekomendasi/">Rekomendasi</a><a class="active" href="./">Koi Farm</a><a href="../ebook-kohaku/">Ebook</a></nav>
+    <nav class="main-nav" aria-label="Navigasi utama"><a href="{{ '/' | relative_url }}">Beranda</a><a href="{{ '/#kalkulator' | relative_url }}">Kalkulator</a><a href="{{ '/#varietas' | relative_url }}">Varietas</a><a href="{{ '/artikel/' | relative_url }}">Artikel</a><a href="{{ '/rekomendasi/' | relative_url }}">Rekomendasi</a><a class="active" href="{{ '/koi-farm/' | relative_url }}">Koi Farm</a><a href="{{ '/ebook-kohaku/' | relative_url }}">Ebook</a><a href="{{ '/konsultasi/' | relative_url }}">Konsultasi AI</a></nav>
   </header>
 
+  {% assign published_farms = site.koi_farms | where: 'published', true | sort: 'name' %}
   <main>
-    <section class="article-hero farm-hero">
-      <div><p class="eyebrow">DIREKTORI KOI FARM</p><h1>Temukan koi farm berdasarkan area</h1><p>Kenali profil farm, rekam prestasi, media sosial, ulasan pelanggan, dan jalur kontak resminya.</p></div>
-    </section>
-
-    <section class="farm-directory" aria-labelledby="farm-area-title">
-      <div class="farm-directory-heading">
-        <div><p class="eyebrow">PILIH WILAYAH</p><h2 id="farm-area-title">Mulai dari area terdekat</h2><p>Daftar kota akan berkembang mengikuti koi farm yang sudah terverifikasi dan bergabung di direktori.</p></div>
-        <span class="category-count">6 wilayah awal</span>
+    <section class="farm-hero"><div><p class="eyebrow">DIREKTORI BERDASARKAN AREA</p><h1>Temukan koi farm yang lebih dekat.</h1><p>Cari farm berdasarkan wilayah, lalu buka profil untuk melihat spesialisasi, prestasi, dan jalur kontak resminya.</p></div><div class="farm-hero-stat" aria-label="Jumlah listing koi farm"><strong id="farm-count">{{ published_farms.size }}</strong><span>farm tersedia</span></div></section>
+    <section class="farm-directory" aria-labelledby="farm-directory-title">
+      <div class="section-heading farm-directory-heading"><div><p class="eyebrow">JELAJAHI FARM</p><h2 id="farm-directory-title">Pilih berdasarkan lokasi</h2></div></div>
+      <div class="farm-tools">
+        <label class="search-box" aria-label="Cari koi farm"><span>⌕</span><input id="farm-search" type="search" placeholder="Cari nama farm, kota, atau spesialisasi..."></label>
+        <label class="farm-select">Provinsi<select id="farm-province"><option value="all">Semua provinsi</option>{% assign provinces = published_farms | map: 'province' | uniq | sort %}{% for province in provinces %}{% assign matching_farm = published_farms | where: 'province', province | first %}<option value="{{ matching_farm.province_slug }}">{{ province }}</option>{% endfor %}</select></label>
       </div>
-
-      <div class="farm-area-grid">
-        <details class="farm-area-card"><summary><span><small>AREA 01</small><strong>DI Yogyakarta</strong></span><b>+</b></summary><p>Sleman · Kota Yogyakarta · Bantul · Kulon Progo · Gunungkidul</p></details>
-        <details class="farm-area-card"><summary><span><small>AREA 02</small><strong>Jawa Tengah</strong></span><b>+</b></summary><p>Solo Raya · Klaten · Magelang · Semarang · Banyumas · area lainnya</p></details>
-        <details class="farm-area-card" open><summary><span><small>AREA 03</small><strong>Jawa Timur</strong></span><b>+</b></summary><p>Blitar · Kediri · Malang · Surabaya · Tulungagung · area lainnya</p></details>
-        <details class="farm-area-card"><summary><span><small>AREA 04</small><strong>Jawa Barat</strong></span><b>+</b></summary><p>Bandung · Bogor · Sukabumi · Bekasi · Cirebon · area lainnya</p></details>
-        <details class="farm-area-card"><summary><span><small>AREA 05</small><strong>Jakarta &amp; Banten</strong></span><b>+</b></summary><p>Jakarta · Tangerang · Tangerang Selatan · Serang · area lainnya</p></details>
-        <details class="farm-area-card"><summary><span><small>AREA 06</small><strong>Area Lainnya</strong></span><b>+</b></summary><p>Bali · Sumatra · Kalimantan · Sulawesi · Nusa Tenggara · area lainnya</p></details>
-      </div>
-
-      <section class="farm-results" aria-labelledby="farm-results-title">
-        <div class="farm-results-heading">
-          <div><p class="eyebrow">JAWA TIMUR</p><h2 id="farm-results-title">Koi farm di Blitar</h2></div>
-          <span class="category-count">1 farm</span>
-        </div>
-
-        <article class="farm-listing">
-          <div class="farm-identity">
-            <div class="farm-monogram" aria-hidden="true">ABK</div>
-            <div>
-              <div class="farm-badges"><span>Jawa Timur</span><span class="badge-muted">Profil awal</span></div>
-              <h3>Astro Blitar Koi</h3>
-              <p>Talun, Kabupaten Blitar</p>
-            </div>
-          </div>
-
-          <p class="farm-description">Koi farm di Blitar dengan layanan penjualan koi dan program azukari.</p>
-
-          <dl class="farm-facts">
-            <div><dt>Grup lelang</dt><dd>Tautan belum tersedia</dd></div>
-            <div><dt>WhatsApp admin</dt><dd>Tautan belum tersedia</dd></div>
-            <div><dt>Prestasi Koi Farm</dt><dd>Data sedang dilengkapi</dd></div>
-          </dl>
-
-          <div class="farm-address"><strong>Alamat</strong><span>Jl. Raya Bendosewu, Kecamatan Talun, Kabupaten Blitar, Jawa Timur</span></div>
-          <div class="farm-address"><strong>Google Reviews</strong><span>Lihat rating dan ulasan pelanggan terbaru langsung di profil Google Maps.</span></div>
-
-          <div class="farm-contact-actions">
-            <a class="primary-button" href="astro-blitar-koi/">Lihat Profil Farm</a>
-            <a class="secondary-button" href="https://www.google.com/maps/place/Astro+Blitar+Koi/@-8.118961,112.270195,986m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2e7895df8b32f38b:0x94e584a6e4d8fb7d!8m2!3d-8.118961!4d112.2727699!16s%2Fg%2F11y4ybh7fm?entry=ttu" target="_blank" rel="noreferrer">Lihat Google Reviews</a>
-            <a class="secondary-button" href="https://www.instagram.com/astroblitarkoi/" target="_blank" rel="noreferrer">Lihat Instagram</a>
-          </div>
-
-          <p class="farm-note">Profil awal dan belum diverifikasi oleh Penggila Koi. Pastikan kembali stok, harga, program, dan kontak resmi langsung kepada farm.</p>
+      <div class="farm-list" id="farm-list">
+        {% for farm in published_farms %}
+        {% assign status_label = 'Profil awal' %}{% if farm.profile_status == 'terverifikasi' %}{% assign status_label = 'Terverifikasi' %}{% endif %}{% if farm.profile_status == 'partner' %}{% assign status_label = 'Partner' %}{% endif %}
+        <article class="farm-listing" data-name="{{ farm.name | downcase | escape }}" data-province="{{ farm.province_slug }}" data-search="{{ farm.name | append: ' ' | append: farm.city | append: ' ' | append: farm.district | append: ' ' | append: farm.specialization | append: ' ' | append: farm.description | downcase | escape }}">
+          <div class="farm-identity"><div class="farm-monogram" aria-hidden="true">{{ farm.monogram }}</div><div><div class="farm-badges"><span>{{ farm.province }}</span><span class="badge-muted">{{ status_label }}</span></div><h3>{{ farm.name }}</h3><p>{% if farm.district %}{{ farm.district }}, {% endif %}{{ farm.city }}</p></div></div>
+          <p class="farm-description">{{ farm.description }}</p>
+          <dl class="farm-facts"><div><dt>Spesialisasi</dt><dd>{{ farm.specialization | default: 'Informasi sedang dilengkapi' }}</dd></div><div><dt>WhatsApp Admin</dt><dd>{% if farm.whatsapp_url %}Tersedia{% else %}Segera dilengkapi{% endif %}</dd></div><div><dt>Grup Lelang</dt><dd>{% if farm.auction_url %}Tersedia{% else %}Segera dilengkapi{% endif %}</dd></div><div><dt>Prestasi Koi Farm</dt><dd>{% if farm.achievements and farm.achievements.size > 0 %}{{ farm.achievements.size }} prestasi tercatat{% else %}Data sedang dilengkapi{% endif %}</dd></div></dl>
+          <div class="farm-address"><strong>Alamat</strong><span>{{ farm.address }}</span></div>
+          <div class="farm-contact-actions"><a class="primary-button" href="{{ farm.url | relative_url }}">Lihat Profil Farm</a><a class="secondary-button" href="{{ farm.maps_url }}" target="_blank" rel="noreferrer">Buka Google Maps</a>{% if farm.instagram_url %}<a class="text-link" href="{{ farm.instagram_url }}" target="_blank" rel="noreferrer">Instagram →</a>{% endif %}</div>
+          <p class="farm-note">Informasi dapat berubah. Konfirmasikan informasi terbaru langsung melalui jalur resmi farm.</p>
         </article>
-      </section>
-
-      <div class="farm-profile-preview">
-        <div><p class="eyebrow">INFORMASI FARM</p><h2>Profil yang mudah dibandingkan</h2><p>Setiap farm dapat menampilkan profil usaha, spesialisasi koi, galeri, prestasi, Google Reviews, serta jalur kontak resminya.</p></div>
-        <div class="farm-labels" aria-label="Jenis penanda koi farm">
-          <span><b>Terverifikasi</b><small>Identitas dan keberadaan farm telah diperiksa.</small></span>
-          <span><b>Partner</b><small>Farm menjalin kerja sama dengan Penggila Koi.</small></span>
-          <span><b>Rekomendasi</b><small>Farm telah dinilai berdasarkan kualitas dan pelayanan.</small></span>
-        </div>
+        {% endfor %}
       </div>
+      <div class="farm-empty hidden" id="farm-empty"><strong>Farm belum ditemukan.</strong><span>Coba gunakan nama wilayah atau kata kunci lain.</span></div>
     </section>
   </main>
-
-  <footer><span>© 2026 Penggila Koi</span><span>Direktori koi farm Indonesia</span></footer>
-  <script src="../navigation.js?v=20260905-1"></script>
+  <footer><span>© 2026 Penggila Koi</span><span>Direktori koi farm untuk penghobi Indonesia</span></footer>
+  <script src="{{ '/koi-farm/farm.js?v=20260912-1' | relative_url }}"></script>
 </body>
 </html>
