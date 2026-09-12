@@ -251,11 +251,8 @@ title: Penggila Koi Tools
         <a class="text-link" href="artikel/">Lihat semua artikel →</a>
       </div>
       <div class="article-card-grid">
-        <a class="article-card featured" href="artikel/berapa-berat-koi.html">
-          <span class="article-category">PERTUMBUHAN KOI</span><h3>Berapa Berat Koi Anda? Panjang Saja Ternyata Belum Cukup</h3><p>Pahami hubungan panjang, estimasi berat, dan perkembangan body koi agar growth record lebih bermakna.</p><span class="read-more">Baca artikel →</span>
-        </a>
-        {% for article in latest_articles limit: 2 %}
-        <a class="article-card" href="{{ article.url | relative_url }}">
+        {% for article in latest_articles limit: 3 %}
+        <a class="article-card{% if forloop.first %} featured{% endif %}" href="{{ article.url | relative_url }}">
           <span class="article-category">{{ article.category | upcase }}</span><h3>{{ article.title }}</h3><p>{{ article.summary }}</p><span class="read-more">Baca artikel →</span>
         </a>
         {% endfor %}
