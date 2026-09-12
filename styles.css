@@ -349,3 +349,11 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .farm-results-heading .category-count { display: block; }
   footer { flex-direction: column; gap: 7px; }
 }
+
+
+/* CMS dynamic content */
+.article-content blockquote { margin: 28px 0; padding: 20px 22px; border-left: 4px solid var(--cyan); border-radius: 0 12px 12px 0; background: var(--ice); }
+.article-content blockquote p { margin: 0; font-size: 13px; }
+.article-cover { width: 100%; max-height: 460px; display: block; margin-bottom: 22px; border-radius: 20px; object-fit: cover; box-shadow: 0 12px 36px rgba(8,34,59,.07); }
+.article-card-cover { width: calc(100% + 54px); height: 150px; margin: -27px -27px 22px; border-radius: 19px 19px 0 0; object-fit: cover; }
+.article-content img { width: 100%; height: auto; display: block; margin: 28px 0 10px; border-radius: 16px; }
