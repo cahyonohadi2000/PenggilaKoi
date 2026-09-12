@@ -21,6 +21,11 @@ content:
       sort: date
       order: desc
     fields:
+      - name: layout
+        label: Template halaman
+        type: string
+        hidden: true
+        default: article
       - name: title
         label: Judul artikel
         type: string
@@ -55,6 +60,13 @@ content:
         options:
           media: images
           path: artikel
+      - name: hero_image_url
+        label: URL gambar eksternal
+        type: string
+        description: Kosongkan jika menggunakan gambar sampul dari galeri media.
+      - name: image_caption
+        label: Keterangan gambar
+        type: string
       - name: author
         label: Penulis
         type: string
