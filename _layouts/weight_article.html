@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.seo_description | escape }}"><title>{{ page.title | escape }} | Penggila Koi</title>
+  <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="{{ '/styles.css?v=20260912-2' | relative_url }}">
+  <style>
+    .weight-article-hero{position:relative;padding:72px max(5vw,24px) 108px;color:#fff;background:radial-gradient(circle at 88% 12%,rgba(91,214,231,.25),transparent 32%),linear-gradient(135deg,#08223b 0%,#07506f 58%,#087ea4 100%)}
+    .weight-article-hero>div{max-width:1116px;margin:auto}.weight-article-hero .breadcrumb{margin-bottom:22px;color:rgba(255,255,255,.68);font-size:13px}.weight-article-hero .breadcrumb a{color:#9ce7f1}.weight-article-hero .eyebrow{display:inline-flex;margin-bottom:18px;padding:7px 11px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#b8f1f7;background:rgba(255,255,255,.08)}
+    .weight-article-hero h1{max-width:900px;margin:0;color:#fff;font-size:clamp(38px,5vw,64px);line-height:1.04}.weight-article-hero .lead{max-width:760px;margin:24px 0 0;color:rgba(255,255,255,.82);font-size:clamp(17px,2vw,21px);line-height:1.65}
+    .weight-article-shell{max-width:1020px;margin:-58px auto 80px;padding:0 24px;position:relative;z-index:2}.weight-article-card{overflow:hidden;border:1px solid #d8e5e9;border-radius:26px;background:#fff;box-shadow:0 24px 70px rgba(8,34,59,.13)}.weight-meta{display:flex;flex-wrap:wrap;gap:10px 24px;padding:22px 32px;border-bottom:1px solid #e4edef;color:#627282;font-size:13px}.weight-body{padding:32px}.weight-hero-image{margin:0 0 34px}.weight-hero-image img{width:100%;aspect-ratio:600/395;display:block;object-fit:cover;border-radius:18px;background:#eaf3f5}.weight-hero-image figcaption{margin-top:10px;color:#71818d;font-size:12px;text-align:center}
+    .weight-body p,.weight-body li{color:#405365;font-size:17px;line-height:1.82}.weight-body h2{margin:42px 0 12px;color:#08223b;font-size:clamp(26px,3vw,34px);letter-spacing:-.025em}.weight-body blockquote{margin:24px 0 30px;padding:18px 20px;border-left:4px solid #087ea4;border-radius:0 14px 14px 0;color:#08223b;background:linear-gradient(90deg,#eef9fb,#f7fbfc)}.weight-body blockquote p{margin:0}.weight-body .article-cta{margin:34px 0;padding:26px;border-radius:20px;color:#fff;background:linear-gradient(135deg,#08223b,#087ea4)}.weight-body .article-cta h3{margin:0 0 8px;color:#fff}.weight-body .article-cta p{color:rgba(255,255,255,.78)}
+    @media(max-width:700px){.weight-article-hero{padding:48px 20px 90px}.weight-article-shell{margin-top:-42px;padding:0 14px}.weight-meta{padding:18px 20px}.weight-body{padding:20px}.weight-body p,.weight-body li{font-size:16px}.weight-hero-image img{border-radius:14px}}
+  </style>
+</head>
+<body class="article-site">
+  <header class="topbar"><a class="brand" href="{{ '/' | relative_url }}"><img class="brand-logo" src="{{ '/assets/logo-penggila-koi.webp' | relative_url }}" alt="Logo Penggila Koi" width="48" height="48"><span><strong>PENGGILA KOI</strong><small>TOOLS</small></span></a><button class="menu-button" type="button" aria-label="Buka menu" aria-expanded="false">☰</button><nav class="main-nav"><a href="{{ '/' | relative_url }}">Beranda</a><a class="active" href="{{ '/artikel/' | relative_url }}">Artikel</a><a href="{{ '/#varietas' | relative_url }}">Varietas</a><a href="{{ '/rekomendasi/' | relative_url }}">Rekomendasi</a><a href="{{ '/koi-farm/' | relative_url }}">Koi Farm</a><a href="{{ '/ebook-kohaku/' | relative_url }}">Ebook</a><a href="{{ '/konsultasi/' | relative_url }}">Konsultasi AI</a></nav></header>
+  <main><section class="weight-article-hero"><div><div class="breadcrumb"><a href="{{ '/artikel/' | relative_url }}">Artikel</a> / {{ page.category }}</div><p class="eyebrow">{{ page.category | upcase }}</p><h1>{{ page.title }}</h1><p class="lead">{{ page.intro }}</p></div></section>
+    <article class="weight-article-shell"><div class="weight-article-card"><div class="weight-meta"><span>{{ page.author }}</span><span>{{ page.reading_time }}</span><span>Diperbarui {{ page.date | date: '%d-%m-%Y' }}</span></div><div class="weight-body">
+      {% assign hero_image = page.hero_image_url | default: page.cover %}{% if hero_image %}<figure class="weight-hero-image"><img src="{{ hero_image }}" alt="{{ page.title | escape }}"><figcaption>{{ page.image_caption }}</figcaption></figure>{% endif %}
+      {{ content }}
+      {% if page.cta_title and page.cta_url %}<div class="article-cta"><h3>{{ page.cta_title }}</h3><p>{{ page.cta_text }}</p><a class="primary-button" href="{{ page.cta_url | relative_url }}">{{ page.cta_label }}</a></div>{% endif %}
+    </div></div></article>
+  </main><footer><span>© 2026 Penggila Koi</span><a href="{{ '/artikel/' | relative_url }}">Kembali ke semua artikel</a></footer><script src="{{ '/navigation.js' | relative_url }}"></script>
+</body></html>
+
