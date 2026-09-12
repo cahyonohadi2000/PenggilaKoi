@@ -1,0 +1,31 @@
+title: Penggila Koi
+description: Tools, artikel, varietas, dan direktori koi farm untuk penghobi koi Indonesia.
+url: https://penggilakoi.my.id
+baseurl: ""
+lang: id
+timezone: Asia/Jakarta
+
+collections:
+  articles:
+    output: true
+    permalink: /artikel/:name.html
+  koi_farms:
+    output: true
+    permalink: /koi-farm/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: articles
+    values:
+      layout: article
+  - scope:
+      path: ""
+      type: koi_farms
+    values:
+      layout: farm
+
+exclude:
+  - README.md
+  - CMS-GUIDE.md
+
