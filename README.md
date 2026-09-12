@@ -40,3 +40,8 @@ Setelah deployment selesai, aplikasi tersedia di:
 ## Catatan keamanan
 
 Versi ini tidak memiliki autentikasi, database, atau credential rahasia. Jangan menaruh password, API key, service-role key, maupun token asli di repository. Jika autentikasi ditambahkan nanti, gunakan layanan backend seperti Supabase atau Firebase dan simpan rahasia server di environment variables.
+
+
+## Mengelola konten
+
+Artikel dan profil koi farm dapat disunting melalui Pages CMS. Panduan langkah demi langkah tersedia di `CMS-GUIDE.md`.
