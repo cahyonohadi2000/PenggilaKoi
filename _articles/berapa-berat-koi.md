@@ -8,6 +8,7 @@ summary: Pahami hubungan panjang, estimasi berat, dan perkembangan body koi agar
 intro: Dua koi dengan panjang yang sama belum tentu mempunyai berat, volume
   tubuh, dan perkembangan body yang sama.
 cover: /assets/uploads/antarafoto-festival-ikan-koi-nasional-di-bogor-1783155960.webp
+hero_image_url: https://id.pinterest.com/pin/12384967703343630/
 image_caption: Koi dengan body volume besar.
 author: Penggila Koi
 date: 2026-09-11
