@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.seo_description | escape }}">
+  <title>{{ page.title | escape }} | Penggila Koi</title>
+  <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/styles.css?v=20260912-1' | relative_url }}">
+</head>
+<body class="article-site">
+  <header class="topbar">
+    <a class="brand" href="{{ '/' | relative_url }}"><img class="brand-logo" src="{{ '/assets/logo-penggila-koi.webp' | relative_url }}" alt="Logo Penggila Koi" width="48" height="48"><span><strong>PENGGILA KOI</strong><small>TOOLS</small></span></a>
+    <button class="menu-button" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="main-nav"><a href="{{ '/' | relative_url }}">Beranda</a><a class="active" href="{{ '/artikel/' | relative_url }}">Artikel</a><a href="{{ '/#varietas' | relative_url }}">Varietas</a><a href="{{ '/rekomendasi/' | relative_url }}">Rekomendasi</a><a href="{{ '/koi-farm/' | relative_url }}">Koi Farm</a><a href="{{ '/ebook-kohaku/' | relative_url }}">Ebook</a><a href="{{ '/konsultasi/' | relative_url }}">Konsultasi AI</a></nav>
+  </header>
+  <main>
+    <section class="article-hero"><div><div class="breadcrumb"><a href="{{ '/artikel/' | relative_url }}">Artikel</a> / {{ page.category }}</div><p class="eyebrow">{{ page.category | upcase }}</p><h1>{{ page.title }}</h1><p>{{ page.intro }}</p></div></section>
+    <article class="article-shell">
+      <div class="article-meta"><span>{{ page.author | default: 'Penggila Koi' }}</span><span>{{ page.reading_time | default: '5 menit membaca' }}</span><span>Diperbarui {{ page.date | date: '%d-%m-%Y' }}</span></div>
+      {% if page.cover %}<img class="article-cover" src="{{ page.cover | relative_url }}" alt="{{ page.title | escape }}">{% endif %}
+      <div class="article-content">
+        {{ content }}
+        {% if page.cta_title and page.cta_url %}
+        <div class="article-cta"><h3>{{ page.cta_title }}</h3>{% if page.cta_text %}<p>{{ page.cta_text }}</p>{% endif %}<a class="primary-button" href="{{ page.cta_url | relative_url }}">{{ page.cta_label | default: 'Pelajari selengkapnya' }}</a></div>
+        {% endif %}
+      </div>
+    </article>
+  </main>
+  <footer><span>© 2026 Penggila Koi</span><a href="{{ '/artikel/' | relative_url }}">Kembali ke semua artikel</a></footer>
+  <script src="{{ '/navigation.js' | relative_url }}"></script>
+</body>
+</html>
