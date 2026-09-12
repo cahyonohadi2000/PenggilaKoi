@@ -1,0 +1,244 @@
+media:
+  - name: images
+    label: Galeri Media
+    input: assets/uploads
+    output: /assets/uploads
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: articles
+    label: Artikel
+    type: collection
+    path: _articles
+    format: yaml-frontmatter
+    filename:
+      template: "{slug}.md"
+      field: create
+    view:
+      primary: title
+      fields: [title, category, date, published]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Judul artikel
+        type: string
+        required: true
+      - name: slug
+        label: Alamat artikel (slug)
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: Gunakan huruf kecil, angka, dan tanda hubung saja.
+        description: Contoh: cara-memilih-kohaku
+      - name: category
+        label: Kategori
+        type: select
+        required: true
+        options:
+          values: [Kualitas Air, Pakan, Kesehatan, Varietas, Pertumbuhan Koi, Kolam, Perawatan]
+      - name: summary
+        label: Ringkasan kartu artikel
+        type: text
+        required: true
+        options:
+          maxlength: 220
+      - name: intro
+        label: Pengantar halaman
+        type: text
+        required: true
+      - name: cover
+        label: Gambar sampul
+        type: image
+        options:
+          media: images
+          path: artikel
+      - name: author
+        label: Penulis
+        type: string
+        required: true
+        default: Penggila Koi
+      - name: date
+        label: Tanggal terbit
+        type: date
+        required: true
+      - name: reading_time
+        label: Waktu membaca
+        type: string
+        default: 5 menit membaca
+      - name: featured
+        label: Artikel unggulan
+        type: boolean
+        default: false
+      - name: published
+        label: Tampilkan di website
+        type: boolean
+        default: false
+      - name: seo_description
+        label: Deskripsi Google (SEO)
+        type: text
+        required: true
+        options:
+          maxlength: 160
+      - name: cta_title
+        label: Judul tombol ajakan
+        type: string
+      - name: cta_text
+        label: Keterangan tombol ajakan
+        type: text
+      - name: cta_label
+        label: Teks tombol
+        type: string
+      - name: cta_url
+        label: Tujuan tombol
+        type: string
+      - name: body
+        label: Isi artikel
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: images
+          path: artikel
+          rename: safe
+
+  - name: koi_farms
+    label: Koi Farm
+    type: collection
+    path: _koi_farms
+    format: yaml-frontmatter
+    filename:
+      template: "{slug}.md"
+      field: create
+    view:
+      primary: name
+      fields: [name, province, city, profile_status, published]
+      sort: name
+    fields:
+      - name: name
+        label: Nama koi farm
+        type: string
+        required: true
+      - name: slug
+        label: Alamat profil (slug)
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: Gunakan huruf kecil, angka, dan tanda hubung saja.
+      - name: monogram
+        label: Singkatan logo
+        type: string
+        required: true
+        description: Maksimal 4 karakter, misalnya ABK.
+      - name: province
+        label: Provinsi
+        type: string
+        required: true
+      - name: province_slug
+        label: Kode provinsi
+        type: string
+        required: true
+        description: Huruf kecil dan tanda hubung, misalnya jawa-timur.
+      - name: city
+        label: Kota atau kabupaten
+        type: string
+        required: true
+      - name: district
+        label: Kecamatan atau area
+        type: string
+      - name: address
+        label: Alamat
+        type: text
+        required: true
+      - name: description
+        label: Ringkasan direktori
+        type: text
+        required: true
+      - name: about
+        label: Tentang farm
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+      - name: specialization
+        label: Spesialisasi
+        type: string
+      - name: programs
+        label: Program farm
+        type: string
+      - name: maps_url
+        label: Link Google Maps / Reviews
+        type: string
+        required: true
+      - name: instagram_url
+        label: Link Instagram
+        type: string
+      - name: instagram_handle
+        label: Nama akun Instagram
+        type: string
+      - name: whatsapp_url
+        label: Link WhatsApp admin
+        type: string
+      - name: auction_url
+        label: Link grup lelang
+        type: string
+      - name: logo
+        label: Logo farm
+        type: image
+        options:
+          media: images
+          path: koi-farm
+      - name: gallery
+        label: Galeri foto
+        type: image
+        options:
+          media: images
+          path: koi-farm
+          multiple:
+            max: 6
+          unique: true
+      - name: achievements
+        label: Prestasi Koi Farm
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title} ({year})"
+        fields:
+          - name: title
+            label: Penghargaan
+            type: string
+            required: true
+          - name: event
+            label: Nama kontes
+            type: string
+          - name: year
+            label: Tahun
+            type: number
+          - name: koi
+            label: Koi atau kelas
+            type: string
+      - name: profile_status
+        label: Status profil
+        type: select
+        required: true
+        options:
+          values:
+            - name: awal
+              label: Profil awal
+            - name: terverifikasi
+              label: Terverifikasi
+            - name: partner
+              label: Partner Penggila Koi
+      - name: published
+        label: Tampilkan di website
+        type: boolean
+        default: false
+      - name: featured
+        label: Farm unggulan
+        type: boolean
+        default: false
