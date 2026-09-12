@@ -1,3 +1,6 @@
+---
+title: Penggila Koi Tools
+---
 <!doctype html>
 <html lang="id">
 <head>
@@ -241,21 +244,21 @@
       </div>
     </section>
 
+    {% assign latest_articles = site.articles | where: 'published', true | sort: 'date' | reverse %}
     <section class="home-articles" aria-labelledby="home-article-title">
       <div class="section-heading">
         <div><p class="eyebrow">EDUKASI KOI</p><h2 id="home-article-title">Artikel terbaru</h2></div>
         <a class="text-link" href="artikel/">Lihat semua artikel →</a>
       </div>
       <div class="article-card-grid">
-        <a class="article-card featured" href="artikel/showa-tiga-warna.html">
-          <span class="article-category">VARIETAS KOI</span><h3>Showa: Tiga Warna dengan Karakter Kuat</h3><p>Kenali karakter sumi, pola kepala, motoguro, serta perbedaan Showa Tradisional dan Kindai Showa.</p><span class="read-more">Baca artikel →</span>
+        <a class="article-card featured" href="artikel/berapa-berat-koi.html">
+          <span class="article-category">PERTUMBUHAN KOI</span><h3>Berapa Berat Koi Anda? Panjang Saja Ternyata Belum Cukup</h3><p>Pahami hubungan panjang, estimasi berat, dan perkembangan body koi agar growth record lebih bermakna.</p><span class="read-more">Baca artikel →</span>
         </a>
-        <a class="article-card" href="artikel/amonia-nitrit-nitrat.html">
-          <span class="article-category">KUALITAS AIR</span><h3>Amonia, Nitrit, dan Nitrat: Membaca Siklus Limbah Kolam</h3><p>Pahami perjalanan limbah nitrogen dan apa artinya ketika salah satu parameter meningkat.</p><span class="read-more">Baca artikel →</span>
+        {% for article in latest_articles limit: 2 %}
+        <a class="article-card" href="{{ article.url | relative_url }}">
+          <span class="article-category">{{ article.category | upcase }}</span><h3>{{ article.title }}</h3><p>{{ article.summary }}</p><span class="read-more">Baca artikel →</span>
         </a>
-        <a class="article-card" href="artikel/pakan-biomassa-koi.html">
-          <span class="article-category">PAKAN</span><h3>Menghitung Pakan Berdasarkan Biomassa Koi</h3><p>Kenapa jumlah pakan sebaiknya tidak hanya berdasarkan perkiraan atau nafsu makan.</p><span class="read-more">Baca artikel →</span>
-        </a>
+        {% endfor %}
       </div>
     </section>
 
