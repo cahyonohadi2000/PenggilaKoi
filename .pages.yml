@@ -18,8 +18,10 @@ content:
     view:
       primary: title
       fields: [title, category, date, published]
-      sort: date
-      order: desc
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
     fields:
       - name: layout
         label: Template halaman
@@ -37,7 +39,7 @@ content:
         pattern:
           regex: "^[a-z0-9-]+$"
           message: Gunakan huruf kecil, angka, dan tanda hubung saja.
-        description: Contoh: cara-memilih-kohaku
+        description: "Contoh: cara-memilih-kohaku"
       - name: category
         label: Kategori
         type: select
@@ -127,7 +129,10 @@ content:
     view:
       primary: name
       fields: [name, province, city, profile_status, published]
-      sort: name
+      sort: [name, province, city]
+      default:
+        sort: name
+        order: asc
     fields:
       - name: name
         label: Nama koi farm
