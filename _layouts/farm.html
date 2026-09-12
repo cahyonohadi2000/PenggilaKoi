@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08223b">
+  <meta name="description" content="Profil {{ page.name | escape }} di {{ page.city | escape }}. Lihat profil farm, media sosial, prestasi, Google Reviews, dan kontak resminya.">
+  <title>{{ page.name | escape }} | Profil Koi Farm</title>
+  <link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/styles.css?v=20260912-1' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/koi-farm/astro-blitar-koi/profile.css?v=20260912-1' | relative_url }}">
+</head>
+<body class="farm-profile-page">
+  <header class="topbar">
+    <a class="brand" href="{{ '/' | relative_url }}"><img class="brand-logo" src="{{ '/assets/logo-penggila-koi.webp' | relative_url }}" alt="Logo Penggila Koi" width="48" height="48"><span><strong>PENGGILA KOI</strong><small>TOOLS</small></span></a>
+    <button class="menu-button" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Navigasi utama"><a href="{{ '/' | relative_url }}">Beranda</a><a href="{{ '/#varietas' | relative_url }}">Varietas</a><a href="{{ '/artikel/' | relative_url }}">Artikel</a><a href="{{ '/rekomendasi/' | relative_url }}">Rekomendasi</a><a class="active" href="{{ '/koi-farm/' | relative_url }}">Koi Farm</a><a href="{{ '/ebook-kohaku/' | relative_url }}">Ebook</a><a href="{{ '/konsultasi/' | relative_url }}">Konsultasi AI</a></nav>
+  </header>
+
+  {% assign status_label = 'Profil awal' %}
+  {% if page.profile_status == 'terverifikasi' %}{% assign status_label = 'Terverifikasi' %}{% endif %}
+  {% if page.profile_status == 'partner' %}{% assign status_label = 'Partner Penggila Koi' %}{% endif %}
+
+  <main>
+    <section class="profile-hero">
+      <div class="profile-shell">
+        <p class="profile-breadcrumb"><a href="{{ '/koi-farm/' | relative_url }}">Direktori Koi Farm</a><span>/</span>{{ page.province }}<span>/</span>{{ page.city }}</p>
+        <div class="profile-hero-grid">
+          <div class="profile-identity-block">
+            {% if page.logo %}<img class="profile-logo" src="{{ page.logo | relative_url }}" alt="Logo {{ page.name | escape }}">{% else %}<div class="profile-mark" aria-hidden="true"><span>{{ page.monogram }}</span><small>{{ page.city }}</small></div>{% endif %}
+            <div><div class="profile-badges"><span>{{ page.province }}</span><span class="neutral">{{ status_label }}</span></div><h1>{{ page.name }}</h1><p class="profile-location">{% if page.district %}{{ page.district }}, {% endif %}{{ page.city }}, {{ page.province }}</p></div>
+          </div>
+          <div class="profile-actions">
+            <a class="profile-button light" href="{{ page.maps_url }}" target="_blank" rel="noreferrer">Buka Google Maps</a>
+            {% if page.instagram_url %}<a class="profile-button outline" href="{{ page.instagram_url }}" target="_blank" rel="noreferrer">Instagram Farm</a>{% endif %}
+          </div>
+        </div>
+        <div class="profile-summary">{{ page.description }}</div>
+      </div>
+    </section>
+
+    <section class="profile-main"><div class="profile-shell profile-columns">
+      <div class="profile-content">
+        <section class="profile-section" aria-labelledby="about-title"><p class="profile-eyebrow">TENTANG FARM</p><h2 id="about-title">Mengenal {{ page.name }}</h2><div class="farm-about-copy">{{ content }}</div>
+          <div class="highlight-grid">
+            <article><small>LOKASI</small><strong>{% if page.district %}{{ page.district }}, {% endif %}{{ page.city }}</strong><p>{{ page.address }}</p></article>
+            <article><small>FOKUS FARM</small><strong>{{ page.specialization | default: 'Aneka varietas koi' }}</strong><p>Detail dapat dikonfirmasi langsung melalui jalur resmi farm.</p></article>
+            <article><small>PROGRAM</small><strong>{{ page.programs | default: 'Informasi sedang dilengkapi' }}</strong><p>Hubungi admin untuk informasi program terbaru.</p></article>
+          </div>
+        </section>
+
+        <section class="profile-section" aria-labelledby="gallery-title"><div class="profile-section-heading"><div><p class="profile-eyebrow">GALERI</p><h2 id="gallery-title">Koi dan fasilitas farm</h2></div><span>{% if page.gallery and page.gallery.size > 0 %}Foto resmi farm{% else %}Menunggu foto resmi{% endif %}</span></div>
+          {% if page.gallery and page.gallery.size > 0 %}<div class="farm-gallery">{% for image in page.gallery %}<img src="{{ image | relative_url }}" alt="Galeri {{ page.name | escape }} {{ forloop.index }}" loading="lazy">{% endfor %}</div>{% else %}<div class="gallery-placeholder" aria-label="Tempat galeri foto"><div class="gallery-main"><span>FOTO UTAMA FARM</span><small>Rasio horizontal</small></div><div><span>KOI UNGGULAN</span><small>Foto 1</small></div><div><span>FASILITAS</span><small>Foto 2</small></div></div><p class="placeholder-note">Galeri hanya menggunakan foto resmi yang diberikan atau disetujui oleh pihak farm.</p>{% endif %}
+        </section>
+
+        <section class="profile-section" aria-labelledby="achievement-title"><p class="profile-eyebrow">REKAM JEJAK</p><h2 id="achievement-title">Prestasi Koi Farm</h2>
+          {% if page.achievements and page.achievements.size > 0 %}<div class="achievement-list">{% for item in page.achievements %}<article><strong>{{ item.title }}</strong><p>{% if item.event %}{{ item.event }}{% endif %}{% if item.year %} · {{ item.year }}{% endif %}{% if item.koi %}<br>{{ item.koi }}{% endif %}</p></article>{% endfor %}</div>{% else %}<div class="empty-state"><strong>Data prestasi sedang dilengkapi</strong><p>Nama kontes, tahun, kelas, penghargaan, dan koi pemenang akan ditampilkan setelah menerima data resmi dari farm.</p></div>{% endif %}
+        </section>
+
+        <section class="profile-section" aria-labelledby="review-title"><div class="profile-section-heading"><div><p class="profile-eyebrow">ULASAN PELANGGAN</p><h2 id="review-title">Google Reviews</h2></div><span>Data langsung dari Google</span></div><div class="review-card"><div class="review-icon">G</div><div><strong>Lihat rating dan ulasan terbaru</strong><p>Rating tidak disalin secara manual agar informasi tetap mengikuti profil Google terbaru.</p></div><a href="{{ page.maps_url }}" target="_blank" rel="noreferrer">Buka Google Reviews →</a></div></section>
+      </div>
+
+      <aside class="profile-sidebar" aria-label="Kontak resmi farm">
+        <div class="contact-card"><p class="profile-eyebrow">HUBUNGI FARM</p><h2>Jalur resmi {{ page.name }}</h2><div class="contact-list">
+          {% if page.whatsapp_url %}<a href="{{ page.whatsapp_url }}" target="_blank" rel="noreferrer"><span>WhatsApp Admin</span><strong>Hubungi admin ↗</strong></a>{% else %}<div><span>WhatsApp Admin</span><strong>Segera dilengkapi</strong></div>{% endif %}
+          {% if page.auction_url %}<a href="{{ page.auction_url }}" target="_blank" rel="noreferrer"><span>Grup Lelang</span><strong>Buka grup lelang ↗</strong></a>{% else %}<div><span>Grup Lelang</span><strong>Segera dilengkapi</strong></div>{% endif %}
+          {% if page.instagram_url %}<a href="{{ page.instagram_url }}" target="_blank" rel="noreferrer"><span>Instagram</span><strong>{{ page.instagram_handle | default: 'Buka Instagram' }} ↗</strong></a>{% endif %}
+          <a href="{{ page.maps_url }}" target="_blank" rel="noreferrer"><span>Alamat</span><strong>Lihat di Google Maps ↗</strong></a>
+        </div></div>
+        <div class="verification-card"><strong>Status profil</strong><span>{{ status_label }}</span><p>{% if page.profile_status == 'awal' %}Data profil belum dikonfirmasi langsung oleh pengelola farm.{% else %}Status diberikan sesuai proses verifikasi Penggila Koi.{% endif %}</p></div>
+        <div class="partner-card"><small>UNTUK PENGELOLA FARM</small><strong>Ingin melengkapi profil ini?</strong><p>Kirim logo, foto, kontak resmi, dan data prestasi agar profil dapat diperbarui.</p></div>
+      </aside>
+    </div></section>
+
+    <section class="profile-disclosure"><div class="profile-shell"><strong>Tentang Direktori Penggila Koi</strong><p>Profil farm disusun untuk membantu penghobi menemukan informasi dasar dan jalur kontak resmi. Status partner, terverifikasi, atau rekomendasi hanya diberikan sesuai proses penilaian Penggila Koi.</p></div></section>
+  </main>
+  <footer><span>© 2026 Penggila Koi</span><span>Direktori koi farm Indonesia</span></footer>
+  <script src="{{ '/navigation.js' | relative_url }}"></script>
+</body>
+</html>
