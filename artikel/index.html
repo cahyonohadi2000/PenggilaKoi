@@ -22,11 +22,10 @@ title: Artikel Koi
     <section class="article-hero"><div><p class="eyebrow">PUSAT EDUKASI</p><h1>Artikel untuk koi keeper yang ingin paham, bukan sekadar ikut tren.</h1><p>Panduan praktis tentang kualitas air, pakan, kesehatan, dan pemilihan koi.</p></div></section>
     {% assign published_articles = site.articles | where: 'published', true | sort: 'date' | reverse %}
     <section class="article-index">
-      <div class="section-heading"><div><p class="eyebrow">ARTIKEL TERBARU</p><h2>Mulai belajar</h2></div><span class="status-pill">{{ published_articles.size | plus: 1 }} artikel</span></div>
+      <div class="section-heading"><div><p class="eyebrow">ARTIKEL TERBARU</p><h2>Mulai belajar</h2></div><span class="status-pill">{{ published_articles.size }} artikel</span></div>
       <div class="article-card-grid">
-        <a class="article-card featured" href="{{ '/artikel/berapa-berat-koi.html' | relative_url }}"><span class="article-category">PERTUMBUHAN KOI</span><h3>Berapa Berat Koi Anda? Panjang Saja Ternyata Belum Cukup</h3><p>Pahami hubungan panjang, estimasi berat, dan perkembangan body koi agar growth record lebih bermakna.</p><span class="read-more">Baca artikel →</span></a>
         {% for article in published_articles %}
-        <a class="article-card" href="{{ article.url | relative_url }}">{% if article.cover %}<img class="article-card-cover" src="{{ article.cover | relative_url }}" alt="" loading="lazy">{% endif %}<span class="article-category">{{ article.category | upcase }}</span><h3>{{ article.title }}</h3><p>{{ article.summary }}</p><span class="read-more">Baca artikel →</span></a>
+        <a class="article-card{% if forloop.first %} featured{% endif %}" href="{{ article.url | relative_url }}">{% if article.cover %}<img class="article-card-cover" src="{{ article.cover | relative_url }}" alt="" loading="lazy">{% endif %}<span class="article-category">{{ article.category | upcase }}</span><h3>{{ article.title }}</h3><p>{{ article.summary }}</p><span class="read-more">Baca artikel →</span></a>
         {% endfor %}
       </div>
     </section>
