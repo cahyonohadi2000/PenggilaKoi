@@ -1,25 +1,27 @@
 ---
 layout: weight_article
-title: "Berapa Berat Koi Anda? Panjang Saja Ternyata Belum Cukup"
+title: Berapa Berat Koi Anda? Panjang Saja Ternyata Belum Cukup
 slug: berapa-berat-koi
 category: Pertumbuhan Koi
-summary: Pahami hubungan panjang, estimasi berat, dan perkembangan body koi agar growth record lebih bermakna.
-intro: Dua koi dengan panjang yang sama belum tentu mempunyai berat, volume tubuh, dan perkembangan body yang sama.
-cover: ""
-hero_image_url: "https://www.kodamakoifarm.com/wp-content/uploads/2026/04/koi-fish-weight.jpg"
+summary: Pahami hubungan panjang, estimasi berat, dan perkembangan body koi agar
+  growth record lebih bermakna.
+intro: Dua koi dengan panjang yang sama belum tentu mempunyai berat, volume
+  tubuh, dan perkembangan body yang sama.
+cover: /assets/uploads/antarafoto-festival-ikan-koi-nasional-di-bogor-1783155960.webp
 image_caption: Koi dengan body volume besar.
 author: Penggila Koi
 date: 2026-09-11
 reading_time: 6 menit membaca
 featured: true
 published: true
-seo_description: Panduan memperkirakan berat koi dari panjang tubuh, memahami body conformation, dan memantau pertumbuhan koi.
+seo_description: Panduan memperkirakan berat koi dari panjang tubuh, memahami
+  body conformation, dan memantau pertumbuhan koi.
 cta_title: Berapa estimasi berat koi Paman sekarang?
-cta_text: Ukur panjang koi, lalu gunakan kalkulator untuk mendapatkan estimasi beratnya secara otomatis.
+cta_text: Ukur panjang koi, lalu gunakan kalkulator untuk mendapatkan estimasi
+  beratnya secara otomatis.
 cta_label: Buka Kalkulator Penggila Koi
 cta_url: /#kalkulator
 ---
-
 Saat melihat koi berukuran 60 cm, kita sering langsung menganggap ikan tersebut sudah besar. Namun, koi yang panjang belum tentu memiliki bobot dan body yang sama.
 
 Dua ekor koi dengan panjang sama-sama 60 cm bisa memiliki berat berbeda. Salah satunya mungkin panjang dan ramping, sementara yang lain mempunyai frame lebar, volume tubuh besar, dan tail tube yang lebih berisi.
