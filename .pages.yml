@@ -45,7 +45,7 @@ content:
         type: select
         required: true
         options:
-          values: [Kualitas Air, Pakan, Kesehatan, Varietas, Pertumbuhan Koi, Kolam, Perawatan]
+          values: [Kualitas Air, Pakan, Kesehatan, Varietas, Breeding, Pertumbuhan Koi, Kolam, Perawatan]
       - name: summary
         label: Ringkasan kartu artikel
         type: text
