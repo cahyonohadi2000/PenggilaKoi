@@ -4,7 +4,7 @@ slug: 10-persiapan-pemijahan-koi
 category: Breeding
 summary: Pemijahan koi tidak cukup hanya mempertemukan induk jantan dan betina. Siapkan induk, wadah, kakaban, kualitas air, dan tempat pembesaran burayak.
 intro: Breeding koi dimulai jauh sebelum telur terlihat. Kualitas induk, kesiapan kolam, dan penanganan setelah pemijahan sangat menentukan hasilnya.
-cover: /assets/varieties/kohaku.webp
+cover: /assets/articles/breeding-koi-cover.webp
 author: Penggila Koi
 date: 2026-10-02
 reading_time: 6 menit membaca
