@@ -1,3 +1,38 @@
+const calculatorToolTabs = [...document.querySelectorAll('.calculator-tool-tab')];
+const calculatorToolPanels = [...document.querySelectorAll('.calculator-tool-panel')];
+
+function selectCalculatorTool(view, updateHash = false) {
+  const selectedTab = calculatorToolTabs.find((tab) => tab.dataset.calculatorView === view) || calculatorToolTabs[0];
+  if (!selectedTab) return;
+  calculatorToolTabs.forEach((tab) => {
+    const selected = tab === selectedTab;
+    tab.classList.toggle('active', selected);
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  });
+  calculatorToolPanels.forEach((panel) => {
+    panel.hidden = panel.id !== selectedTab.getAttribute('aria-controls');
+  });
+  if (updateHash) {
+    const hash = selectedTab.dataset.calculatorView === 'feed' ? '#kalkulator-pakan' : '#kalkulator';
+    history.replaceState(null, '', hash);
+  }
+}
+
+calculatorToolTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectCalculatorTool(tab.dataset.calculatorView, true));
+  tab.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const nextIndex = event.key === 'Home' ? 0 : event.key === 'End' ? calculatorToolTabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + calculatorToolTabs.length) % calculatorToolTabs.length;
+    const nextTab = calculatorToolTabs[nextIndex];
+    selectCalculatorTool(nextTab.dataset.calculatorView, true);
+    nextTab.focus();
+  });
+});
+
+selectCalculatorTool(window.location.hash === '#kalkulator-pakan' ? 'feed' : 'composition');
+
 const tabs = document.querySelectorAll('.shape-tab');
 const rectangleFields = document.querySelector('#rectangle-fields');
 const circleFields = document.querySelector('#circle-fields');
