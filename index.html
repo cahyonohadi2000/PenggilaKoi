@@ -13,7 +13,7 @@ title: Penggila Koi Tools
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261003-1">
+  <link rel="stylesheet" href="styles.css?v=20261003-2">
 </head>
 <body>
   <header class="topbar">
@@ -62,7 +62,7 @@ title: Penggila Koi Tools
       </div>
     </section>
 
-    <section class="calculator-tools" id="kalkulator" aria-label="Kalkulator kolam dan pakan">
+    <section class="calculator-tools" id="kalkulator" aria-label="Kalkulator kolam, pakan, dan treatment">
       <div class="calculator-tool-tabs" role="tablist" aria-label="Pilih kalkulator">
         <button class="calculator-tool-tab active" id="composition-tab" type="button" role="tab" aria-selected="true" aria-controls="kalkulator-komposisi" data-calculator-view="composition">
           <span class="tool-tab-icon" aria-hidden="true">◌</span>
@@ -72,11 +72,11 @@ title: Penggila Koi Tools
           <span class="tool-tab-icon" aria-hidden="true">◍</span>
           <span><strong>Penghitung Pakan</strong><small>Biomassa, kebutuhan harian, dan porsi tiap pemberian</small></span>
         </button>
-      </div>
-        <button class="calculator-tool-tab" id="treatment-tab" type="button" role="tab" aria-selected="false" aria-controls="dosis-treatment" data-calculator-view="treatment" tabindex="-1">
+              <button class="calculator-tool-tab" id="treatment-tab" type="button" role="tab" aria-selected="false" aria-controls="dosis-treatment" data-calculator-view="treatment" tabindex="-1">
           <span class="tool-tab-icon" aria-hidden="true">＋</span>
           <span><strong>Dosis Treatment</strong><small>Hitung garam, obat bubuk, dan obat cair</small></span>
         </button>
+      </div>
 
       <section class="calculator-section calculator-tool-panel" id="kalkulator-komposisi" role="tabpanel" aria-labelledby="composition-tab calculator-title">
       <div class="calculator-intro">
@@ -157,7 +157,6 @@ title: Penggila Koi Tools
         </div>
       </div>
       </section>
-    </section>
 
       <section class="calculator-section treatment-section calculator-tool-panel" id="dosis-treatment" role="tabpanel" aria-labelledby="treatment-tab treatment-title" hidden>
       <div class="calculator-intro">
@@ -291,6 +290,6 @@ title: Penggila Koi Tools
   </main>
 
   <footer><span>© 2026 Penggila Koi</span><span>Dibuat untuk koi keeper Indonesia</span></footer>
-  <script src="app.js?v=20261003-1"></script>
+  <script src="app.js?v=20261003-2"></script>
 </body>
 </html>
