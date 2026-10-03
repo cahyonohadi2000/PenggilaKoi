@@ -65,6 +65,18 @@ h2 { font-size: clamp(30px, 4vw, 44px); }
 .feature-card small { margin-top: 7px; line-height: 1.4; opacity: .62; }
 .arrow { align-self: end; font-size: 24px; }
 
+.calculator-tools { padding-top: 62px; }
+.calculator-tool-tabs { max-width: 1116px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.calculator-tool-tab { min-height: 88px; display: flex; align-items: center; gap: 15px; padding: 17px 20px; border: 1px solid var(--line); border-radius: 16px; color: var(--muted); background: #f7fafb; text-align: left; cursor: pointer; transition: border-color .2s, background .2s, box-shadow .2s; }
+.calculator-tool-tab:hover { border-color: #a7c7d0; }
+.calculator-tool-tab.active { border-color: var(--blue); color: var(--navy); background: white; box-shadow: 0 5px 20px rgba(8,34,59,.08); }
+.calculator-tool-tab:focus-visible { outline: 3px solid rgba(8,126,164,.28); outline-offset: 2px; }
+.tool-tab-icon { width: 44px; height: 44px; flex: 0 0 44px; display: grid; place-items: center; border-radius: 13px; color: var(--blue); background: #e8f5f7; font-size: 24px; }
+.calculator-tool-tab strong, .calculator-tool-tab small { display: block; }
+.calculator-tool-tab strong { font-family: Manrope; font-size: 16px; }
+.calculator-tool-tab small { margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.4; }
+.calculator-tool-panel[hidden] { display: none !important; }
+.calculator-tool-panel { padding-top: 45px; }
 .calculator-section { max-width: 1116px; margin: auto; padding: 100px 24px 110px; display: grid; grid-template-columns: .82fr 1.18fr; gap: 86px; align-items: start; }
 .feed-section { max-width: none; padding-left: max(calc((100vw - 1116px) / 2 + 24px), 24px); padding-right: max(calc((100vw - 1116px) / 2 + 24px), 24px); background: var(--ice); }
 .feed-section .calculator-intro { order: 2; }
@@ -300,7 +312,11 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
   .water-card.hero-technical-card { height: auto; min-height: 0; padding: 9px; aspect-ratio: 16 / 9; border-radius: 24px; }
   .hero-technical-card img { border-radius: 16px; }
   .feature-grid { grid-template-columns: 1fr 1fr; }
-  .calculator-section { padding-top: 75px; grid-template-columns: 1fr; gap: 35px; }
+  .calculator-section { padding-top: 55px; grid-template-columns: 1fr; gap: 35px; }
+  .calculator-tools { padding-top: 40px; }
+  .calculator-tool-tabs { grid-template-columns: 1fr; gap: 10px; }
+  .calculator-tool-tab { min-height: 76px; padding: 14px 16px; }
+  .calculator-tool-tab strong { font-size: 15px; }
   .feed-section .calculator-intro { order: 1; }
   .feed-section .calculator-card { order: 2; }
   .water-grid { grid-template-columns: 1fr; }
