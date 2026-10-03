@@ -73,6 +73,10 @@ title: Penggila Koi Tools
           <span><strong>Penghitung Pakan</strong><small>Biomassa, kebutuhan harian, dan porsi tiap pemberian</small></span>
         </button>
       </div>
+        <button class="calculator-tool-tab" id="treatment-tab" type="button" role="tab" aria-selected="false" aria-controls="dosis-treatment" data-calculator-view="treatment" tabindex="-1">
+          <span class="tool-tab-icon" aria-hidden="true">＋</span>
+          <span><strong>Dosis Treatment</strong><small>Hitung garam, obat bubuk, dan obat cair</small></span>
+        </button>
 
       <section class="calculator-section calculator-tool-panel" id="kalkulator-komposisi" role="tabpanel" aria-labelledby="composition-tab calculator-title">
       <div class="calculator-intro">
@@ -155,7 +159,7 @@ title: Penggila Koi Tools
       </section>
     </section>
 
-    <section class="calculator-section treatment-section" id="dosis-treatment" aria-labelledby="treatment-title">
+      <section class="calculator-section treatment-section calculator-tool-panel" id="dosis-treatment" role="tabpanel" aria-labelledby="treatment-tab treatment-title" hidden>
       <div class="calculator-intro">
         <p class="eyebrow">KALKULATOR TREATMENT</p>
         <h2 id="treatment-title">Dosis untuk bak karantina</h2>
@@ -221,6 +225,7 @@ title: Penggila Koi Tools
           <small class="disclaimer" id="treatment-note">Larutkan garam terlebih dahulu dan masukkan secara bertahap. Ukur kembali salinitas air.</small>
         </div>
       </div>
+      </section>
     </section>
 
     <section class="variety-section" id="varietas" aria-labelledby="variety-title">
