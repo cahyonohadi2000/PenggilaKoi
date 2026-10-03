@@ -1,5 +1,5 @@
 ---
-title: Kutu Argulus pada Koi: Kenali dan Tangani dengan Tepat
+title: "Kutu Argulus pada Koi: Kenali dan Tangani dengan Tepat"
 slug: kutu-argulus-pada-koi
 category: Kesehatan
 summary: Kenali ciri kutu Argulus, tanda iritasi pada koi, dan hal yang perlu diperhatikan sebelum menggunakan Dimilin.
