@@ -31,7 +31,7 @@ calculatorToolTabs.forEach((tab, index) => {
   });
 });
 
-selectCalculatorTool(window.location.hash === '#kalkulator-pakan' ? 'feed' : 'composition');
+selectCalculatorTool(window.location.hash === '#kalkulator-pakan' ? 'feed' : window.location.hash === '#dosis-treatment' ? 'treatment' : 'composition');
 
 const tabs = document.querySelectorAll('.shape-tab');
 const rectangleFields = document.querySelector('#rectangle-fields');
