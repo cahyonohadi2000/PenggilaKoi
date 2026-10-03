@@ -14,7 +14,7 @@ function selectCalculatorTool(view, updateHash = false) {
     panel.hidden = panel.id !== selectedTab.getAttribute('aria-controls');
   });
   if (updateHash) {
-    const hash = selectedTab.dataset.calculatorView === 'feed' ? '#kalkulator-pakan' : '#kalkulator';
+    const hash = selectedTab.dataset.calculatorView === 'feed' ? '#kalkulator-pakan' : selectedTab.dataset.calculatorView === 'treatment' ? '#dosis-treatment' : '#kalkulator';
     history.replaceState(null, '', hash);
   }
 }
