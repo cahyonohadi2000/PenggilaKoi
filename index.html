@@ -13,7 +13,7 @@ title: Penggila Koi Tools
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260907-6">
+  <link rel="stylesheet" href="styles.css?v=20261003-1">
 </head>
 <body>
   <header class="topbar">
@@ -62,9 +62,21 @@ title: Penggila Koi Tools
       </div>
     </section>
 
-    <section class="calculator-section" id="kalkulator" aria-labelledby="calculator-title">
+    <section class="calculator-tools" id="kalkulator" aria-label="Kalkulator kolam dan pakan">
+      <div class="calculator-tool-tabs" role="tablist" aria-label="Pilih kalkulator">
+        <button class="calculator-tool-tab active" id="composition-tab" type="button" role="tab" aria-selected="true" aria-controls="kalkulator-komposisi" data-calculator-view="composition">
+          <span class="tool-tab-icon" aria-hidden="true">◌</span>
+          <span><strong>Komposisi Ideal Kolam</strong><small>Volume air, kapasitas sistem, dan jumlah koi</small></span>
+        </button>
+        <button class="calculator-tool-tab" id="feed-tab" type="button" role="tab" aria-selected="false" aria-controls="kalkulator-pakan" data-calculator-view="feed" tabindex="-1">
+          <span class="tool-tab-icon" aria-hidden="true">◍</span>
+          <span><strong>Penghitung Pakan</strong><small>Biomassa, kebutuhan harian, dan porsi tiap pemberian</small></span>
+        </button>
+      </div>
+
+      <section class="calculator-section calculator-tool-panel" id="kalkulator-komposisi" role="tabpanel" aria-labelledby="composition-tab calculator-title">
       <div class="calculator-intro">
-        <p class="eyebrow">KALKULATOR PERTAMA</p>
+        <p class="eyebrow">KALKULATOR KOMPOSISI IDEAL</p>
         <h2 id="calculator-title">Komposisi ideal kolam koi</h2>
         <p>Masukkan ukuran bagian dalam kolam dan rata-rata panjang koi. Hasilnya digunakan untuk memperkirakan volume air, jumlah koi ideal, kapasitas pompa, ukuran bottom drain, volume chamber, dan kebutuhan aerasi.</p>
         <div class="formula-note"><strong>Kenapa ini penting?</strong><span>Kolam koi yang sehat memerlukan keseimbangan antara jumlah ikan, sirkulasi air, filtrasi, dan aerasi. Gunakan hasil perhitungan sebagai acuan awal dalam merancang sistem kolam.</span></div>
@@ -105,10 +117,10 @@ title: Penggila Koi Tools
       </div>
     </section>
 
-    <section class="calculator-section feed-section" id="kalkulator-pakan" aria-labelledby="feed-title">
+    <section class="calculator-section feed-section calculator-tool-panel" id="kalkulator-pakan" role="tabpanel" aria-labelledby="feed-tab feed-title" hidden>
       <div class="calculator-intro">
         <p class="eyebrow">KALKULATOR PAKAN</p>
-        <h2 id="feed-title">Atur pakan berdasarkan biomassa</h2>
+        <h2 id="feed-title">Kebutuhan pakan berdasarkan biomassa</h2>
         <p>Masukkan panjang badan dan jumlah koi pada setiap kelompok ukuran. Sistem mengubah panjang menjadi estimasi berat sesuai kurva referensi, kemudian menjumlahkannya sebagai biomassa.</p>
         <div class="formula-note"><strong>Cara mengukur</strong><span>Ukur panjang badan dari ujung mulut sampai pangkal ekor—sirip ekor tidak ikut dihitung. Kurva digunakan untuk panjang 10–70 cm.</span></div>
       </div>
@@ -140,6 +152,7 @@ title: Penggila Koi Tools
           <small class="disclaimer">Berat merupakan estimasi dari kurva dan dapat berbeda karena bentuk tubuh, jenis kelamin, serta kondisi ikan. Kurangi atau hentikan pakan saat ikan tidak aktif atau kualitas air bermasalah.</small>
         </div>
       </div>
+      </section>
     </section>
 
     <section class="calculator-section treatment-section" id="dosis-treatment" aria-labelledby="treatment-title">
@@ -273,6 +286,6 @@ title: Penggila Koi Tools
   </main>
 
   <footer><span>© 2026 Penggila Koi</span><span>Dibuat untuk koi keeper Indonesia</span></footer>
-  <script src="app.js?v=20260905-12"></script>
+  <script src="app.js?v=20261003-1"></script>
 </body>
 </html>
