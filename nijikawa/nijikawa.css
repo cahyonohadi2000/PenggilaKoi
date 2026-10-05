@@ -117,3 +117,57 @@
   .niji-footer { flex-direction:column; padding:18px 24px; }
 }
 @media(prefers-reduced-motion:reduce) { .niji-button,.niji-product-card { transition:none; } }
+
+/* Expanded brand and product information */
+.niji-about-heading { max-width:1200px; }
+.niji-values .niji-section-heading h2 { color:#fff; }
+.niji-values .niji-section-heading > p { color:#b8cbd4; }
+.niji-formula-grid { max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.niji-formula-grid article { min-height:170px; padding:21px; border:1px solid rgba(255,255,255,.13); border-radius:14px; background:rgba(255,255,255,.045); }
+.niji-formula-grid article > span { color:#79cbd4; font:700 10px Manrope,sans-serif; }
+.niji-formula-grid h3 { margin:18px 0 8px; font:700 15px Manrope,sans-serif; }
+.niji-formula-grid p { margin:0; color:#b0c4ce; font-size:11px; line-height:1.68; }
+.niji-product-detail-list { max-width:1200px; margin:auto; display:grid; gap:16px; }
+.niji-product-detail { display:grid; grid-template-columns:250px 1fr; overflow:hidden; border:1px solid #e1e9ec; border-radius:17px; background:#fff; box-shadow:0 8px 28px rgba(6,26,46,.045); }
+.niji-product-visual { min-height:100%; position:relative; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start; padding:20px; color:#fff; background:linear-gradient(145deg,#0c3d57,#09233b); }
+.niji-product-visual:after { content:""; position:absolute; width:220px;height:220px;right:-90px;bottom:-95px;border:1px solid rgba(255,255,255,.12);border-radius:50%;box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 55px rgba(255,255,255,.025); }
+.niji-product-professional .niji-product-visual { background:linear-gradient(145deg,#33475b,#122840); }
+.niji-product-color .niji-product-visual { background:linear-gradient(145deg,#863f3f,#3c2637); }
+.niji-product-visual .niji-product-index { position:relative;z-index:1;color:#c0d4dc; }
+.niji-product-visual .niji-product-symbol { position:relative;z-index:1;align-self:center;width:76px;height:76px;margin:auto;border:1px solid rgba(255,255,255,.35);border-radius:50%;color:#fff;background:rgba(255,255,255,.09);font-size:30px; }
+.niji-product-visual small { position:relative;z-index:1;color:#d4e2e8;font-size:8px;font-weight:800;letter-spacing:.14em; }
+.niji-product-content { padding:24px 26px; }
+.niji-product-content h3 { margin:4px 0 8px;font:800 28px Manrope,sans-serif; }
+.niji-product-summary { max-width:740px;margin:0;color:#607581;font-size:12px;line-height:1.7; }
+.niji-product-highlights { margin:20px 0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 20px; }
+.niji-product-highlights div { padding-left:11px;border-left:2px solid #8fd4da; }
+.niji-product-highlights strong,.niji-product-highlights span { display:block; }
+.niji-product-highlights strong { color:#12354e;font-size:10px; }
+.niji-product-highlights span { margin-top:4px;color:#71838c;font-size:10px;line-height:1.55; }
+.niji-spec-row { display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #e5ecee;border-radius:9px;background:#f8fbfb; }
+.niji-spec-row div { padding:11px 12px;border-right:1px solid #e5ecee; }
+.niji-spec-row div:last-child { border:0; }
+.niji-spec-row small,.niji-spec-row strong { display:block; }
+.niji-spec-row small { color:#73858d;font-size:7px;font-weight:800;letter-spacing:.08em; }
+.niji-spec-row strong { margin-top:5px;color:#11344d;font-size:11px; }
+.niji-product-more { margin-top:12px;padding-top:10px;border-top:1px solid #e8edef; }
+.niji-product-more summary { color:#086d85;font-size:10px;font-weight:800;cursor:pointer; }
+.niji-product-more p { margin:9px 0 0;color:#687b86;font-size:10px;line-height:1.7; }
+@media(max-width:900px) {
+  .niji-product-detail { grid-template-columns:190px 1fr; }
+  .niji-product-visual { padding:16px; }
+  .niji-spec-row { grid-template-columns:repeat(2,1fr); }
+  .niji-spec-row div:nth-child(2) { border-right:0; }
+  .niji-spec-row div:nth-child(-n+2) { border-bottom:1px solid #e5ecee; }
+}
+@media(max-width:650px) {
+  .niji-formula-grid { grid-template-columns:1fr; }
+  .niji-formula-grid article { min-height:0; }
+  .niji-product-detail { grid-template-columns:1fr; }
+  .niji-product-visual { min-height:145px; flex-direction:row;align-items:center; }
+  .niji-product-visual .niji-product-symbol { align-self:center;margin:0 18px; }
+  .niji-product-visual small { margin-left:auto; }
+  .niji-product-content { padding:20px; }
+  .niji-product-highlights { grid-template-columns:1fr;gap:11px; }
+  .niji-spec-row div { padding:10px; }
+}
