@@ -1,7 +1,7 @@
 const pageMenuButton = document.querySelector('.menu-button');
 const pageNavigation = document.querySelector('.main-nav');
 
-const isNestedPage = ['/artikel/', '/rekomendasi/', '/koi-farm/', '/ebook-kohaku/', '/konsultasi/', '/nijikawa/'].some((path) => window.location.pathname.includes(path));
+const isNestedPage = ['/artikel/', '/rekomendasi/', '/koi-farm/', '/ebook-kohaku/', '/konsultasi/', '/nijikawa/', '/auction/'].some((path) => window.location.pathname.includes(path));
 const localPrefix = isNestedPage ? '../' : '';
 
 if (pageNavigation && !pageNavigation.querySelector('a[href*="nijikawa/"]')) {
