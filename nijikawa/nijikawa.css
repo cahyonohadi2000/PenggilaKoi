@@ -1,0 +1,119 @@
+:root { --niji-ink: #0a223a; --niji-deep: #061a2e; --niji-aqua: #67c6d3; --niji-mist: #e9f5f6; --niji-red: #ce353c; }
+.nijikawa-site { background: #fbfcfc; color: var(--niji-ink); }
+.nijikawa-site .topbar { z-index: 20; }
+.nijikawa-site .main-nav a { font-size: 12px; }
+.niji-hero { position: relative; overflow: hidden; color: #fff; background: radial-gradient(ellipse at 76% 46%, rgba(19,83,108,.5), transparent 34%), linear-gradient(125deg,#071a2e 0%,#0b304b 100%); }
+.niji-hero:after { content:""; position:absolute; width:520px; height:520px; border:1px solid rgba(255,255,255,.07); border-radius:50%; right:-185px; top:-285px; box-shadow:0 0 0 45px rgba(255,255,255,.018),0 0 0 90px rgba(255,255,255,.018); pointer-events:none; }
+.niji-hero-inner { position:relative; z-index:1; max-width:1200px; min-height:565px; margin:auto; padding:65px 30px 55px; display:grid; grid-template-columns:1.02fr .98fr; gap:54px; align-items:center; }
+.niji-hero-copy { max-width:600px; }
+.niji-eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 18px; color:var(--niji-aqua); font-size:10px; font-weight:800; letter-spacing:.16em; }
+.niji-eyebrow span { width:22px; height:1px; background:var(--niji-aqua); }
+.niji-hero h1 { max-width:660px; margin:0; font:800 clamp(42px,5.4vw,70px)/1.08 Manrope,sans-serif; letter-spacing:-.045em; }
+.niji-hero h1 em { color:#8ed6dc; font-style:normal; }
+.niji-hero-copy > p:not(.niji-eyebrow) { max-width:520px; margin:24px 0 0; color:#c3d3dc; font-size:16px; line-height:1.75; }
+.niji-hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:24px; margin-top:30px; }
+.niji-button { min-height:48px; display:inline-flex; align-items:center; justify-content:center; gap:21px; padding:0 19px; border-radius:9px; font-size:12px; font-weight:800; transition:transform .2s,background .2s; }
+.niji-button:hover { transform:translateY(-2px); }
+.niji-button-light { color:#09223b; background:#fff; }
+.niji-button-light:hover { background:#c9f0f1; }
+.niji-button span { font-size:18px; line-height:1; }
+.niji-text-link { color:#d5e5ea; font-size:12px; font-weight:700; }
+.niji-text-link span { padding-left:5px; color:var(--niji-aqua); }
+.niji-hero-note { display:flex; align-items:center; gap:13px; margin-top:49px; padding-top:18px; border-top:1px solid rgba(255,255,255,.13); }
+.niji-note-mark { width:37px; height:37px; display:grid; place-items:center; border:1px solid rgba(126,212,217,.42); border-radius:50%; color:var(--niji-aqua); font-family:serif; font-size:17px; }
+.niji-hero-note strong,.niji-hero-note small { display:block; }
+.niji-hero-note strong { font-size:11px; }
+.niji-hero-note small { margin-top:4px; color:#9eb4c0; font-size:10px; }
+.niji-hero-visual { position:relative; margin:0; padding:10px; border:1px solid rgba(255,255,255,.17); border-radius:24px 24px 80px 24px; background:rgba(255,255,255,.07); box-shadow:0 25px 65px rgba(0,0,0,.22); }
+.niji-hero-visual img { display:block; width:100%; aspect-ratio:1.14; object-fit:cover; border-radius:16px 16px 66px 16px; background:#f7f7f4; }
+.niji-hero-visual figcaption { position:absolute; right:23px; bottom:23px; padding:8px 11px; border:1px solid rgba(255,255,255,.22); border-radius:5px; color:#fff; background:rgba(6,26,46,.75); font-size:8px; font-weight:800; letter-spacing:.13em; }
+.niji-hero-bottom { position:relative; z-index:1; display:flex; justify-content:space-between; padding:14px max(calc((100% - 1200px)/2 + 30px),30px); border-top:1px solid rgba(255,255,255,.12); color:#8ca8b6; font-size:8px; font-weight:800; letter-spacing:.15em; }
+.niji-section-heading { max-width:1200px; margin:0 auto 31px; display:grid; grid-template-columns:1fr .68fr; gap:70px; align-items:end; }
+.niji-eyebrow-dark { color:#08738b; }
+.niji-section-heading h2,.niji-values h2,.niji-guide h2,.niji-contact h2 { margin:0; font:800 clamp(30px,4vw,46px)/1.12 Manrope,sans-serif; letter-spacing:-.035em; }
+.niji-section-heading > p { max-width:480px; margin:0 0 3px; color:#647785; font-size:14px; line-height:1.75; }
+.niji-breeders,.niji-products { padding:82px max(5vw,24px) 88px; }
+.niji-breeder-grid { max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
+.niji-breeder-card { overflow:hidden; border:1px solid #e1e9ec; border-radius:16px; background:#fff; box-shadow:0 9px 28px rgba(6,26,46,.04); }
+.niji-breeder-photo { height:205px; position:relative; display:grid; place-items:center; overflow:hidden; background:linear-gradient(145deg,#16445a,#0c263f); }
+.niji-breeder-photo:before,.niji-breeder-photo:after { content:""; position:absolute; border:1px solid rgba(142,214,220,.18); border-radius:50%; }
+.niji-breeder-photo:before { width:240px; height:240px; right:-40px; top:-95px; }
+.niji-breeder-photo:after { width:320px; height:320px; right:-80px; top:-135px; }
+.niji-breeder-photo-alt { background:linear-gradient(145deg,#22505a,#102a40); }
+.niji-breeder-photo-third { background:linear-gradient(145deg,#253f59,#12243b); }
+.niji-photo-frame { position:relative; z-index:1; width:65px; height:65px; display:grid; place-items:center; border:1px solid rgba(142,214,220,.42); border-radius:50%; color:#a4e0e2; font:500 20px serif; }
+.niji-photo-caption { position:absolute; z-index:1; left:16px; bottom:14px; color:#bad0d9; font-size:8px; font-weight:800; letter-spacing:.14em; }
+.niji-breeder-info { padding:21px 22px 22px; }
+.niji-card-kicker,.niji-product-label { color:#08738b; font-size:8px; font-weight:800; letter-spacing:.14em; }
+.niji-breeder-info h3 { margin:9px 0 7px; font:700 20px Manrope,sans-serif; }
+.niji-breeder-info p { min-height:49px; margin:0; color:#657785; font-size:12px; line-height:1.65; }
+.niji-profile-status { display:inline-block; margin-top:17px; padding:7px 9px; border-radius:4px; color:#697b83; background:#f0f4f5; font-size:8px; font-weight:800; letter-spacing:.08em; }
+.niji-section-footnote { max-width:1200px; margin:17px auto 0; color:#83929a; font-size:10px; line-height:1.6; }
+.niji-values { padding:78px max(5vw,24px) 70px; color:white; background:#0a253d; }
+.niji-values-inner { max-width:1200px; margin:auto; display:grid; grid-template-columns:.9fr 1.1fr; gap:105px; align-items:start; }
+.niji-values-intro .niji-eyebrow,.niji-guide .niji-eyebrow,.niji-contact .niji-eyebrow { color:#8ed6dc; }
+.niji-values-intro > p:last-child { max-width:420px; margin:17px 0 0; color:#b8cbd4; font-size:14px; line-height:1.75; }
+.niji-value-list article { display:grid; grid-template-columns:42px 1fr; gap:17px; padding:17px 0; border-top:1px solid rgba(255,255,255,.14); }
+.niji-value-list article:first-child { padding-top:4px; border-top:0; }
+.niji-value-list article > span { color:#78cbd3; font:700 11px Manrope,sans-serif; }
+.niji-value-list h3 { margin:0; font:700 16px Manrope,sans-serif; }
+.niji-value-list p { margin:6px 0 0; color:#a8bec9; font-size:12px; line-height:1.65; }
+.niji-claim-note { max-width:1200px; margin:23px auto 0; padding-top:15px; border-top:1px solid rgba(255,255,255,.1); color:#8da5b2; font-size:10px; line-height:1.6; }
+.niji-product-grid { max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.niji-product-card { min-height:300px; display:flex; flex-direction:column; justify-content:space-between; padding:20px; border:1px solid #e0e8eb; border-radius:15px; background:white; transition:transform .2s,box-shadow .2s; }
+.niji-product-card:hover { transform:translateY(-4px); box-shadow:0 15px 38px rgba(6,26,46,.09); }
+.niji-product-top { display:flex; align-items:center; justify-content:space-between; }
+.niji-product-index { color:#6b7e88; font-size:8px; font-weight:800; letter-spacing:.12em; }
+.niji-product-symbol { width:43px; height:43px; display:grid; place-items:center; border-radius:12px; color:#0c5973; background:#e4f3f5; font:700 20px Manrope,serif; }
+.niji-product-professional .niji-product-symbol { color:#49647b; background:#edf0f2; }
+.niji-product-color .niji-product-symbol { color:#b74941; background:#f8ece9; }
+.niji-product-taki .niji-product-symbol { color:#3c6d72; background:#e9f1ee; }
+.niji-product-card > div:nth-child(2) { margin:22px 0 21px; }
+.niji-product-label { margin:0 0 8px; font-size:8px; }
+.niji-product-card h3 { margin:0; font:800 23px Manrope,sans-serif; }
+.niji-product-card > div:nth-child(2) > p:last-child { min-height:66px; margin:10px 0 0; color:#687b86; font-size:11px; line-height:1.65; }
+.niji-product-card > a { display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid #e8edef; color:#086d85; font-size:10px; font-weight:800; }
+.niji-product-card > a span { font-size:15px; }
+.niji-guide { padding:77px max(5vw,24px); color:white; background:linear-gradient(110deg,#0b334d,#08243d); }
+.niji-guide-inner { max-width:1200px; margin:auto; display:grid; grid-template-columns:.87fr 1.13fr; gap:100px; }
+.niji-guide-inner > div:first-child > p:last-child { max-width:440px; margin:17px 0 0; color:#b8cbd4; font-size:13px; line-height:1.75; }
+.niji-guide-steps article { display:grid; grid-template-columns:35px 1fr; gap:16px; padding:13px 0; border-top:1px solid rgba(255,255,255,.15); }
+.niji-guide-steps article:first-child { border:0; padding-top:0; }
+.niji-guide-steps article > span { color:#86d2d8; font:700 10px Manrope,sans-serif; }
+.niji-guide-steps h3 { margin:0; font:700 15px Manrope,sans-serif; }
+.niji-guide-steps p { margin:5px 0 0; color:#b0c4ce; font-size:11px; line-height:1.6; }
+.niji-contact { position:relative; overflow:hidden; padding:57px max(5vw,24px); color:white; background:#0d6178; }
+.niji-contact-inner { position:relative; z-index:1; max-width:1200px; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:35px; }
+.niji-contact h2 { max-width:650px; }
+.niji-contact-inner > div > p:last-child { margin:12px 0 0; color:#d1e7eb; font-size:13px; line-height:1.65; }
+.niji-contact-stamp { position:absolute; right:8%; top:-110px; color:rgba(255,255,255,.055); font:800 330px Manrope,sans-serif; }
+.niji-footer { position:relative; z-index:1; display:flex; justify-content:space-between; gap:15px; padding:20px max(5vw,24px); color:#6d818b; background:#f8fafb; font-size:10px; }
+.niji-footer a { color:#176a7e; font-weight:700; }
+@media(max-width:900px) {
+  .niji-hero-inner { min-height:500px; gap:30px; grid-template-columns:1fr 1fr; }
+  .niji-section-heading { gap:35px; }
+  .niji-values-inner,.niji-guide-inner { gap:50px; }
+  .niji-product-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:650px) {
+  .niji-hero-inner { min-height:auto; padding:54px 24px 40px; grid-template-columns:1fr; gap:30px; }
+  .niji-hero h1 { font-size:44px; }
+  .niji-hero-visual { max-width:540px; }
+  .niji-hero-visual img { aspect-ratio:1.25; }
+  .niji-hero-note { margin-top:32px; }
+  .niji-hero-bottom { padding:12px 24px; font-size:7px; }
+  .niji-section-heading { display:block; margin-bottom:25px; }
+  .niji-section-heading > p { margin-top:14px; }
+  .niji-breeders,.niji-products { padding:57px 20px 62px; }
+  .niji-breeder-grid { grid-template-columns:1fr; gap:13px; }
+  .niji-breeder-photo { height:190px; }
+  .niji-values { padding:57px 24px 43px; }
+  .niji-values-inner,.niji-guide-inner { grid-template-columns:1fr; gap:33px; }
+  .niji-product-grid { grid-template-columns:1fr; }
+  .niji-product-card { min-height:255px; }
+  .niji-guide { padding:58px 24px; }
+  .niji-contact { padding:45px 24px; }
+  .niji-contact-inner { align-items:flex-start; flex-direction:column; }
+  .niji-footer { flex-direction:column; padding:18px 24px; }
+}
+@media(prefers-reduced-motion:reduce) { .niji-button,.niji-product-card { transition:none; } }
