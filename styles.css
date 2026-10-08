@@ -373,3 +373,22 @@ footer { display: flex; justify-content: space-between; padding: 26px max(5vw, 2
 .article-cover { width: 100%; max-height: 460px; display: block; margin-bottom: 22px; border-radius: 20px; object-fit: cover; box-shadow: 0 12px 36px rgba(8,34,59,.07); }
 .article-card-cover { width: calc(100% + 54px); height: 150px; margin: -27px -27px 22px; border-radius: 19px 19px 0 0; object-fit: cover; }
 .article-content img { width: 100%; height: auto; display: block; margin: 28px 0 10px; border-radius: 16px; }
+
+/* Nijikawa recommendation feature */
+.recommendation-nijikawa { position:relative; overflow:hidden; display:grid; grid-template-columns:1.15fr .85fr; gap:35px; align-items:center; margin:0 0 26px; padding:32px 34px; border-radius:20px; color:#fff; background:linear-gradient(120deg,#08223b,#0b526d); box-shadow:0 16px 38px rgba(8,34,59,.13); }
+.recommendation-nijikawa-copy { position:relative; z-index:1; }
+.recommendation-nijikawa .eyebrow { color:#7bd3dc; }
+.recommendation-nijikawa h2 { margin:0; color:#fff; font:800 clamp(27px,3.3vw,38px)/1.12 Manrope,sans-serif; letter-spacing:-.03em; }
+.recommendation-nijikawa-copy > p:not(.eyebrow) { max-width:570px; margin:12px 0 0; color:#c6d9e1; font-size:13px; line-height:1.7; }
+.recommendation-nijikawa-lines { display:flex; flex-wrap:wrap; gap:7px; margin-top:17px; }
+.recommendation-nijikawa-lines span { padding:6px 9px; border:1px solid rgba(255,255,255,.18); border-radius:99px; color:#d9e9ed; font-size:9px; font-weight:700; }
+.recommendation-nijikawa-link { display:inline-flex; align-items:center; gap:14px; margin-top:21px; padding:11px 14px; border-radius:9px; color:#09233b; background:#fff; font-size:11px; font-weight:800; }
+.recommendation-nijikawa-link:hover { background:#c9f0f1; }
+.recommendation-nijikawa-link span { font-size:16px; }
+.recommendation-nijikawa-art { position:relative; min-height:190px; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden; border:1px solid rgba(255,255,255,.17); border-radius:16px; background:radial-gradient(circle at center,rgba(76,181,194,.25),transparent 60%),rgba(255,255,255,.04); }
+.recommendation-nijikawa-art:before,.recommendation-nijikawa-art:after { content:""; position:absolute; width:230px;height:230px;border:1px solid rgba(123,211,220,.2);border-radius:50%; }
+.recommendation-nijikawa-art:after { width:310px;height:310px; }
+.recommendation-nijikawa-art span,.recommendation-nijikawa-art strong,.recommendation-nijikawa-art small { position:relative;z-index:1; }
+.recommendation-nijikawa-art span,.recommendation-nijikawa-art small { color:#c4d9e0;font-size:8px;font-weight:800;letter-spacing:.17em; }
+.recommendation-nijikawa-art strong { margin:7px 0;color:#9de0e2;font:800 78px/1 Manrope,sans-serif; }
+@media(max-width:650px) { .recommendation-nijikawa { grid-template-columns:1fr; gap:20px; padding:23px; } .recommendation-nijikawa-art { min-height:125px; } .recommendation-nijikawa-art strong { font-size:54px; } }
