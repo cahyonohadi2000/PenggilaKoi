@@ -203,3 +203,5 @@
   .niji-ebook-inner { align-items:stretch; }
   .niji-ebook-visual { width:100%; max-width:440px; align-self:center; }
 }
+.niji-button.niji-shopee-button { background:#ee4d2d; border-color:#ee4d2d; color:#fff; }
+.niji-button.niji-shopee-button:hover { background:#d94325; border-color:#d94325; color:#fff; }
