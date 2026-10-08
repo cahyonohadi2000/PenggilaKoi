@@ -183,3 +183,10 @@
   .niji-product-visual-image { min-height:340px; }
   .niji-product-packshot { max-height:420px; }
 }
+
+
+/* Keep uploaded package photography on a light, high-contrast background. */
+.niji-product-growth .niji-product-visual-image,
+.niji-product-professional .niji-product-visual-image,
+.niji-product-color .niji-product-visual-image { background:#f6f7f5; color:#0c3048; }
+.niji-product-packshot { mix-blend-mode:normal; }
