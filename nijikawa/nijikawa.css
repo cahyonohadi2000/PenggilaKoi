@@ -171,3 +171,15 @@
   .niji-product-highlights { grid-template-columns:1fr;gap:11px; }
   .niji-spec-row div { padding:10px; }
 }
+
+
+/* Product packaging photos */
+.niji-product-visual-image { background:#f6f7f5; overflow:hidden; }
+.niji-product-visual-image:after { display:none; }
+.niji-product-visual-image .niji-product-index { color:#0c3048; background:rgba(255,255,255,.9); padding:6px 8px; border-radius:3px; }
+.niji-product-packshot { position:relative; z-index:1; display:block; flex:1; width:100%; min-height:0; max-height:560px; object-fit:contain; mix-blend-mode:multiply; }
+.niji-product-visual-image small { color:#466273; }
+@media (max-width:680px) {
+  .niji-product-visual-image { min-height:340px; }
+  .niji-product-packshot { max-height:420px; }
+}
