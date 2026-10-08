@@ -4,18 +4,6 @@ const pageNavigation = document.querySelector('.main-nav');
 const isNestedPage = ['/artikel/', '/rekomendasi/', '/koi-farm/', '/ebook-kohaku/', '/konsultasi/', '/nijikawa/', '/auction/'].some((path) => window.location.pathname.includes(path));
 const localPrefix = isNestedPage ? '../' : '';
 
-if (pageNavigation && !pageNavigation.querySelector('a[href*="nijikawa/"]')) {
-  const nijikawaLink = document.createElement('a');
-  nijikawaLink.href = `${localPrefix}nijikawa/`;
-  nijikawaLink.textContent = 'Nijikawa';
-  const recommendationLink = Array.from(pageNavigation.querySelectorAll('a')).find((link) => link.textContent.trim().toLowerCase().includes('rekomendasi'));
-  if (recommendationLink) {
-    pageNavigation.insertBefore(nijikawaLink, recommendationLink.nextSibling);
-  } else {
-    pageNavigation.appendChild(nijikawaLink);
-  }
-}
-
 if (pageNavigation && !pageNavigation.querySelector('a[href*="auction/"]')) {
   const auctionLink = document.createElement('a');
   auctionLink.href = `${localPrefix}auction/`;
