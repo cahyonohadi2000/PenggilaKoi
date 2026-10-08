@@ -190,3 +190,16 @@
 .niji-product-professional .niji-product-visual-image,
 .niji-product-color .niji-product-visual-image { background:#f6f7f5; color:#0c3048; }
 .niji-product-packshot { mix-blend-mode:normal; }
+
+
+/* Ebook cover and download button */
+.niji-ebook-inner { align-items:center; }
+.niji-ebook-copy { max-width:620px; }
+.niji-ebook-visual { width:min(100%,440px); display:flex; flex-direction:column; gap:14px; align-items:stretch; }
+.niji-ebook-cover-link { display:block; overflow:hidden; border:1px solid rgba(255,255,255,.2); border-radius:14px; box-shadow:0 16px 42px rgba(0,0,0,.18); }
+.niji-ebook-cover { display:block; width:100%; aspect-ratio:1; object-fit:cover; }
+.niji-ebook-button { width:100%; text-align:center; }
+@media(max-width:650px) {
+  .niji-ebook-inner { align-items:stretch; }
+  .niji-ebook-visual { width:100%; max-width:440px; align-self:center; }
+}
