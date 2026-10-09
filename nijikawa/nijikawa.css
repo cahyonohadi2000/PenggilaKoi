@@ -205,3 +205,32 @@
 }
 .niji-button.niji-shopee-button { background:#ee4d2d; border-color:#ee4d2d; color:#fff; }
 .niji-button.niji-shopee-button:hover { background:#d94325; border-color:#d94325; color:#fff; }
+
+/* Detailed formula overview and nutrition illustration */
+.niji-formula-overview { max-width:1200px; margin:0 auto 18px; display:grid; grid-template-columns:1fr 1fr; overflow:hidden; border:1px solid rgba(255,255,255,.13); border-radius:16px; background:rgba(255,255,255,.035); }
+.niji-formula-art { position:relative; min-height:290px; margin:0; padding:12px; background:linear-gradient(145deg,rgba(23,71,99,.68),rgba(10,37,61,.4)); }
+.niji-formula-art svg { display:block; width:100%; height:100%; min-height:265px; }
+.niji-formula-art figcaption { position:absolute; bottom:19px; left:27px; color:#c2d9de; font-size:9px; letter-spacing:.04em; }
+.niji-formula-overview-copy { padding:27px clamp(22px,3vw,38px); align-self:center; }
+.niji-formula-kicker { color:#83d3d8; font-size:9px; font-weight:800; letter-spacing:.15em; }
+.niji-formula-overview-copy h3 { max-width:440px; margin:11px 0 10px; color:#fff; font:700 clamp(20px,2.4vw,28px)/1.2 Manrope,sans-serif; letter-spacing:-.025em; }
+.niji-formula-overview-copy > p { margin:0; color:#b4c9d3; font-size:12px; line-height:1.75; }
+.niji-formula-steps { margin:16px 0 0; padding:0; display:grid; gap:8px; list-style:none; }
+.niji-formula-steps li { display:grid; grid-template-columns:25px 1fr; align-items:center; gap:9px; color:#e9f1f2; font-size:11px; }
+.niji-formula-steps b { color:#80d0d5; font:700 9px Manrope,sans-serif; }
+.niji-formula-grid article { min-height:0; }
+.niji-formula-grid h3 { margin:15px 0 8px; }
+.niji-formula-grid p { font-size:12px; line-height:1.72; }
+.niji-claim-note { font-size:11px; }
+@media(max-width:820px) {
+  .niji-formula-overview { grid-template-columns:1fr; }
+  .niji-formula-art { min-height:230px; }
+  .niji-formula-art svg { min-height:220px; max-height:290px; }
+  .niji-formula-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:650px) {
+  .niji-formula-grid { grid-template-columns:1fr; }
+  .niji-formula-overview-copy { padding:22px; }
+  .niji-formula-art { min-height:205px; }
+  .niji-formula-art svg { min-height:190px; }
+}
