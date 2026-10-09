@@ -234,3 +234,15 @@
   .niji-formula-art { min-height:205px; }
   .niji-formula-art svg { min-height:190px; }
 }
+
+
+/* Expandable formula category explanations */
+.niji-formula-grid article { display:flex; flex-direction:column; align-items:flex-start; }
+.niji-formula-grid .niji-formula-teaser { margin:0; color:#b0c4ce; font-size:12px; line-height:1.72; }
+.niji-formula-more { width:100%; margin-top:auto; padding-top:14px; }
+.niji-formula-more summary { position:relative; padding-top:12px; border-top:1px solid rgba(255,255,255,.12); color:#8ed6dc; font-size:10px; font-weight:800; cursor:pointer; list-style:none; }
+.niji-formula-more summary::-webkit-details-marker { display:none; }
+.niji-formula-more summary::after { content:"+"; position:absolute; right:1px; top:8px; color:#8ed6dc; font-size:17px; font-weight:500; }
+.niji-formula-more[open] summary::after { content:"−"; }
+.niji-formula-more > p { margin:10px 0 0; color:#b0c4ce; font-size:11px; line-height:1.72; }
+.niji-formula-more summary:focus-visible { outline:2px solid #8ed6dc; outline-offset:4px; border-radius:2px; }
